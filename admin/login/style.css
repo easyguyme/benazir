@@ -1,0 +1,35 @@
+#reg_form div{
+	padding:5px;
+}
+
+#reg_form fieldset{
+	width:20%;
+	padding:25px;
+}
+
+#recover_password_form div{
+	padding:5px;
+}
+
+#recover_password_form fieldset{
+	width:20%;
+	padding:25px;
+}
+
+#login_form div{
+	padding:5px;
+}
+
+#login_form fieldset{
+	width:20%;
+	padding:25px;
+}
+
+#change_password_form div{
+	padding:5px;
+}
+
+#change_password_form fieldset{
+	width:20%;
+	padding:25px;
+}
