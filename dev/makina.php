@@ -25,7 +25,7 @@
             <ol class="breadcrumb">
                 <li><a href="../index.php"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="../makina.php"><i class="fa  fa-sticky-note"></i> Area stats</a></li>
-                <li class="active">Development Projects</li>
+                <li class="active">Dev Projects</li>
             </ol>
         </section>
 
@@ -91,19 +91,7 @@
                             <li class="active"><a href="#tab_1-1" data-toggle="tab">County</a></li>
                             <li><a href="#tab_2-2" data-toggle="tab">C.B.O</a></li>
                             <li><a href="#tab_3-2" data-toggle="tab">N.G.O</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    Compare <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lindi</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Laini Saba</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sarang'ombe</a></li>
-
-                                    <li role="presentation" class="divider"></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Go Back</a></li>
-                                </ul>
-                            </li>
+                          
                             <li class="pull-left header"><i class="fa fa-cubes"></i><dt> Project status</dt></li>
                         </ul>
                         <div class="tab-content">

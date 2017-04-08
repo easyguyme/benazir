@@ -11,7 +11,7 @@
             <div class="pull-left info">
                 <p>Umande Trust</p>
                 <!-- Status -->
-                <a href="index.php"><i class="fa fa-circle text-success" style="font-size: x-small"></i> Innovative Solutions:<br>Sustainable Communities</a>
+                <a href="../index.php"><i class="fa fa-circle text-success" style="font-size: x-small"></i> Innovative Solutions:<br>Sustainable Communities</a>
             </div>
         </div>
 
@@ -47,19 +47,7 @@
                 </ul>
             </li>
             <li><a href="../media.php"><i class="fa fa-maxcdn"></i> <span>In the Media</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-plus-square-o"></i> <span>Areas Statistics</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="../stats/makina.php"><i class="fa fa-female"></i>Makina</a></li>
-                    <li><a href="#"><i class="fa fa-female"></i>Sarangombe</a></li>
-                    <li><a href="#"><i class="fa fa-female"></i>Lindi</a></li>
-                    <li><a href="#"><i class="fa fa-female"></i>Laini Saba</a></li>
-                </ul>
-            </li>
+            <li><a href="../stats/makina.php"><i class="fa fa-line-chart"></i> <span>Areas Statistics</span></a></li>
             <li><a href="../calendar.php"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
             <li><a href="../contact.php"><i class="fa fa-envelope"></i> <span>Contact Us</span></a></li>
         </ul>

@@ -18,13 +18,13 @@
         <section class="content-header">
             <h1>
                 Women Voices, ICT Choices |
-                MAKINA Ward | Budget Allocation
+                WARDS | Budget Allocation
                 <small>Version 1.0</small>
 
             </h1>
             <ol class="breadcrumb">
                 <li><a href="../index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="../makina.php"><i class="fa  fa-sticky-note"></i> Makina</a></li>
+                <li><a href="../makina.php"><i class="fa  fa-sticky-note"></i> Area stats</a></li>
                 <li class="active">Budget Allocation</li>
             </ol>
         </section>
@@ -34,7 +34,7 @@
             <!-- Top Info boxes -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="box box-primary">
+                    <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title"><dt>Budget Allocation</dt></h3>
 
@@ -44,82 +44,648 @@
                                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Custom Tabs -->
+                                    <div class="nav-tabs-custom">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#makina" data-toggle="tab">MAKINA</a></li>
+                                            <li><a href="#sara" data-toggle="tab">SARANG'OMBE</a></li>
+                                            <li><a href="#lindi" data-toggle="tab">LINDI</a></li>
+                                            <li><a href="#saba" data-toggle="tab">LAINI SABA</a></li>
 
-                        <div class="box-body table-responsive">
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="makina">
 
-                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+                                                <!-- /.box-header -->
+                                                <div class="box-body table-responsive">
 
-                                <thead>
-                                <tr>
-                                    <th><span class="badge bg-blue">No.</span></th>
-                                    <th><span class="badge bg-light-blue">Project</span></th>
-                                    <th><span class="badge bg-red">Estimated Cost</span></th>
-                                    <th><span class="badge bg-green">Amount Allocated</span></th>
-                                    <th><span class="badge bg-purple">Amount Used</span></th>
-                                    <th><span class="badge bg-yellow">Budget Variance</span></th>
+                                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
 
-                                </tr>
-                                </thead>
-                                <tbody>
+                                                        <thead>
+                                                        <tr>
+                                                            <th><span class="badge bg-blue">No.</span></th>
+                                                            <th><span class="badge bg-light-blue">Project</span></th>
+                                                            <th><span class="badge bg-red">Estimated Cost</span></th>
+                                                            <th><span class="badge bg-green">Amount Allocated</span></th>
+                                                            <th><span class="badge bg-purple">Amount Used</span></th>
+                                                            <th><span class="badge bg-yellow">Budget Variance</span></th>
 
-                                <tr>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_makina where head='water'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>1.</th>
+                                                                <th>Water</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_makina where head='health'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>2.</th>
+                                                                <th>Health</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_makina where head='edu'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>3.</th>
+                                                                <th>Education</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_makina where head='san'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>4.</th>
+                                                                <th>Sanitation</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_makina where head='solid'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>5.</th>
+                                                                <th>Solid Waste</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_makina where head='drain'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>6.</th>
+                                                                <th>Drainage</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_makina where head='energy'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>7.</th>
+                                                                <th>Energy</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_makina where head='road'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>8.</th>
+                                                                <th>Roads</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
 
 
-                                    <th>1.</th>
-                                    <th>Water</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                                <!-- /.box-body -->
+
+                                                <!-- /.box-body -->
+
+                                            </div>
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="sara">
+
+                                                <!-- /.box-header -->
+                                                <div class="box-body table-responsive">
+
+                                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+
+                                                        <thead>
+                                                        <tr>
+                                                            <th><span class="badge bg-blue">No.</span></th>
+                                                            <th><span class="badge bg-light-blue">Project</span></th>
+                                                            <th><span class="badge bg-red">Estimated Cost</span></th>
+                                                            <th><span class="badge bg-green">Amount Allocated</span></th>
+                                                            <th><span class="badge bg-purple">Amount Used</span></th>
+                                                            <th><span class="badge bg-yellow">Budget Variance</span></th>
+
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_sara where head='water'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>1.</th>
+                                                                <th>Water</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_sara where head='health'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>2.</th>
+                                                                <th>Health</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_sara where head='edu'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>3.</th>
+                                                                <th>Education</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_sara where head='san'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>4.</th>
+                                                                <th>Sanitation</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_sara where head='solid'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>5.</th>
+                                                                <th>Solid Waste</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_sara where head='drain'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>6.</th>
+                                                                <th>Drainage</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_sara where head='energy'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>7.</th>
+                                                                <th>Energy</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_sara where head='road'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>8.</th>
+                                                                <th>Roads</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
 
 
-                                    <th>2.</th>
-                                    <th>Health</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                                <!-- /.box-body -->
+
+                                                <!-- /.box-footer -->
+                                            </div>
+
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="lindi">
+
+                                                <div class="box-body table-responsive">
+
+                                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+
+                                                        <thead>
+                                                        <tr>
+                                                            <th><span class="badge bg-blue">No.</span></th>
+                                                            <th><span class="badge bg-light-blue">Project</span></th>
+                                                            <th><span class="badge bg-red">Estimated Cost</span></th>
+                                                            <th><span class="badge bg-green">Amount Allocated</span></th>
+                                                            <th><span class="badge bg-purple">Amount Used</span></th>
+                                                            <th><span class="badge bg-yellow">Budget Variance</span></th>
+
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_lindi where head='water'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>1.</th>
+                                                                <th>Water</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_lindi where head='health'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>2.</th>
+                                                                <th>Health</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_lindi where head='edu'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>3.</th>
+                                                                <th>Education</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_lindi where head='san'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>4.</th>
+                                                                <th>Sanitation</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_lindi where head='solid'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>5.</th>
+                                                                <th>Solid Waste</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_lindi where head='drain'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>6.</th>
+                                                                <th>Drainage</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_lindi where head='energy'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>7.</th>
+                                                                <th>Energy</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_lindi where head='road'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>8.</th>
+                                                                <th>Roads</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
 
 
-                                    <th>3.</th>
-                                    <th>Education</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
 
+                                                        </tbody>
+                                                    </table>
 
-                                    <th>4.</th>
-                                    <th>Sanitation</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                                </div>
+                                                <!-- /.box-body -->
 
 
 
+                                                <!-- /.box-body -->
+
+                                            </div>
+                                            <div class="tab-pane" id="saba">
+
+                                                <div class="box-body table-responsive">
+
+                                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+
+                                                        <thead>
+                                                        <tr>
+                                                            <th><span class="badge bg-blue">No.</span></th>
+                                                            <th><span class="badge bg-light-blue">Project</span></th>
+                                                            <th><span class="badge bg-red">Estimated Cost</span></th>
+                                                            <th><span class="badge bg-green">Amount Allocated</span></th>
+                                                            <th><span class="badge bg-purple">Amount Used</span></th>
+                                                            <th><span class="badge bg-yellow">Budget Variance</span></th>
+
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_saba where head='water'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>1.</th>
+                                                                <th>Water</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_saba where head='health'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>2.</th>
+                                                                <th>Health</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_saba where head='edu'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>3.</th>
+                                                                <th>Education</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_saba where head='san'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>4.</th>
+                                                                <th>Sanitation</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_saba where head='solid'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>5.</th>
+                                                                <th>Solid Waste</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_saba where head='drain'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>6.</th>
+                                                                <th>Drainage</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_saba where head='energy'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>7.</th>
+                                                                <th>Energy</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                        <tr>
+                                                            <?php
+                                                            $query = $conn->query("select * from budget_saba where head='road'");
+                                                            while ($row = $query->fetch()) {
+
+                                                                ?>
+
+                                                                <th>8.</th>
+                                                                <th>Roads</th>
+                                                                <td><?php echo $row['cost']; ?></td>
+                                                                <td><?php echo $row['allocated']; ?></td>
+                                                                <td><?php echo $row['used']; ?></td>
+                                                                <td><?php echo $row['variance']; ?></td>
+                                                            <?php } ?>
+                                                        </tr>
 
 
-                                </tbody>
-                            </table>
 
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                                <!-- /.box-body -->
+
+
+
+                                                <!-- /.box-body -->
+
+                                            </div>
+                                            <!-- /.tab-pane -->
+                                        </div>
+                                        <!-- /.tab-content -->
+                                    </div>
+                                    <!-- nav-tabs-custom -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
                         </div>
+                        <!-- /.box-body -->
 
-
+                        <!-- /.footer -->
                     </div>
-
                 </div>
+
 
 
                 <!-- /.col -->
@@ -127,7 +693,7 @@
             <!-- /.row -->
             <!-- Top row -->
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-10">
                     <!-- AREA CHART -->
                     <div class="box box-success">
                         <div class="box-header with-border">
@@ -156,7 +722,7 @@
 
                 </div>
                 <!-- /.col (LEFT) -->
-                <div class="col-md-3">
+                <div class="col-md-2">
 
                     <div class="box box-danger">
                         <div class="box-header with-border">
@@ -170,74 +736,18 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
+                            <ul class="chart-legend clearfix">
+                            <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
+                            <li><i class="fa fa-circle-o text-green"></i> IE</li>
+                            <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
+                            <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
+                            <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
+                            <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
+                                <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
+                                <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
+                            </ul>
                             <!-- Info Boxes Style 2 -->
-                            <div class="info-box bg-yellow">
-                                <span class="info-box-icon"><i class="ion ion-ios-rainy"></i></span>
 
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Water</span>
-                                    <span class="info-box-number">5,200</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 50%"></div>
-                                    </div>
-                  <span class="progress-description">
-                    50% Increase in 5 years
-                  </span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                            <div class="info-box bg-green">
-                                <span class="info-box-icon"><i class="ion ion-ios-medkit"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Health</span>
-                                    <span class="info-box-number">92,050</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 20%"></div>
-                                    </div>
-                  <span class="progress-description">
-                    20% Increase in 30 Days
-                  </span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                            <div class="info-box bg-red">
-                                <span class="info-box-icon"><i class="ion ion-ios-briefcase"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Education</span>
-                                    <span class="info-box-number">114,381</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
-                                    </div>
-                  <span class="progress-description">
-                    70% Increase in 30 Days
-                  </span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.info-box -->
-                            <div class="info-box bg-aqua">
-                                <span class="info-box-icon"><i class="ion-ios-trash"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Sanitation</span>
-                                    <span class="info-box-number">163,921</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 40%"></div>
-                                    </div>
-                  <span class="progress-description">
-                    40% Increase in 30 Days
-                  </span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
                             <!-- /.info-box -->
 
                             <!-- /.row -->
@@ -320,10 +830,10 @@
     $(function () {
         $("#example1").DataTable();
         $('#example2').DataTable({
-            "paging": true,
+            "paging": false,
             "lengthChange": true,
             "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
-            "searching": true,
+            "searching": false,
             "ordering": false,
             "info": true,
             "autoWidth": true
@@ -346,18 +856,26 @@
 </script>
 <!-- page script -->
 <script>
+    <?php
+    $query = $conn->query("select * from resource where id='1'");
+    while ($row = $query->fetch()) {
 
+    ?>
 
     var configs = {
         type: 'pie',
         data: {
             datasets: [{
-                data: [120, 70, 50, 60],
+                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
+                <?php } ?>
                 backgroundColor: [
+                    window.chartColors.aqua,
                     window.chartColors.red,
-                    window.chartColors.orange,
                     window.chartColors.yellow,
                     window.chartColors.green,
+                    window.chartColors.purple,
+                    window.chartColors.grey,
+                    window.chartColors.orange,
                     window.chartColors.blue
 
                 ],
@@ -367,7 +885,11 @@
                 "Water",
                 "Health",
                 "Education",
-                "Sanitation"
+                "Sanitation",
+                "Solid Waste",
+                "Drainage",
+                "Energy",
+                "Roads"
 
 
             ]

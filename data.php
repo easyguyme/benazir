@@ -23,7 +23,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="../makina.php"><i class="fa  fa-sticky-note"></i> Area stats</a></li>
+                <li><a href="stats/makina.php"><i class="fa  fa-sticky-note"></i> Area stats</a></li>
                 <li class="active">Demographic Data</li>
             </ol>
         </section>
