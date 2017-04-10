@@ -737,14 +737,14 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <ul class="chart-legend clearfix">
-                            <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
-                            <li><i class="fa fa-circle-o text-green"></i> IE</li>
-                            <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
-                            <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
-                            <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
-                            <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
-                                <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
-                                <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
+                            <li><i class="fa fa-circle-o text-aqua"></i> Water</li>
+                            <li><i class="fa fa-circle-o text-red"></i>Health</li>
+                            <li><i class="fa fa-circle-o text-yellow"></i> Education</li>
+                            <li><i class="fa fa-circle-o text-green"></i> Sanitation</li>
+                            <li><i class="fa fa-circle-o text-purple"></i> Solid Waste</li>
+                            <li><i class="fa fa-circle-o text-gray"></i> Drainage</li>
+                                <li><i class="fa fa-circle-o text-orange"></i> Energy</li>
+                                <li><i class="fa fa-circle-o text-blue"></i> Roads</li>
                             </ul>
                             <!-- Info Boxes Style 2 -->
 
