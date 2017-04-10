@@ -65,7 +65,7 @@ desired effect
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <img class="img-responsive" style="" src="<?php echo $row['logo']; ?>" alt="Photo">
+                                    <img class="img-responsive" style="height:30pc;width: 100pc; " src="<?php echo $row['logo']; ?>" alt="Photo">
 
                                     <?php } ?>
                                     <!-- /Pic to be changed -->
