@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2017 at 10:42 AM
+-- Generation Time: Apr 10, 2017 at 10:55 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -38,10 +38,126 @@ CREATE TABLE `barinfo` (
 --
 
 INSERT INTO `barinfo` (`id`, `head`, `des`, `page`) VALUES
-(1, 'Description lists', 'this is the bar graph description', 'makina'),
+(1, 'Description lists', 'Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.\r\nDonec id elit non mi porta gravida at eget metus.', 'makina'),
 (2, 'Description lists', 'Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.\r\nDonec id elit non mi porta gravida at eget metus.', 'sara'),
 (3, 'Description lists', 'Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.\r\nDonec id elit non mi porta gravida at eget metus.', 'saba'),
 (4, 'Description lists', 'Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.\r\nDonec id elit non mi porta gravida at eget metus.', 'lindi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `budget_lindi`
+--
+
+CREATE TABLE `budget_lindi` (
+  `id` int(11) NOT NULL,
+  `cost` text NOT NULL,
+  `allocated` text NOT NULL,
+  `used` text NOT NULL,
+  `variance` text NOT NULL,
+  `head` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `budget_lindi`
+--
+
+INSERT INTO `budget_lindi` (`id`, `cost`, `allocated`, `used`, `variance`, `head`) VALUES
+(1, '200 million', '150 mmillion', '100 millionn', '50 million', 'water'),
+(2, '200 million', '150 mmillion', '100 millionn', '50 million', 'health'),
+(3, '200 million', '150 mmillion', '100 millionn', '50 million', 'edu'),
+(4, '200 million', '150 mmillion', '100 millionn', '50 million', 'san'),
+(5, '200 million', '150 mmillion', '100 millionn', '50 million', 'solid'),
+(6, '200 million', '150 mmillion', '100 millionn', '50 million', 'drain'),
+(7, '200 million', '150 mmillion', '100 millionn', '50 million', 'energy'),
+(8, '200 million', '150 mmillion', '100 millionn', '50 million', 'road');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `budget_makina`
+--
+
+CREATE TABLE `budget_makina` (
+  `id` int(11) NOT NULL,
+  `cost` text NOT NULL,
+  `allocated` text NOT NULL,
+  `used` text NOT NULL,
+  `variance` text NOT NULL,
+  `head` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `budget_makina`
+--
+
+INSERT INTO `budget_makina` (`id`, `cost`, `allocated`, `used`, `variance`, `head`) VALUES
+(1, '200 million', '150 mmillion', '100 millionn', '50 million', 'water'),
+(2, '200 million', '150 mmillion', '100 millionn', '50 million', 'health'),
+(3, '200 million', '150 mmillion', '100 millionn', '50 million', 'edu'),
+(4, '200 million', '150 mmillion', '100 millionn', '50 million', 'san'),
+(5, '200 million', '150 mmillion', '100 millionn', '50 million', 'solid'),
+(6, '200 million', '150 mmillion', '100 millionn', '50 million', 'drain'),
+(7, '200 million', '150 mmillion', '100 millionn', '50 million', 'energy'),
+(8, '200 million', '150 mmillion', '100 millionn', '50 million', 'road');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `budget_saba`
+--
+
+CREATE TABLE `budget_saba` (
+  `id` int(11) NOT NULL,
+  `cost` text NOT NULL,
+  `allocated` text NOT NULL,
+  `used` text NOT NULL,
+  `variance` text NOT NULL,
+  `head` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `budget_saba`
+--
+
+INSERT INTO `budget_saba` (`id`, `cost`, `allocated`, `used`, `variance`, `head`) VALUES
+(1, '200 million', '150 mmillion', '100 millionn', '50 million', 'water'),
+(2, '200 million', '150 mmillion', '100 millionn', '50 million', 'health'),
+(3, '200 million', '150 mmillion', '100 millionn', '50 million', 'edu'),
+(4, '200 million', '150 mmillion', '100 millionn', '50 million', 'san'),
+(5, '200 million', '150 mmillion', '100 millionn', '50 million', 'solid'),
+(6, '200 million', '150 mmillion', '100 millionn', '50 million', 'drain'),
+(7, '200 million', '150 mmillion', '100 millionn', '50 million', 'energy'),
+(8, '200 million', '150 mmillion', '100 millionn', '50 million', 'road');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `budget_sara`
+--
+
+CREATE TABLE `budget_sara` (
+  `id` int(11) NOT NULL,
+  `cost` text NOT NULL,
+  `allocated` text NOT NULL,
+  `used` text NOT NULL,
+  `variance` text NOT NULL,
+  `head` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `budget_sara`
+--
+
+INSERT INTO `budget_sara` (`id`, `cost`, `allocated`, `used`, `variance`, `head`) VALUES
+(1, '200 million', '150 mmillion', '100 millionn', '50 million', 'water'),
+(2, '200 million', '150 mmillion', '100 millionn', '50 million', 'health'),
+(3, '200 million', '150 mmillion', '100 millionn', '50 million', 'edu'),
+(4, '200 million', '150 mmillion', '100 millionn', '50 million', 'san'),
+(5, '200 million', '150 mmillion', '100 millionn', '50 million', 'solid'),
+(6, '200 million', '150 mmillion', '100 millionn', '50 million', 'drain'),
+(7, '200 million', '150 mmillion', '100 millionn', '50 million', 'energy'),
+(8, '200 million', '150 mmillion', '100 millionn', '50 million', 'road');
 
 -- --------------------------------------------------------
 
@@ -64,7 +180,53 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `pob`, `loc`, `phone`, `mail`, `hours`, `url`) VALUES
-(1, ' Umande Trust<br> P.O. BOX 43691-00100,<br> Nairobi, Kenya.', 'Kibra Sports Ground,Off Kibera Drive', '0772092343 / 0723 5606923', 'Info@Umande.Org', ' 8a.m - 5 p.m', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7716310403957!2d36.776046814754!3d-1.3124399990427569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a80eb306e8f%3A0x9ad959333195432b!2sUmande+Trust+Nairobi!5e0!3m2!1sen!2s!4v1482308845602');
+(1, ' Umande Trust<br> P.O. BOX 43691-00100,<br> Nairobi, Kenya.', 'Kibra Ground,Off Kibera Drive', '0772092343', 'info@umande.org', ' 8a.m - 5 p.m', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7716310403957!2d36.776046814754!3d-1.3124399990427569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a80eb306e8f%3A0x9ad959333195432b!2sUmande+Trust+Nairobi!5e0!3m2!1sen!2s!4v1482308845602');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `demo_data`
+--
+
+CREATE TABLE `demo_data` (
+  `id` int(11) NOT NULL,
+  `makina` text NOT NULL,
+  `sara` text NOT NULL,
+  `lindi` text NOT NULL,
+  `laini` text NOT NULL,
+  `head` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `demo_data`
+--
+
+INSERT INTO `demo_data` (`id`, `makina`, `sara`, `lindi`, `laini`, `head`) VALUES
+(1, '100', '200', '300', '400', 'area'),
+(2, '100', '200', '300', '400', 'density'),
+(3, '100', '200', '300', '400', 'population'),
+(4, '65', '59', '60', '89', 'male'),
+(5, '50', '78', '85', '45', 'female');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dev_proj`
+--
+
+CREATE TABLE `dev_proj` (
+  `id` int(11) NOT NULL,
+  `planned` text NOT NULL,
+  `ongoing` text NOT NULL,
+  `page` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dev_proj`
+--
+
+INSERT INTO `dev_proj` (`id`, `planned`, `ongoing`, `page`) VALUES
+(1, 'Water pump installation', 'Borehole drilling', 'makina');
 
 -- --------------------------------------------------------
 
@@ -78,45 +240,41 @@ CREATE TABLE `downloads` (
   `sub` text NOT NULL,
   `des` text NOT NULL,
   `link` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date` datetime NOT NULL,
+  `page` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `downloads`
 --
 
-INSERT INTO `downloads` (`id`, `name`, `sub`, `des`, `link`, `date`) VALUES
-(1, 'Newsletter', 'Download our newsletter', 'This is our first newsletter..............', '#', '2017-01-19 12:41:56'),
-(2, 'Terms and conditions', 'Download our T&C', 'To ensure we abide by the laws kindly download our T&C......', '#', '2017-01-19 12:41:56'),
-(3, 'Bulletin', 'Download our weekly bulletin', 'To ensure we abide by the laws kindly download our T&C......', '#', '2017-01-19 12:41:56'),
-(11, 'Lenny', 'Addis', 'Ethiopian', 'http://localhost/umande/downloads/MUSIC-PLATFORM-SCOPE OF WORK.docx', '2017-01-19 12:41:56');
+INSERT INTO `downloads` (`id`, `name`, `sub`, `des`, `link`, `date`, `page`) VALUES
+(1, 'Newsletter', 'Download our March newsletter', 'This is our first newsletter..............', '#', '2017-03-22 16:02:45', 'makina');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event`
+-- Table structure for table `events`
 --
 
-CREATE TABLE `event` (
-  `event_id` int(11) NOT NULL,
-  `event_title` varchar(100) NOT NULL,
-  `teacher_class_id` int(11) NOT NULL,
-  `date_start` varchar(100) NOT NULL,
-  `date_end` varchar(100) NOT NULL
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `venue` text NOT NULL,
+  `date` text NOT NULL,
+  `time` text NOT NULL,
+  `description` text NOT NULL,
+  `status` text NOT NULL,
+  `page` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `event`
+-- Dumping data for table `events`
 --
 
-INSERT INTO `event` (`event_id`, `event_title`, `teacher_class_id`, `date_start`, `date_end`) VALUES
-(12, ' 	  Orientation with the Parents of the College Freshmen', 0, '12/12/2016', '12/04/2016'),
-(13, 'Start of Classes', 0, '11/04/2013', '11/04/2013'),
-(14, 'Intercampus Sports and Cultural Fest/College Week', 0, '11/19/2013', '11/22/2013'),
-(15, 'Long Test', 113, '12/05/2013', '12/06/2013'),
-(16, 'Long Test', 0, '12/05/2013', '12/06/2013'),
-(17, 'sdasf', 147, '11/16/2013', '11/16/2013'),
-(18, 'try', 0, '01/03/2017', '01/04/2017');
+INSERT INTO `events` (`id`, `name`, `venue`, `date`, `time`, `description`, `status`, `page`) VALUES
+(1, 'Facebook Live', 'Facebook', '02/03/2017', '12:45 pm', 'Facebook Event will be officiated by His excellency the ...............', 'Cancelled', 'makina'),
+(2, 'Facebook Live', 'Facebook', '02/03/2017', '12:45 pm', 'Facebook Event will be officiated by His excellency the ...............', 'Cancelled', 'makina');
 
 -- --------------------------------------------------------
 
@@ -129,22 +287,22 @@ CREATE TABLE `hevents` (
   `event` varchar(200) NOT NULL,
   `venue` text NOT NULL,
   `title` text NOT NULL,
-  `sday` text NOT NULL,
-  `smonth` text NOT NULL,
-  `syear` text NOT NULL,
-  `stime` text NOT NULL,
+  `sdate` varchar(200) NOT NULL,
   `edate` text NOT NULL,
-  `etime` text NOT NULL,
   `status` varchar(200) NOT NULL,
-  `tarehes` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `tarehes` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hevents`
 --
 
-INSERT INTO `hevents` (`id`, `event`, `venue`, `title`, `sday`, `smonth`, `syear`, `stime`, `edate`, `etime`, `status`, `tarehes`) VALUES
-(12, 'Imran', 'wangara', '', '02', '08', '2017', '', '02/09/2017', '', 'Upcoming', '2017-02-07 16:56:09');
+INSERT INTO `hevents` (`id`, `event`, `venue`, `title`, `sdate`, `edate`, `status`, `tarehes`) VALUES
+(11, 'Social dialogue capacity building session', 'Kidyot Bio-centre Sarang''ombe Ward', '', '02/03/2017', '02/03/2017', 'Upcoming', '2017-02-01 13:06:00'),
+(12, 'Radio talk show', 'Pamoja FM studio', '', '02/07/2017', '02/07/2017', 'Upcoming', '2017-02-01 13:07:02'),
+(13, 'Radio talk show', 'Pamoja FM studio', '', '02/14/2017', '02/14/2017', 'Upcoming', '2017-02-01 13:07:40'),
+(14, 'Radio talk show', 'Pamoja FM studio', '', '02/21/2017', '02/21/2017', 'Upcoming', '2017-02-01 13:08:04'),
+(15, 'Social Auditing ', 'To be confrmed', '', '02/06/2017', '02/17/2017', 'Upcoming', '2017-02-01 13:08:51');
 
 -- --------------------------------------------------------
 
@@ -166,12 +324,13 @@ CREATE TABLE `hgallery` (
 --
 
 INSERT INTO `hgallery` (`id`, `maintitle`, `title`, `descp`, `image`, `date`) VALUES
-(1, 'Gallery', 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, '', 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 03:53:13'),
-(3, '', 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(4, '', 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40'),
-(6, '', 'Aqua', 'Detol', '1.8L MAC Aqua.png', '2014-01-23 03:56:49'),
-(7, '', 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 03:56:49');
+(1, 'Gallery', 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(8, '', 'Leadership and Governance Capacity Building Session ', 'Training of women champions', 'DSCN0113.JPG', '2017-02-01 11:56:30'),
+(3, '', 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, '', 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(9, '', 'Leadership and Governance Capacity Building Session ', 'Group work ', 'DSCN0017.JPG', '2017-02-01 12:00:18'),
+(10, '', 'Leadership and Governance Capacity Building Session ', 'Group work', 'DSCN0022.JPG', '2017-02-01 12:13:24'),
+(11, '', 'Radio talk show at Pamoja FM', 'Awareness creation on women engagement', '20170131_080318.jpg', '2017-02-01 13:01:52');
 
 -- --------------------------------------------------------
 
@@ -192,10 +351,10 @@ CREATE TABLE `hlocation` (
 --
 
 INSERT INTO `hlocation` (`id`, `name`, `linfo`, `contact`, `email`) VALUES
-(1, 'Sarangombe voice centere', ' near Ghetto sana', '+254712345679', 'info@wangara.com'),
-(2, 'Makina Voice centres', ' near Ghetto primary school', '+254712345679', 'INFO@WHO.WHAT'),
-(3, 'Laini Saba Voice centres', ' near Ghetto primary school', '+254712345674', 'INFO@WHO.WHAT'),
-(4, 'Lindi  Voice centre', ' near Ghetto primary school', '+254712345679', 'INFO@WHO.WHAT');
+(1, 'Sarangombe voice centere', ' near Ghetto sana', '+254712345678', 'info@wangara.com'),
+(2, 'Makina Voice centres', ' near Ghetto primary school', '+254712345678', 'INFO@WHO.WHAT'),
+(3, 'Laini Saba Voice centres', ' near Ghetto primary school', '+254712345678', 'INFO@WHO.WHAT'),
+(4, 'Lindi  Voice centre', ' near Ghetto primary school', '+254712345678', 'INFO@WHO.WHAT');
 
 -- --------------------------------------------------------
 
@@ -247,7 +406,7 @@ CREATE TABLE `home` (
 --
 
 INSERT INTO `home` (`id`, `logo`, `title`, `info`, `remo`) VALUES
-(1, 'uploads/logo_reverse_web.png', 'Project Description', 'There is a gap in gender representation among the people of Kibera in regards to having the womenâ€™s voices heard on issues involving their community and the society they live in. This project, Womenâ€™s Voices, seeks to capture womenâ€™s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption."', ' To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the communityâ€™s thoughts into action. The womenâ€™s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Womenâ€™s Voices will be run through four of Kiberaâ€™s bio-sanitation facilities since they are already a focal point for men and women in the community.');
+(1, 'uploads/trust.jpg', 'Project Introduction.', 'There is a gap in gender representation among the people of Kibera in regards to having the womenâ€™s voices heard on issues involving their community and the society they live in. This project, Womenâ€™s Voices, seeks to capture womenâ€™s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. ""', ' To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the communityâ€™s thoughts into action. The womenâ€™s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Womenâ€™s Voices will be run through four of Kiberaâ€™s bio-sanitation facilities since they are already a focal point for men and women in the community.');
 
 -- --------------------------------------------------------
 
@@ -317,13 +476,13 @@ CREATE TABLE `lagallery` (
 --
 
 INSERT INTO `lagallery` (`id`, `title`, `desc`, `image`, `date`) VALUES
-(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 03:53:13'),
-(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40'),
-(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 03:56:49'),
-(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 03:56:49'),
-(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 03:56:49');
+(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49');
 
 -- --------------------------------------------------------
 
@@ -344,13 +503,13 @@ CREATE TABLE `laproimg` (
 --
 
 INSERT INTO `laproimg` (`id`, `title`, `desc`, `image`, `date`) VALUES
-(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 03:53:13'),
-(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40'),
-(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 03:56:49'),
-(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 03:56:49'),
-(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 03:56:49');
+(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49');
 
 -- --------------------------------------------------------
 
@@ -371,13 +530,13 @@ CREATE TABLE `ligallery` (
 --
 
 INSERT INTO `ligallery` (`id`, `title`, `desc`, `image`, `date`) VALUES
-(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 03:53:13'),
-(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40'),
-(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 03:56:49'),
-(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 03:56:49'),
-(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 03:56:49');
+(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49');
 
 -- --------------------------------------------------------
 
@@ -452,13 +611,13 @@ CREATE TABLE `liproimg` (
 --
 
 INSERT INTO `liproimg` (`id`, `title`, `desc`, `image`, `date`) VALUES
-(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 03:53:13'),
-(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40'),
-(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 03:56:49'),
-(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 03:56:49'),
-(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 03:56:49');
+(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49');
 
 -- --------------------------------------------------------
 
@@ -469,7 +628,7 @@ INSERT INTO `liproimg` (`id`, `title`, `desc`, `image`, `date`) VALUES
 CREATE TABLE `magallery` (
   `id` int(10) NOT NULL,
   `title` text NOT NULL,
-  `dscn` text NOT NULL,
+  `desc` text NOT NULL,
   `image` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -478,11 +637,14 @@ CREATE TABLE `magallery` (
 -- Dumping data for table `magallery`
 --
 
-INSERT INTO `magallery` (`id`, `title`, `dscn`, `image`, `date`) VALUES
-(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, 'Bootstrap Contact', 'How to create Contact Form', 'avatar04.png', '2014-01-23 03:53:13'),
-(10, 'Imran khamis', 'iiiiiiiii', 'avatar5.png', '2017-01-31 09:48:20'),
-(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40');
+INSERT INTO `magallery` (`id`, `title`, `desc`, `image`, `date`) VALUES
+(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49');
 
 -- --------------------------------------------------------
 
@@ -509,6 +671,7 @@ CREATE TABLE `mail` (
 CREATE TABLE `makinacurrent` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
+  `complete` text NOT NULL,
   `des` text NOT NULL,
   `per` text NOT NULL,
   `type` text NOT NULL
@@ -518,10 +681,13 @@ CREATE TABLE `makinacurrent` (
 -- Dumping data for table `makinacurrent`
 --
 
-INSERT INTO `makinacurrent` (`id`, `name`, `des`, `per`, `type`) VALUES
-(1, 'Tembea Kenya', 'The project was allocated a budget of Ksh. 10m', '60%', 'county'),
-(2, 'Gawa Umeme', 'The project was allocated a budget of Ksh. 10m', '70%', 'ngo'),
-(3, 'Bio yetu', 'The project was allocated a budget of Ksh. 10m', '40%', 'cbo');
+INSERT INTO `makinacurrent` (`id`, `name`, `complete`, `des`, `per`, `type`) VALUES
+(1, 'Tembea Kenya', '60% Complete', 'The project was allocated a budget of Ksh. 10m', '60%', 'county'),
+(2, 'Gawa Umeme', '70% Complete', 'The project was allocated a budget of Ksh. 10m', '70%', 'ngo'),
+(3, 'Bio yetu', '40% Complete', 'The project was allocated a budget of Ksh. 10m', '40%', 'cbo'),
+(4, 'Cow ', '30% Complete', 'The project was allocated a budget of Ksh. 10m', '30%', 'county'),
+(5, 'Gawa Umeme', '70% Complete', 'The project was allocated a budget of Ksh. 10m', '70%', 'ngo'),
+(6, 'Gawa Umeme', '90% Complete', 'The project was allocated a budget of Ksh. 10m', '90%', 'cbo');
 
 -- --------------------------------------------------------
 
@@ -543,11 +709,12 @@ CREATE TABLE `makina_cproject` (
 --
 
 INSERT INTO `makina_cproject` (`id`, `name`, `sdate`, `edate`, `status`, `org`) VALUES
-(6, 'Project 6', '1/11/2015', '10/12/2016', 'complete', 'cbo'),
-(12, 'Project 10', '01/01/2017', '01/30/2017', 'complete', 'county'),
-(22, 'Project 7', '12/25/2016', '01/30/2017', 'complete', 'ngo'),
-(23, 'Project 5', '01/04/2017', '02/01/2017', 'complete', 'cbo'),
-(25, 'Project 3', '12/27/2016', '01/31/2017', 'complete', 'county');
+(1, 'Project 1', '1/11/2015', '10/12/2016', 'complete', 'county'),
+(2, 'Project 3', '1/11/2015', '10/12/2016', 'complete', 'ngo'),
+(3, 'Project 5', '1/11/2015', '10/12/2016', 'complete', 'cbo'),
+(4, 'Project 2', '1/11/2015', '10/12/2016', 'complete', 'county'),
+(5, 'Project 4', '1/11/2015', '10/12/2016', 'complete', 'ngo'),
+(6, 'Project 6', '1/11/2015', '10/12/2016', 'complete', 'cbo');
 
 -- --------------------------------------------------------
 
@@ -558,7 +725,7 @@ INSERT INTO `makina_cproject` (`id`, `name`, `sdate`, `edate`, `status`, `org`) 
 CREATE TABLE `maproimg` (
   `id` int(10) NOT NULL,
   `title` text NOT NULL,
-  `des` text NOT NULL,
+  `desc` text NOT NULL,
   `image` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -567,11 +734,14 @@ CREATE TABLE `maproimg` (
 -- Dumping data for table `maproimg`
 --
 
-INSERT INTO `maproimg` (`id`, `title`, `des`, `image`, `date`) VALUES
-(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', 'logo_reverse_web.png', '2014-01-23 03:53:13'),
-(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(12, 'Imran khamis', 'Imran', 'avatar5.png', '2017-01-31 09:59:37');
+INSERT INTO `maproimg` (`id`, `title`, `desc`, `image`, `date`) VALUES
+(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49');
 
 -- --------------------------------------------------------
 
@@ -593,17 +763,17 @@ CREATE TABLE `mediaimg` (
 --
 
 INSERT INTO `mediaimg` (`id`, `maintitle`, `title`, `descp`, `image`, `date`) VALUES
-(1, 'Media Gallery', 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, '', 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 03:53:13'),
-(3, '', 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(4, '', 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40'),
-(5, '', 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 03:56:49'),
-(6, '', 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 03:56:49'),
-(7, '', 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 03:56:49'),
-(13, '', 'we are', 'Umabde', '151697979.jpeg', '2017-01-12 07:11:03'),
-(14, '', 'we are', 'Umabde', '151697979.jpeg', '2017-01-12 07:11:10'),
-(15, '', 'Imran', 'Wangara', '285427134.jpeg', '2017-01-12 07:11:59'),
-(16, '', 'we are', 'Umabde', '151697979.jpeg', '2017-01-12 07:14:20');
+(1, 'Media Gallery', 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, '', 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, '', 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, '', 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, '', 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, '', 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, '', 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49'),
+(13, '', 'we are', 'Umabde', '151697979.jpeg', '2017-01-12 06:11:03'),
+(14, '', 'we are', 'Umabde', '151697979.jpeg', '2017-01-12 06:11:10'),
+(15, '', 'Imran', 'Wangara', '285427134.jpeg', '2017-01-12 06:11:59'),
+(16, '', 'we are', 'Umabde', '151697979.jpeg', '2017-01-12 06:14:20');
 
 -- --------------------------------------------------------
 
@@ -653,7 +823,7 @@ CREATE TABLE `pdes` (
 --
 
 INSERT INTO `pdes` (`id`, `head`, `des`, `page`) VALUES
-(1, 'Heading', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions.', 'makina'),
+(1, 'Sub Heading', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions.', 'makina'),
 (2, 'Sub Heading', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions.', 'sara'),
 (3, 'Sub Heading', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions.', 'saba'),
 (4, 'Sub Heading', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions.', 'lindi');
@@ -675,7 +845,7 @@ CREATE TABLE `pieinfo` (
 --
 
 INSERT INTO `pieinfo` (`id`, `des`, `page`) VALUES
-(1, 'this is the pie chart description', 'makina'),
+(1, 'Umande brings together teams of resource persons who share a passion and commitment to learn from, share and achieve lasting change with people. This team comprises community organizers, academics, geo-informatics, urban planning, human rights, civil engineering, social scientists, environmental, gender, youth and enterprise development resource persons Team members have several years of experience from diverse research, civil society and public sector agencies .', 'makina'),
 (2, 'Umande brings together teams of resource persons who share a passion and commitment to learn from, share and achieve lasting change with people. This team comprises community organizers, academics, geo-informatics, urban planning, human rights, civil engineering, social scientists, environmental, gender, youth and enterprise development resource persons Team members have several years of experience from diverse research, civil society and public sector agencies .', 'sara'),
 (3, 'Umande brings together teams of resource persons who share a passion and commitment to learn from, share and achieve lasting change with people. This team comprises community organizers, academics, geo-informatics, urban planning, human rights, civil engineering, social scientists, environmental, gender, youth and enterprise development resource persons Team members have several years of experience from diverse research, civil society and public sector agencies .', 'saba'),
 (4, 'Umande brings together teams of resource persons who share a passion and commitment to learn from, share and achieve lasting change with people. This team comprises community organizers, academics, geo-informatics, urban planning, human rights, civil engineering, social scientists, environmental, gender, youth and enterprise development resource persons Team members have several years of experience from diverse research, civil society and public sector agencies .', 'lindi');
@@ -699,12 +869,55 @@ CREATE TABLE `planned` (
 --
 
 INSERT INTO `planned` (`id`, `name`, `des`, `page`, `budget`) VALUES
-(3, 'Project 5', 'Anim pariatur cliche reprehenderit', 'makina', '70'),
+(1, 'Project 1', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf ', 'makina', '10.6 M'),
+(2, 'Project 2', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf ', 'makina', '60 m'),
+(3, 'Project 3', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf ', 'makina', '60 m'),
 (4, 'Project 1', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf ', 'sara', '10.6 M'),
 (5, 'Project 2', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf ', 'sara', '60 m'),
 (6, 'Project 2', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf ', 'lindi', '60 m'),
-(7, 'Project 2', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf ', 'saba', '60 m'),
-(9, 'Project 10', 'this project will focus on blablabal', 'makina', '10');
+(7, 'Project 2', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf ', 'saba', '60 m');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plans_county`
+--
+
+CREATE TABLE `plans_county` (
+  `id` int(11) NOT NULL,
+  `type` text NOT NULL,
+  `period` text NOT NULL,
+  `location` text NOT NULL,
+  `budget` text NOT NULL,
+  `page` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `plans_county`
+--
+
+INSERT INTO `plans_county` (`id`, `type`, `period`, `location`, `budget`, `page`) VALUES
+(1, 'Construction of classroom', '2 months', 'Umande', '20,524,888', 'makina');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plan_comm`
+--
+
+CREATE TABLE `plan_comm` (
+  `id` int(11) NOT NULL,
+  `prior` text NOT NULL,
+  `description` text NOT NULL,
+  `page` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `plan_comm`
+--
+
+INSERT INTO `plan_comm` (`id`, `prior`, `description`, `page`) VALUES
+(1, 'Bio gas', 'Provide bio gas to 23345 households', 'makina');
 
 -- --------------------------------------------------------
 
@@ -728,12 +941,68 @@ INSERT INTO `prioinfo` (`id`, `des`, `page`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `prior_com`
+--
+
+CREATE TABLE `prior_com` (
+  `id` int(11) NOT NULL,
+  `makina` text NOT NULL,
+  `sara` text NOT NULL,
+  `laini` text NOT NULL,
+  `lindi` text NOT NULL,
+  `page` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `prior_com`
+--
+
+INSERT INTO `prior_com` (`id`, `makina`, `sara`, `laini`, `lindi`, `page`) VALUES
+(1, 'Buying this and that', 'Buying this and that', 'Buying this and that', 'Buying this and that', 'makina');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prior_county`
+--
+
+CREATE TABLE `prior_county` (
+  `id` int(11) NOT NULL,
+  `makina` text NOT NULL,
+  `sara` text NOT NULL,
+  `laini` text NOT NULL,
+  `lindi` text NOT NULL,
+  `page` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `prior_county`
+--
+
+INSERT INTO `prior_county` (`id`, `makina`, `sara`, `laini`, `lindi`, `page`) VALUES
+(1, 'Buying this and that', 'Buying this and that', 'Buying this and that', 'Buying this and that', 'makina');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `profiles`
 --
 
 CREATE TABLE `profiles` (
   `id` int(10) NOT NULL,
-  `jina` text NOT NULL,
+  `name` text NOT NULL,
+  `education` text NOT NULL,
+  `designation` text NOT NULL,
+  `location` text NOT NULL,
+  `bio` text NOT NULL,
+  `hobby4` text NOT NULL,
+  `hobby3` text NOT NULL,
+  `hobby2` text NOT NULL,
+  `hobby1` text NOT NULL,
+  `skill4` text NOT NULL,
+  `skill3` text NOT NULL,
+  `skill2` text NOT NULL,
+  `skill1` text NOT NULL,
   `age` text NOT NULL,
   `image` text NOT NULL,
   `page` text NOT NULL,
@@ -744,15 +1013,62 @@ CREATE TABLE `profiles` (
 -- Dumping data for table `profiles`
 --
 
-INSERT INTO `profiles` (`id`, `jina`, `age`, `image`, `page`, `date`) VALUES
-(15, 'john Doe', '27', 'avatar5.png', 'makina', '2014-01-23 03:53:13'),
-(13, 'Jane Doe', '27 years', '2.jpg', 'sara', '2014-01-23 03:53:13'),
-(14, 'Jane Doe', '27 years', '3.jpg', 'saba', '2014-01-23 03:53:13'),
-(12, 'Jane Doe', '27 years', '1.jpg', 'lindi', '2014-01-23 03:53:13'),
-(27, 'Imran khamis', '23', 'avatar.png', 'makina', '2017-01-28 23:58:23'),
-(26, 'Kip Rop', '55', 'avatar.png', 'makina', '2017-01-22 20:58:06'),
-(23, 'Imran', '25', 'bio.png', '', '2017-01-22 19:36:41'),
-(25, 'Daniel craig', '22 ', 'avatar04.png', 'makina', '2017-01-22 19:43:53');
+INSERT INTO `profiles` (`id`, `name`, `education`, `designation`, `location`, `bio`, `hobby4`, `hobby3`, `hobby2`, `hobby1`, `skill4`, `skill3`, `skill2`, `skill1`, `age`, `image`, `page`, `date`) VALUES
+(1, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27 years', '1.jpg', 'makina', '2014-01-23 02:53:13'),
+(15, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27 years', '2.jpg', 'makina', '2014-01-23 02:53:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile_tbl`
+--
+
+CREATE TABLE `profile_tbl` (
+  `id` int(11) NOT NULL,
+  `area` text NOT NULL,
+  `population` text NOT NULL,
+  `village` text NOT NULL,
+  `fund` text NOT NULL,
+  `mca` text NOT NULL,
+  `admin` text NOT NULL,
+  `page` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `profile_tbl`
+--
+
+INSERT INTO `profile_tbl` (`id`, `area`, `population`, `village`, `fund`, `mca`, `admin`, `page`) VALUES
+(1, '2,236', '55,000', '7', '2,222,333', 'Benazir Omotto', 'Omotto Benazir ', 'makina');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `proj_status`
+--
+
+CREATE TABLE `proj_status` (
+  `id` int(11) NOT NULL,
+  `water` text NOT NULL,
+  `health` text NOT NULL,
+  `education` text NOT NULL,
+  `sanitation` text NOT NULL,
+  `waste` text NOT NULL,
+  `drain` text NOT NULL,
+  `energy` text NOT NULL,
+  `road` text NOT NULL,
+  `page` text NOT NULL,
+  `body` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `proj_status`
+--
+
+INSERT INTO `proj_status` (`id`, `water`, `health`, `education`, `sanitation`, `waste`, `drain`, `energy`, `road`, `page`, `body`) VALUES
+(1, '50', '60', '70', '80', '20', '45', '55', '40', 'makina', 'cbo'),
+(2, '50', '60', '70', '80', '20', '45', '55', '40', 'makina', 'county'),
+(3, '50', '60', '70', '80', '20', '45', '55', '40', 'makina', 'ngo');
 
 -- --------------------------------------------------------
 
@@ -776,7 +1092,7 @@ CREATE TABLE `ptop` (
 --
 
 INSERT INTO `ptop` (`id`, `lh`, `ln`, `mh`, `mn`, `rh`, `rn`, `page`) VALUES
-(1, 'C.B.Os', '1020', 'N.G.O', '5000', 'ENVIRONMENTALs', '3020', 'makina'),
+(1, 'C.B.O', '101', 'N.G.O', '500', 'ENVIRONMENTAL ORGS', '302', 'makina'),
 (2, 'C.B.O', '101', 'N.G.O', '500', 'ENVIRONMENTAL ORGS', '302', 'lindi'),
 (3, 'C.B.O', '101', 'N.G.O', '500', 'ENVIRONMENTAL ORGS', '302', 'sara'),
 (4, 'C.B.O', '101', 'N.G.O', '500', 'ENVIRONMENTAL ORGS', '302', 'saba');
@@ -790,6 +1106,7 @@ INSERT INTO `ptop` (`id`, `lh`, `ln`, `mh`, `mn`, `rh`, `rn`, `page`) VALUES
 CREATE TABLE `quotes` (
   `id` int(11) NOT NULL,
   `title` text NOT NULL,
+  `cate` text NOT NULL,
   `neno` varchar(20000) NOT NULL,
   `who` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -798,61 +1115,35 @@ CREATE TABLE `quotes` (
 -- Dumping data for table `quotes`
 --
 
-INSERT INTO `quotes` (`id`, `title`, `neno`, `who`) VALUES
-(1, 'Quotes of the day', 'Put your heart, mind, and soul into even your smallest acts. This is the secret of success.\r\n', 'Swami Sivanandadd'),
-(2, 'Quotes of the day', 'We must let go of the life we have planned, so as to accept the one that is waiting for us.\r\n', 'Joseph Campbell\r\n'),
-(3, 'Quotes of the day', 'The best preparation for tomorrow is doing your best today.', 'H. Jackson Brown, Jr.'),
-(4, '', 'Keep your head high', 'Imran Khamis');
+INSERT INTO `quotes` (`id`, `title`, `cate`, `neno`, `who`) VALUES
+(1, 'Quotes of the day', 'Inspirational Quote', 'â€œLeaders say \\"no\\" to corruption. Anyone playing a role in governance, and is not ready to do this is not a leader.â€ ', 'Israelmore Ayivor, Leaders\\'' Ladder'),
+(2, 'Quotes of the day', 'Popular Quotes', 'Put your heart, mind, and soul into even your smallest acts. This is the secret of success', 'Albert Einstein'),
+(3, 'Quotes of the day', 'Motivational Quotes', 'Put your heart, mind, and soul into even your smallest acts. This is the secret of success.', 'Confucius');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `recover_password`
+-- Table structure for table `resource`
 --
 
-CREATE TABLE `recover_password` (
-  `email` varchar(30) NOT NULL,
-  `recovery_code` varchar(200) NOT NULL,
-  `recovery_id` int(11) NOT NULL
+CREATE TABLE `resource` (
+  `id` int(11) NOT NULL,
+  `water` text NOT NULL,
+  `health` text NOT NULL,
+  `edu` text NOT NULL,
+  `san` text NOT NULL,
+  `waste` text NOT NULL,
+  `drain` text NOT NULL,
+  `energy` text NOT NULL,
+  `road` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `recover_password`
+-- Dumping data for table `resource`
 --
 
-INSERT INTO `recover_password` (`email`, `recovery_code`, `recovery_id`) VALUES
-('wangara88@gmail.com', '6432f7a18facd5377aa09b333d864f05', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `registration`
---
-
-CREATE TABLE `registration` (
-  `user_id` int(10) NOT NULL,
-  `fname` text NOT NULL,
-  `sname` text NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `image` text NOT NULL,
-  `password` varchar(200) NOT NULL,
-  `registration_date` date NOT NULL,
-  `is_account_banned` tinyint(1) NOT NULL,
-  `is_ip_banned` tinyint(1) NOT NULL,
-  `current_ip` varchar(39) NOT NULL,
-  `account_ban_date` date NOT NULL,
-  `account_unban_date` date NOT NULL,
-  `confirmation_code` varchar(200) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `registration`
---
-
-INSERT INTO `registration` (`user_id`, `fname`, `sname`, `username`, `email`, `image`, `password`, `registration_date`, `is_account_banned`, `is_ip_banned`, `current_ip`, `account_ban_date`, `account_unban_date`, `confirmation_code`) VALUES
-(29, 'Imran', 'Khamis', '', 'wangara88@gmail.com', 'avatar5.png', '93fdf08a7909a671f8912080c2566a6c', '2017-02-04', 0, 0, '::1', '0000-00-00', '0000-00-00', 'b9543043a887ac1ba155b7e4e858434e'),
-(28, 'Daniel', 'Craig', '', 'wangara881@gmail.com', '', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-03', 0, 0, '::1', '0000-00-00', '0000-00-00', '');
+INSERT INTO `resource` (`id`, `water`, `health`, `edu`, `san`, `waste`, `drain`, `energy`, `road`) VALUES
+(1, '30', '50', '40', '60', '80', '40', '20', '40');
 
 -- --------------------------------------------------------
 
@@ -927,13 +1218,13 @@ CREATE TABLE `sagallery` (
 --
 
 INSERT INTO `sagallery` (`id`, `title`, `desc`, `image`, `date`) VALUES
-(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 03:53:13'),
-(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40'),
-(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 03:56:49'),
-(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 03:56:49'),
-(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 03:56:49');
+(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49');
 
 -- --------------------------------------------------------
 
@@ -954,13 +1245,13 @@ CREATE TABLE `saproimg` (
 --
 
 INSERT INTO `saproimg` (`id`, `title`, `desc`, `image`, `date`) VALUES
-(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 03:53:13'),
-(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 03:53:13'),
-(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 03:54:40'),
-(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 03:54:40'),
-(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 03:56:49'),
-(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 03:56:49'),
-(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 03:56:49');
+(1, 'HTML to PDF', 'How to Convert HTML to PDF in PHP with fpdf', '1.jpg', '2014-01-23 02:53:13'),
+(2, 'Bootstrap Contact Form', 'How to create Contact Form using Bootstrap', '2.jpg', '2014-01-23 02:53:13'),
+(3, 'Facebook Style Scroll Bar', 'How to create Facebook style scroll bar with jQuery and CSS.', '3.jpeg', '2014-01-23 02:54:40'),
+(4, 'Instagram OAuth', 'How to login with Instagram OAuth using PHP', '4.JPG', '2014-01-23 02:54:40'),
+(5, 'PDO database connection in PHP', 'How to use PDO database connection in PHP', '5.JPG', '2014-01-23 02:56:49'),
+(6, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '6.jpg', '2014-01-23 02:56:49'),
+(7, 'Tweet on Twitter', 'How to post tweet on Twitter with PHP', '7.png', '2014-01-23 02:56:49');
 
 -- --------------------------------------------------------
 
@@ -1045,10 +1336,34 @@ CREATE TABLE `social` (
 --
 
 INSERT INTO `social` (`id`, `account`, `link`) VALUES
-(1, 'facebook', 'http://www.facebook.com'),
+(1, 'facebook', 'https://www.facebook.com/UmandeTrust/'),
 (2, 'twitter', 'https://www.facebook.com/UmandeTrust/'),
 (3, 'instagram', 'https://www.facebook.com/UmandeTrust/'),
-(4, 'youtube', 'https://www.facebook.com/');
+(4, 'youtube', 'https://www.facebook.com/UmandeTrust/');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `social_audit`
+--
+
+CREATE TABLE `social_audit` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `stage` text NOT NULL,
+  `stake` text NOT NULL,
+  `finding` text NOT NULL,
+  `page` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `social_audit`
+--
+
+INSERT INTO `social_audit` (`id`, `name`, `stage`, `stake`, `finding`, `page`) VALUES
+(1, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'makina'),
+(2, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'makina'),
+(3, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'makina');
 
 -- --------------------------------------------------------
 
@@ -1060,7 +1375,7 @@ CREATE TABLE `testimony` (
   `id` int(11) NOT NULL,
   `message` text NOT NULL,
   `name` text NOT NULL,
-  `date` datetime DEFAULT CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1068,12 +1383,13 @@ CREATE TABLE `testimony` (
 --
 
 INSERT INTO `testimony` (`id`, `message`, `name`, `date`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci, sed libero. Iste asperiores suscipit, consequatur debitis animi impedit numquam facilis iusto porro labore dolorem, maxime magni. ', 'Alex McGees', '2017-01-12 10:58:33'),
-(2, 'Totam at eius excepturi deleniti sed, error repellat itaque omnis maiores tempora ratione dolor velit minus porro aspernatur repudiandae labore quas adipisci esse, nulla tempore voluptatibus cupiditate.', 'Melissa Washington', '2017-01-12 10:58:33'),
-(3, 'Possimus deserunt nisi perferendis, consequuntur odio et aperiam, est, dicta dolor itaque sunt laborum, magni qui optio illum dolore laudantium similique harum. Ab provident, porro atque.', 'Joseph Salazar', '2017-01-12 10:58:33'),
-(4, 'Vel nam odio dolorem, voluptas sequi minus quo tempore, animi est quia earum maxime. Reiciendis quae repellat, modi non, veniam natus soluta at optio vitae in excepturi minima eveniet dolor.', 'Maria Douglas', '2017-01-12 10:58:33'),
-(5, 'Accusantium at omnis vel, possimus fugiat explicabo necessitatibus facilis tempore voluptate, ea in, sunt magnam officia? Beatae reprehenderit non tempore, assumenda reiciendis.', 'Gary Benham', '2017-01-12 10:58:33'),
-(6, ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci, sed libero. Iste asperiores suscipit, consequatur debitis animi impedit numquam facilis iusto porro labore dolorem, maxime magni.', 'Imran Khamis', '2017-01-26 15:44:10');
+(1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci, sed libero. Iste asperiores suscipit, consequatur debitis animi impedit numquam facilis iusto porro labore dolorem, maxime magni.', 'Alex McGee', '2017-01-12 08:58:33'),
+(2, 'Totam at eius excepturi deleniti sed, error repellat itaque omnis maiores tempora ratione dolor velit minus porro aspernatur repudiandae labore quas adipisci esse, nulla tempore voluptatibus cupiditate.', 'Melissa Washington', '2017-01-12 08:58:33'),
+(3, 'Possimus deserunt nisi perferendis, consequuntur odio et aperiam, est, dicta dolor itaque sunt laborum, magni qui optio illum dolore laudantium similique harum. Ab provident, porro atque.', 'Joseph Salazar', '2017-01-12 08:58:33'),
+(4, 'Vel nam odio dolorem, voluptas sequi minus quo tempore, animi est quia earum maxime. Reiciendis quae repellat, modi non, veniam natus soluta at optio vitae in excepturi minima eveniet dolor.', 'Maria Douglas', '2017-01-12 08:58:33'),
+(5, 'Accusantium at omnis vel, possimus fugiat explicabo necessitatibus facilis tempore voluptate, ea in, sunt magnam officia? Beatae reprehenderit non tempore, assumenda reiciendis.', 'Gary Benham', '2017-01-12 08:58:33'),
+(7, 'Totam at eius excepturi deleniti sed, error repellat itaque omnis maiores tempora ratione dolor velit minus porro aspernatur repudiandae labore quas adipisci esse, nulla tempore voluptatibus cupiditate.', 'Imran', '2017-01-12 09:21:06'),
+(8, ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci, sed libero. Iste asperiores suscipit, consequatur debitis animi impedit numquam facilis iusto porro labore dolorem, maxime magni.', 'Khamis', '2017-01-12 09:21:22');
 
 -- --------------------------------------------------------
 
@@ -1096,8 +1412,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `username`, `password`, `firstname`, `lastname`) VALUES
 (13, 'teph', 'teph', 'Stephanie', 'villanueva'),
 (14, 'jkev', 'jkev', 'john kevin', 'lorayna'),
-(15, 'wangara88@gmail.com', 'admin', 'admin', 'admin'),
-(16, 'omottobe@gmail.com ', 'admin123', 'admin', 'admin');
+(15, 'omottobe@gmail.com ', 'admin12345', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1118,69 +1433,83 @@ CREATE TABLE `user_log` (
 --
 
 INSERT INTO `user_log` (`user_log_id`, `username`, `login_date`, `logout_date`, `user_id`) VALUES
-(6, 'teph', '2017-01-04 22:26:39', '2017-01-04 22:58:38', 13),
-(7, 'teph', '2017-01-04 22:27:50', '2017-01-04 22:58:38', 13),
-(8, 'teph', '2017-01-04 22:43:44', '2017-01-04 22:58:38', 13),
-(9, 'teph', '2017-01-04 22:43:53', '2017-01-04 22:58:38', 13),
-(10, 'teph', '2017-01-04 22:45:35', '2017-01-04 22:58:38', 13),
-(11, 'teph', '2017-01-04 22:47:04', '2017-01-04 22:58:38', 13),
-(12, 'teph', '2017-01-04 22:47:53', '2017-01-04 22:58:38', 13),
-(13, 'teph', '2017-01-04 22:48:05', '2017-01-04 22:58:38', 13),
-(14, 'teph', '2017-01-04 22:49:24', '2017-01-04 22:58:38', 13),
-(15, 'teph', '2017-01-04 22:57:15', '2017-01-04 22:58:38', 13),
-(16, 'teph', '2017-01-04 22:58:29', '2017-01-04 22:58:38', 13),
-(17, 'teph', '2017-01-04 22:58:47', '', 13),
-(18, 'teph', '2017-01-04 23:00:52', '', 13),
-(19, 'teph', '2017-01-04 23:28:49', '', 13),
-(20, 'teph', '2017-01-04 23:49:21', '', 13),
-(21, 'teph', '2017-01-04 23:52:12', '', 13),
-(22, 'teph', '2017-01-05 10:07:17', '', 13),
-(23, 'teph', '2017-01-05 10:13:20', '', 13),
-(24, 'teph', '2017-01-05 13:25:49', '', 13),
-(25, 'teph', '2017-01-05 13:36:06', '', 13),
-(26, 'teph', '2017-01-05 15:53:49', '', 13),
-(27, 'teph', '2017-01-05 15:55:40', '', 13),
-(28, 'teph', '2017-01-07 13:08:30', '', 13),
-(29, 'teph', '2017-01-08 11:39:54', '', 13),
-(30, 'teph', '2017-01-09 12:17:34', '', 13),
-(31, 'teph', '2017-01-09 17:47:06', '', 13),
-(32, 'teph', '2017-01-09 23:43:15', '', 13),
-(33, 'teph', '2017-01-10 00:36:56', '', 13),
-(34, 'teph', '2017-01-11 11:28:26', '', 13),
-(35, 'teph', '2017-01-11 22:15:10', '', 13),
-(36, 'teph', '2017-01-12 09:49:51', '', 13),
-(37, 'wangara88@gmail.com', '2017-01-12 16:54:50', '2017-02-02 12:56:41', 15),
-(38, 'teph', '2017-01-16 17:01:01', '', 13),
-(39, 'wangara88@gmail.com', '2017-01-17 12:12:48', '2017-02-02 12:56:41', 15),
-(40, 'wangara88@gmail.com', '2017-01-19 10:02:38', '2017-02-02 12:56:41', 15),
-(41, 'wangara88@gmail.com', '2017-01-19 10:29:34', '2017-02-02 12:56:41', 15),
-(42, 'wangara88@gmail.com', '2017-01-20 14:45:17', '2017-02-02 12:56:41', 15),
-(43, 'wangara88@gmail.com', '2017-01-22 21:14:37', '2017-02-02 12:56:41', 15),
-(44, 'wangara88@gmail.com', '2017-01-22 21:16:03', '2017-02-02 12:56:41', 15),
-(45, 'wangara88@gmail.com', '2017-01-22 21:21:25', '2017-02-02 12:56:41', 15),
-(46, 'wangara88@gmail.com', '2017-01-23 12:54:09', '2017-02-02 12:56:41', 15),
-(47, 'wangara88@gmail.com', '2017-01-26 14:05:42', '2017-02-02 12:56:41', 15),
-(48, 'wangara88@gmail.com', '2017-01-26 16:47:14', '2017-02-02 12:56:41', 15),
-(49, 'wangara88@gmail.com', '2017-01-26 18:04:45', '2017-02-02 12:56:41', 15),
-(50, 'wangara88@gmail.com', '2017-01-27 16:04:16', '2017-02-02 12:56:41', 15),
-(51, 'wangara88@gmail.com', '2017-01-28 21:07:47', '2017-02-02 12:56:41', 15),
-(52, 'wangara88@gmail.com', '2017-01-29 01:50:42', '2017-02-02 12:56:41', 15),
-(53, 'wangara88@gmail.com', '2017-01-29 15:03:43', '2017-02-02 12:56:41', 15),
-(54, 'wangara88@gmail.com', '2017-01-29 15:06:36', '2017-02-02 12:56:41', 15),
-(55, 'wangara88@gmail.com', '2017-01-29 15:33:45', '2017-02-02 12:56:41', 15),
-(56, 'wangara88@gmail.com', '2017-01-29 15:35:49', '2017-02-02 12:56:41', 15),
-(57, 'wangara88@gmail.com', '2017-01-29 15:36:30', '2017-02-02 12:56:41', 15),
-(58, 'wangara88@gmail.com', '2017-01-29 15:45:04', '2017-02-02 12:56:41', 15),
-(59, 'wangara88@gmail.com', '2017-01-29 15:47:42', '2017-02-02 12:56:41', 15),
-(60, 'wangara88@gmail.com', '2017-01-29 15:48:59', '2017-02-02 12:56:41', 15),
-(61, 'wangara88@gmail.com', '2017-01-29 15:49:11', '2017-02-02 12:56:41', 15),
-(62, 'wangara88@gmail.com', '2017-01-29 15:49:43', '2017-02-02 12:56:41', 15),
-(63, 'wangara88@gmail.com', '2017-01-29 15:51:59', '2017-02-02 12:56:41', 15),
-(64, 'wangara88@gmail.com', '2017-01-29 16:01:19', '2017-02-02 12:56:41', 15),
-(65, 'wangara88@gmail.com', '2017-01-29 17:53:20', '2017-02-02 12:56:41', 15),
-(66, 'wangara88@gmail.com', '2017-01-31 12:12:41', '2017-02-02 12:56:41', 15),
-(67, 'wangara88@gmail.com', '2017-02-02 10:48:24', '2017-02-02 12:56:41', 15),
-(68, 'wangara88@gmail.com', '2017-02-02 12:50:42', '2017-02-02 12:56:41', 15);
+(6, 'teph', '2017-01-04 22:26:39', '2017-02-01 12:04:08', 13),
+(7, 'teph', '2017-01-04 22:27:50', '2017-02-01 12:04:08', 13),
+(8, 'teph', '2017-01-04 22:43:44', '2017-02-01 12:04:08', 13),
+(9, 'teph', '2017-01-04 22:43:53', '2017-02-01 12:04:08', 13),
+(10, 'teph', '2017-01-04 22:45:35', '2017-02-01 12:04:08', 13),
+(11, 'teph', '2017-01-04 22:47:04', '2017-02-01 12:04:08', 13),
+(12, 'teph', '2017-01-04 22:47:53', '2017-02-01 12:04:08', 13),
+(13, 'teph', '2017-01-04 22:48:05', '2017-02-01 12:04:08', 13),
+(14, 'teph', '2017-01-04 22:49:24', '2017-02-01 12:04:08', 13),
+(15, 'teph', '2017-01-04 22:57:15', '2017-02-01 12:04:08', 13),
+(16, 'teph', '2017-01-04 22:58:29', '2017-02-01 12:04:08', 13),
+(17, 'teph', '2017-01-04 22:58:47', '2017-02-01 12:04:08', 13),
+(18, 'teph', '2017-01-04 23:00:52', '2017-02-01 12:04:08', 13),
+(19, 'teph', '2017-01-04 23:28:49', '2017-02-01 12:04:08', 13),
+(20, 'teph', '2017-01-04 23:49:21', '2017-02-01 12:04:08', 13),
+(21, 'teph', '2017-01-04 23:52:12', '2017-02-01 12:04:08', 13),
+(22, 'teph', '2017-01-05 10:07:17', '2017-02-01 12:04:08', 13),
+(23, 'teph', '2017-01-05 10:13:20', '2017-02-01 12:04:08', 13),
+(24, 'teph', '2017-01-05 13:25:49', '2017-02-01 12:04:08', 13),
+(25, 'teph', '2017-01-05 13:36:06', '2017-02-01 12:04:08', 13),
+(26, 'teph', '2017-01-05 15:53:49', '2017-02-01 12:04:08', 13),
+(27, 'teph', '2017-01-05 15:55:40', '2017-02-01 12:04:08', 13),
+(28, 'teph', '2017-01-07 13:08:30', '2017-02-01 12:04:08', 13),
+(29, 'teph', '2017-01-08 11:39:54', '2017-02-01 12:04:08', 13),
+(30, 'teph', '2017-01-09 12:17:34', '2017-02-01 12:04:08', 13),
+(31, 'teph', '2017-01-09 17:47:06', '2017-02-01 12:04:08', 13),
+(32, 'teph', '2017-01-09 23:43:15', '2017-02-01 12:04:08', 13),
+(33, 'teph', '2017-01-10 00:36:56', '2017-02-01 12:04:08', 13),
+(34, 'teph', '2017-01-11 11:28:26', '2017-02-01 12:04:08', 13),
+(35, 'teph', '2017-01-11 22:15:10', '2017-02-01 12:04:08', 13),
+(36, 'teph', '2017-01-12 09:49:51', '2017-02-01 12:04:08', 13),
+(37, 'teph', '2017-01-17 16:01:24', '2017-02-01 12:04:08', 13),
+(38, 'teph', '2017-01-17 16:03:48', '2017-02-01 12:04:08', 13),
+(39, 'teph', '2017-01-17 16:04:56', '2017-02-01 12:04:08', 13),
+(40, 'teph', '2017-01-17 16:05:46', '2017-02-01 12:04:08', 13),
+(41, 'teph', '2017-01-17 16:08:11', '2017-02-01 12:04:08', 13),
+(42, 'teph', '2017-01-17 16:15:48', '2017-02-01 12:04:08', 13),
+(43, 'teph', '2017-01-17 16:16:12', '2017-02-01 12:04:08', 13),
+(44, 'teph', '2017-01-19 07:10:54', '2017-02-01 12:04:08', 13),
+(45, 'teph', '2017-01-19 08:57:08', '2017-02-01 12:04:08', 13),
+(46, 'teph', '2017-01-19 09:16:37', '2017-02-01 12:04:08', 13),
+(47, 'teph', '2017-01-19 09:16:40', '2017-02-01 12:04:08', 13),
+(48, 'teph', '2017-01-19 09:16:47', '2017-02-01 12:04:08', 13),
+(49, 'teph', '2017-01-19 09:16:54', '2017-02-01 12:04:08', 13),
+(50, 'teph', '2017-01-19 09:17:16', '2017-02-01 12:04:08', 13),
+(51, 'teph', '2017-01-19 09:17:35', '2017-02-01 12:04:08', 13),
+(52, 'teph', '2017-01-19 09:17:39', '2017-02-01 12:04:08', 13),
+(53, 'teph', '2017-01-19 09:19:04', '2017-02-01 12:04:08', 13),
+(54, 'teph', '2017-01-19 09:46:49', '2017-02-01 12:04:08', 13),
+(55, 'teph', '2017-01-19 10:13:40', '2017-02-01 12:04:08', 13),
+(56, 'teph', '2017-01-19 10:13:46', '2017-02-01 12:04:08', 13),
+(57, 'teph', '2017-01-19 10:14:32', '2017-02-01 12:04:08', 13),
+(58, 'teph', '2017-01-19 10:18:38', '2017-02-01 12:04:08', 13),
+(59, 'teph', '2017-01-19 10:23:30', '2017-02-01 12:04:08', 13),
+(60, 'teph', '2017-01-19 10:23:50', '2017-02-01 12:04:08', 13),
+(61, 'teph', '2017-01-19 10:26:37', '2017-02-01 12:04:08', 13),
+(62, 'teph', '2017-01-19 10:27:28', '2017-02-01 12:04:08', 13),
+(63, 'teph', '2017-01-19 11:17:16', '2017-02-01 12:04:08', 13),
+(64, 'teph', '2017-01-19 11:22:46', '2017-02-01 12:04:08', 13),
+(65, 'teph', '2017-01-19 11:24:34', '2017-02-01 12:04:08', 13),
+(66, 'teph', '2017-01-19 11:25:08', '2017-02-01 12:04:08', 13),
+(67, 'teph', '2017-01-19 11:36:45', '2017-02-01 12:04:08', 13),
+(68, 'teph', '2017-01-19 12:18:27', '2017-02-01 12:04:08', 13),
+(69, 'teph', '2017-01-19 12:42:50', '2017-02-01 12:04:08', 13),
+(70, 'omottobe@gmail.com', '2017-01-19 15:36:42', '', 15),
+(71, 'omottobe@gmail.com', '2017-01-20 12:45:44', '', 15),
+(72, 'teph', '2017-02-01 12:02:47', '2017-02-01 12:04:08', 13),
+(73, 'teph', '2017-02-01 12:04:11', '', 13),
+(74, 'omottobe@gmail.com', '2017-02-01 13:23:40', '', 15),
+(75, 'omottobe@gmail.com ', '2017-02-01 13:36:22', '', 15),
+(76, 'omottobe@gmail.com', '2017-02-01 15:02:35', '', 15),
+(77, 'omottobe@gmail.com', '2017-02-02 08:40:04', '', 15),
+(78, 'omottobe@gmail.com', '2017-02-02 08:44:50', '', 15),
+(79, 'omottobe@gmail.com', '2017-02-02 08:56:52', '', 15),
+(80, 'omottobe@gmail.com', '2017-02-03 14:44:21', '', 15),
+(81, 'omottobe@gmail.com', '2017-02-09 14:53:44', '', 15),
+(82, 'omottobe@gmail.com', '2017-02-10 08:37:36', '', 15);
 
 -- --------------------------------------------------------
 
@@ -1209,9 +1538,45 @@ ALTER TABLE `barinfo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `budget_lindi`
+--
+ALTER TABLE `budget_lindi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `budget_makina`
+--
+ALTER TABLE `budget_makina`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `budget_saba`
+--
+ALTER TABLE `budget_saba`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `budget_sara`
+--
+ALTER TABLE `budget_sara`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `demo_data`
+--
+ALTER TABLE `demo_data`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dev_proj`
+--
+ALTER TABLE `dev_proj`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1221,10 +1586,10 @@ ALTER TABLE `downloads`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `event`
+-- Indexes for table `events`
 --
-ALTER TABLE `event`
-  ADD PRIMARY KEY (`event_id`);
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `hevents`
@@ -1371,15 +1736,51 @@ ALTER TABLE `planned`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `plans_county`
+--
+ALTER TABLE `plans_county`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `plan_comm`
+--
+ALTER TABLE `plan_comm`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `prioinfo`
 --
 ALTER TABLE `prioinfo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `prior_com`
+--
+ALTER TABLE `prior_com`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `prior_county`
+--
+ALTER TABLE `prior_county`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `profiles`
 --
 ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `profile_tbl`
+--
+ALTER TABLE `profile_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `proj_status`
+--
+ALTER TABLE `proj_status`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1395,16 +1796,10 @@ ALTER TABLE `quotes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `recover_password`
+-- Indexes for table `resource`
 --
-ALTER TABLE `recover_password`
-  ADD PRIMARY KEY (`recovery_id`);
-
---
--- Indexes for table `registration`
---
-ALTER TABLE `registration`
-  ADD PRIMARY KEY (`user_id`);
+ALTER TABLE `resource`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `sabacurrent`
@@ -1455,6 +1850,12 @@ ALTER TABLE `social`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `social_audit`
+--
+ALTER TABLE `social_audit`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `testimony`
 --
 ALTER TABLE `testimony`
@@ -1488,30 +1889,60 @@ ALTER TABLE `ward_rep`
 ALTER TABLE `barinfo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `budget_lindi`
+--
+ALTER TABLE `budget_lindi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `budget_makina`
+--
+ALTER TABLE `budget_makina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `budget_saba`
+--
+ALTER TABLE `budget_saba`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `budget_sara`
+--
+ALTER TABLE `budget_sara`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `demo_data`
+--
+ALTER TABLE `demo_data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `dev_proj`
+--
+ALTER TABLE `dev_proj`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `downloads`
 --
 ALTER TABLE `downloads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `event`
+-- AUTO_INCREMENT for table `events`
 --
-ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `hevents`
 --
 ALTER TABLE `hevents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `hgallery`
 --
 ALTER TABLE `hgallery`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `hlocation`
 --
@@ -1576,7 +2007,7 @@ ALTER TABLE `liproimg`
 -- AUTO_INCREMENT for table `magallery`
 --
 ALTER TABLE `magallery`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `mail`
 --
@@ -1586,17 +2017,17 @@ ALTER TABLE `mail`
 -- AUTO_INCREMENT for table `makinacurrent`
 --
 ALTER TABLE `makinacurrent`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `makina_cproject`
 --
 ALTER TABLE `makina_cproject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `maproimg`
 --
 ALTER TABLE `maproimg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `mediaimg`
 --
@@ -1621,17 +2052,47 @@ ALTER TABLE `pieinfo`
 -- AUTO_INCREMENT for table `planned`
 --
 ALTER TABLE `planned`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `plans_county`
+--
+ALTER TABLE `plans_county`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `plan_comm`
+--
+ALTER TABLE `plan_comm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `prioinfo`
 --
 ALTER TABLE `prioinfo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `prior_com`
+--
+ALTER TABLE `prior_com`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `prior_county`
+--
+ALTER TABLE `prior_county`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `profile_tbl`
+--
+ALTER TABLE `profile_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `proj_status`
+--
+ALTER TABLE `proj_status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `ptop`
 --
@@ -1641,17 +2102,12 @@ ALTER TABLE `ptop`
 -- AUTO_INCREMENT for table `quotes`
 --
 ALTER TABLE `quotes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `recover_password`
+-- AUTO_INCREMENT for table `resource`
 --
-ALTER TABLE `recover_password`
-  MODIFY `recovery_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `registration`
---
-ALTER TABLE `registration`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+ALTER TABLE `resource`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `sabacurrent`
 --
@@ -1693,20 +2149,25 @@ ALTER TABLE `skills`
 ALTER TABLE `social`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `social_audit`
+--
+ALTER TABLE `social_audit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `testimony`
 --
 ALTER TABLE `testimony`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `user_log`
 --
 ALTER TABLE `user_log`
-  MODIFY `user_log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `user_log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 --
 -- AUTO_INCREMENT for table `ward_rep`
 --
