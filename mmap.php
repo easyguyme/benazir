@@ -17,7 +17,7 @@
                 <div class="pad"  >
 
                     <!-- Map will be created here -->
-                    <iframe src=<?php echo $row['url']; ?> width="640" height="480"></iframe>
+                    <iframe src=<?php echo $row['url']; ?> width="540" height="480"></iframe>
                 </div>
                 <?php } ?>
             </div>
