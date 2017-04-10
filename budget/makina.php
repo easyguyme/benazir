@@ -748,6 +748,7 @@
                             </ul>
                             <!-- Info Boxes Style 2 -->
 
+                            
                             <!-- /.info-box -->
 
                             <!-- /.row -->
