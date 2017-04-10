@@ -52,7 +52,7 @@ desired effect
                 <?php
                 $query = $conn->query("select * from home where id=1");
                 while ($row = $query->fetch()) {
-                $id = $row['id'];
+
                 ?>
                 <div class="col-md-12">
                     <div class="box">
@@ -64,20 +64,16 @@ desired effect
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-responsive" src="<?php echo $row['logo']; ?>" alt="Photo">
+                                <div class="col-md-7">
+                                    <img class="img-responsive" style="" src="<?php echo $row['logo']; ?>" alt="Photo">
 
                                     <?php } ?>
                                     <!-- /Pic to be changed -->
-                                </div>
-                                <div class="col-md-4">
                                     <p>
                                         <?php include('homeinfo.php'); ?>
                                     </p>
-
-                                    <!-- /Pic to be changed -->
                                 </div>
-                                <!-- /.col -->
+
                                 <div class="col-md-5">
                                     <div class="box box-primary">
                                         <div class="box-header with-border">
@@ -202,7 +198,7 @@ desired effect
         $('#example12').DataTable({
             "paging": true,
             "lengthChange": true,
-            "lengthMenu": [[3, 10, 20, -1], [3, 10, 20, "All"]],
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
             "searching": true,
             "ordering": false,
             "info": true,
