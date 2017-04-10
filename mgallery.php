@@ -1,10 +1,11 @@
-<div class="box-header with-border">
-    <h3 class="box-title"><dt>GALLERY</dt></h3>
 
-
-</div>
 <div class="box box-success">
+    <div class="box-header with-border">
+        <i class="fa fa-camera"></i>
+        <h3 class="box-title"><dt>GALLERY</dt></h3>
 
+
+    </div>
     <!-- /.box-header -->
     <style>
 
