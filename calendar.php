@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="plugins/fullcalendar/fullcalendar.min.css">
-<link rel="stylesheet" href="plugins/fullcalendar/fullcalendar.print.css" media="print">
+
+<link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
 <?php include('header.php'); ?>
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
@@ -48,7 +48,57 @@
             <div class="row">
                 <!-- /.col -->
                 <div class="col-md-6">
-                    <?php include('hevents.php');?>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title"><dt>Events</dt></h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body table-responsive">
+
+                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+
+                                <thead>
+                                <tr>
+
+                                    <th>Event</th>
+                                    <th>Venue</th>
+                                    <th>Start date</th>
+                                    <th>End date</th>
+                                    <th>Status</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $query = $conn->query("select * from hevents ORDER BY tarehes DESC ");
+                                while ($row = $query->fetch()) {
+
+                                    ?>
+                                    <tr>
+
+                                        <td><?php echo $row['event']; ?></td>
+                                        <td><?php echo $row['venue']; ?></td>
+                                        <td><?php echo $row['sdate']; ?></td>
+                                        <td><?php echo $row['edate']; ?></td>
+                                        <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
+
+
+                                    </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
                     <!-- /. box -->
                 </div>
 
@@ -79,7 +129,7 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
 <!-- Slimscroll -->
 <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -89,10 +139,27 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- fullCalendar 2.2.5 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="plugins/fullcalendar/fullcalendar.min.js"></script>
-<!-- Page specific script -->
-<?php include('calendarscript.php');?>
 
+
+<script>
+    $(function () {
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[3, 10, 20, -1], [3, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
+
+
+
+
+
+    });
+</script>
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
 </body>
 </html>

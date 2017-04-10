@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
 <?php include('header.php'); ?>
 <!--
 BODY TAG OPTIONS:
@@ -78,9 +79,58 @@ desired effect
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-md-5">
+                                    <div class="box box-primary">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title"><dt>Events</dt></h3>
 
-                                    <?php include('hevents.php'); ?>
+                                            <div class="box-tools pull-right">
+                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                            </div>
+                                        </div>
 
+                                        <div class="box-body table-responsive">
+
+                                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example12">
+
+                                                <thead>
+                                                <tr>
+
+                                                    <th>Event</th>
+                                                    <th>Venue</th>
+                                                    <th>Start date</th>
+                                                    <th>End date</th>
+                                                    <th>Status</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                $query = $conn->query("select * from hevents ORDER BY tarehes DESC ");
+                                                while ($row = $query->fetch()) {
+
+                                                    ?>
+                                                    <tr>
+
+                                                        <td><?php echo $row['event']; ?></td>
+                                                        <td><?php echo $row['venue']; ?></td>
+                                                        <td><?php echo $row['sdate']; ?></td>
+                                                        <td><?php echo $row['edate']; ?></td>
+                                                        <td><span class="label label-success"><?php echo $row['status']; ?></span></td>
+
+
+                                                    </tr>
+                                                <?php } ?>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+
+                                    </div>
+                                    <!-- /. box -->
                                 </div>
                                 <!-- /.col -->
                             </div>
@@ -136,77 +186,7 @@ desired effect
     <?php include('footer.php'); ?>
 
     <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <!-- Home tab content -->
-            <div class="tab-pane active" id="control-sidebar-home-tab">
-                <h3 class="control-sidebar-heading">Upcoming Activities</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript::;">
-                            <i class="menu-icon fa fa-users bg-red"></i>
 
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Annual General Meeting</h4>
-
-                                <p>Will be held on November 24th at KICC starting from 10.00am </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
-                <h3 class="control-sidebar-heading">Elimu Grant target</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript::;">
-                            <h4 class="control-sidebar-subheading">
-                                Contributions
-                <span class="pull-right-container">
-                  <span class="label label-danger pull-right">70%</span>
-                </span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
-            </div>
-            <!-- /.tab-pane -->
-            <!-- Stats tab content -->
-            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-            <!-- /.tab-pane -->
-            <!-- Settings tab content -->
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-                <form method="post">
-                    <h3 class="control-sidebar-heading">General Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Terms and Conditions Apply
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            By using this dashboard you accept our <a href="#"> Terms and Conditions</a>
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-                </form>
-            </div>
-            <!-- /.tab-pane -->
-        </div>
-    </aside>
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
@@ -217,8 +197,26 @@ desired effect
 
 <!-- jQuery 2.2.3 -->
 <?php include('hscripts.php'); ?>
+<script>
+    $(function () {
+        $('#example12').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[3, 10, 20, -1], [3, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
 
 
+
+
+
+    });
+</script>
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript">
     $("#read").click(function() {
         $("#hidden").show();
