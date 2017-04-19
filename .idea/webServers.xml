@@ -2,11 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="d650d7e3-4a50-42c1-a3cb-4aedb2cba338" name="umande" url="http://www.womenvoicesictchoices.org/umande">
-        <fileTransfer host="www.womenvoicesictchoices.org" port="21" rootFolder="/public_html/umande" password="dfe7dfd3dfcbdfd9dfcbdfc4dfcedfcfdf92df9adf92df9c" username="womenvoices">
+      <webServer id="d650d7e3-4a50-42c1-a3cb-4aedb2cba338" name="umande" url="http://www.womenvoicesictchoices.org">
+        <fileTransfer host="www.womenvoicesictchoices.org" port="21" rootFolder="/public_html" password="dfe7dfd3dfcbdfd9dfcbdfc4dfcedfcfdf92df9adf92df9c" username="womenvoices">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
     </option>

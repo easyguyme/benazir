@@ -68,7 +68,7 @@
                                     while ($row = $query->fetch()) {
 
                                     ?>
-                                    <th>AREA. Km<sup>2</sup></th>
+                                    <th>AREA. (Km<sup>2</sup>)</th>
                                         <td></td>
                                     <td><?php echo $row['makina']; ?></td>
                                     <td><?php echo $row['sara']; ?></td>
@@ -85,7 +85,7 @@
 
                                     ?>
 
-                                    <th>POPULATION COMPOSITION.</th>
+                                    <th>POPULATION SIZE.</th>
                                         <td></td>
                                         <td><?php echo $row['makina']; ?></td>
                                         <td><?php echo $row['sara']; ?></td>

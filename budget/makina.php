@@ -706,13 +706,54 @@
                             </div>
                         </div>
                         <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Custom Tabs -->
+                                    <div class="nav-tabs-custom">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#makinas" data-toggle="tab">MAKINA</a></li>
+                                            <li><a href="#saras" data-toggle="tab">SARANG'OMBE</a></li>
+                                            <li><a href="#lindis" data-toggle="tab">LINDI</a></li>
+                                            <li><a href="#sabas" data-toggle="tab">LAINI SABA</a></li>
 
-                            <div class="box-pane">
-                                <canvas id="pieright" style="height:300px"></canvas>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="makinas">
+
+                                                <!-- /.box-header -->
+
+
+                                                <canvas id="piemakina" style="height:300px"></canvas>
+
+                                            </div>
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="saras">
+
+                                                <canvas id="piesara" style="height:300px"></canvas>
+                                            </div>
+
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="lindis">
+
+                                                <canvas id="pielindi" style="height:300px"></canvas>
+                                            </div>
+                                            <div class="tab-pane" id="sabas">
+
+                                                <canvas id="piesaba" style="height:300px"></canvas>
+
+
+                                            </div>
+                                            <!-- /.tab-pane -->
+                                        </div>
+                                        <!-- /.tab-content -->
+                                    </div>
+                                    <!-- nav-tabs-custom -->
+                                </div>
+                                <!-- /.col -->
                             </div>
-
-
+                            <!-- /.row -->
                         </div>
+
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
@@ -858,7 +899,7 @@
 <!-- page script -->
 <script>
     <?php
-    $query = $conn->query("select * from resource where id='1'");
+    $query = $conn->query("select * from resource where page='makina'");
     while ($row = $query->fetch()) {
 
     ?>
