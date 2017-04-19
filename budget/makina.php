@@ -887,24 +887,175 @@
 
     window.onload = function () {
         <!--load left pie chart -->
-
-        <!--load left pie chart -->
-        var ct = document.getElementById("pieright").getContext("2d");
+        var ct = document.getElementById("piemakina").getContext("2d");
         window.myPieR = new Chart(ct, configs);
-
+        <!--load left pie chart -->
+        var cts = document.getElementById("piesara").getContext("2d");
+        window.myPieR = new Chart(cts, configa);
+        <!--load left pie chart -->
+        var ctd = document.getElementById("pielindi").getContext("2d");
+        window.myPieR = new Chart(ctd, configb);
+        <!--load left pie chart -->
+        var ctf = document.getElementById("piesaba").getContext("2d");
+        window.myPieR = new Chart(ctf, configc);
     };
 
 
 </script>
 <!-- page script -->
 <script>
-    <?php
-    $query = $conn->query("select * from resource where page='makina'");
-    while ($row = $query->fetch()) {
 
-    ?>
 
     var configs = {
+        <?php
+        $query = $conn->query("select * from resource where page='makina'");
+        while ($row = $query->fetch()) {
+
+        ?>
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
+                <?php } ?>
+                backgroundColor: [
+                    window.chartColors.aqua,
+                    window.chartColors.red,
+                    window.chartColors.yellow,
+                    window.chartColors.green,
+                    window.chartColors.purple,
+                    window.chartColors.grey,
+                    window.chartColors.orange,
+                    window.chartColors.blue
+
+                ],
+                label: 'Dataset'
+            }],
+            labels: [
+                "Water",
+                "Health",
+                "Education",
+                "Sanitation",
+                "Solid Waste",
+                "Drainage",
+                "Energy",
+                "Roads"
+
+
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Project Based Resources Distribution'
+            }
+        }
+    };
+    var configa = {
+        <?php
+        $query = $conn->query("select * from resource where page='sara'");
+        while ($row = $query->fetch()) {
+
+        ?>
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
+                <?php } ?>
+                backgroundColor: [
+                    window.chartColors.aqua,
+                    window.chartColors.red,
+                    window.chartColors.yellow,
+                    window.chartColors.green,
+                    window.chartColors.purple,
+                    window.chartColors.grey,
+                    window.chartColors.orange,
+                    window.chartColors.blue
+
+                ],
+                label: 'Dataset'
+            }],
+            labels: [
+                "Water",
+                "Health",
+                "Education",
+                "Sanitation",
+                "Solid Waste",
+                "Drainage",
+                "Energy",
+                "Roads"
+
+
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Project Based Resources Distribution'
+            }
+        }
+    };
+    var configb = {
+        <?php
+        $query = $conn->query("select * from resource where page='lindi'");
+        while ($row = $query->fetch()) {
+
+        ?>
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
+                <?php } ?>
+                backgroundColor: [
+                    window.chartColors.aqua,
+                    window.chartColors.red,
+                    window.chartColors.yellow,
+                    window.chartColors.green,
+                    window.chartColors.purple,
+                    window.chartColors.grey,
+                    window.chartColors.orange,
+                    window.chartColors.blue
+
+                ],
+                label: 'Dataset'
+            }],
+            labels: [
+                "Water",
+                "Health",
+                "Education",
+                "Sanitation",
+                "Solid Waste",
+                "Drainage",
+                "Energy",
+                "Roads"
+
+
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Project Based Resources Distribution'
+            }
+        }
+    };
+    var configc = {
+        <?php
+        $query = $conn->query("select * from resource where page='laini'");
+        while ($row = $query->fetch()) {
+
+        ?>
         type: 'pie',
         data: {
             datasets: [{
