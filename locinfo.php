@@ -10,6 +10,7 @@
         <span class="info-box-number"><?php echo $row['name']; ?></span>
         <span class="info-box-text">Location:<?php echo $row['linfo']; ?></span>
         <span class="info-box-text">Contact:<?php echo $row['description']; ?></span>
+        <span class="info-box-text">Cordinates:<?php echo $row['email']; ?></span>
 
         <?php } ?>
     </div>
@@ -28,7 +29,7 @@
         <span class="info-box-number"><?php echo $row['name']; ?></span>
         <span class="info-box-text">Name:<?php echo $row['linfo']; ?></span>
         <span class="info-box-text">Location:<?php echo $row['description']; ?></span>
-
+        <span class="info-box-text">Cordinates:<?php echo $row['email']; ?></span>
         <?php } ?>
     </div>
     <!-- /.info-box-content -->
@@ -46,7 +47,7 @@
         <span class="info-box-number"><?php echo $row['name']; ?></span>
         <span class="info-box-text">Name:<?php echo $row['linfo']; ?></span>
         <span class="info-box-text">Location:<?php echo $row['description']; ?></span>
-
+        <span class="info-box-text">Cordinates:<?php echo $row['email']; ?></span>
         <?php } ?>
     </div>
     <!-- /.info-box-content -->
@@ -64,7 +65,7 @@
         <span class="info-box-number"><?php echo $row['name']; ?></span>
         <span class="info-box-text">Name:<?php echo $row['linfo']; ?></span>
         <span class="info-box-text">Location:<?php echo $row['description']; ?></span>
-
+        <span class="info-box-text">Cordinates:<?php echo $row['email']; ?></span>
         <?php } ?>
     </div>
     <!-- /.info-box-content -->

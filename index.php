@@ -134,7 +134,7 @@ desired effect
                         </div>
                         <!-- ./box-body -->
                         <div class="box-footer">
-                            <?php include('hstrip.php'); ?>
+
                             <!-- /.row -->
                         </div>
                         <!-- /.box-footer -->

@@ -68,7 +68,7 @@
                                     while ($row = $query->fetch()) {
 
                                     ?>
-                                    <th>AREA.</th>
+                                    <th>AREA. Km<sup>2</sup></th>
                                         <td></td>
                                     <td><?php echo $row['makina']; ?></td>
                                     <td><?php echo $row['sara']; ?></td>
@@ -202,7 +202,7 @@
                         <div class="box-body">
 
                             <div class="box-pane">
-                                <h3 class="box-title">To be shared by Umande</h3>
+                                <img class="img-responsive" style="height:20pc;width: 100pc" src="dist/img/density.PNG" alt="Photo">
                             </div>
 
 
@@ -327,7 +327,7 @@
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            labelString: 'Number of people (Millions)'
+                            labelString: 'Number of people (Thousands)'
 
                         }
 
