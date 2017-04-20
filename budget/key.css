@@ -1,0 +1,14 @@
+/* your colors */
+/* basic positioning */
+.lego { list-style: none; }
+.lego li { float: left; margin-right: 10px; }
+.lego span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
+
+.lego.Water{ background-color: #3024ff; }
+.Health{ background-color: #00ffff; }
+.Education{ background-color: #00ffff; }
+.Sanitation{ background-color: #00ffff; }
+.Solid{ background-color: #00ffff; }
+.Drainage{ background-color: #00ffff; }
+.Energy{ background-color: #00ffff; }
+.Roads{ background-color: #00ffff; }

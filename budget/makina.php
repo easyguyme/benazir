@@ -5,6 +5,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" href="key.css">
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
@@ -723,7 +724,9 @@
                                                 <!-- /.box-header -->
 
 
-                                                <canvas id="piemakina" style="height:300px"></canvas>
+
+                                                    <canvas id="chart-area"  style="height:300px"></canvas>
+
 
                                             </div>
                                             <!-- /.tab-pane -->
@@ -778,14 +781,15 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <ul class="chart-legend clearfix">
-                            <li><i class="fa fa-circle-o text-aqua"></i> Water</li>
-                            <li><i class="fa fa-circle-o text-red"></i>Health</li>
-                            <li><i class="fa fa-circle-o text-yellow"></i> Education</li>
-                            <li><i class="fa fa-circle-o text-green"></i> Sanitation</li>
-                            <li><i class="fa fa-circle-o text-purple"></i> Solid Waste</li>
-                            <li><i class="fa fa-circle-o text-gray"></i> Drainage</li>
-                                <li><i class="fa fa-circle-o text-orange"></i> Energy</li>
-                                <li><i class="fa fa-circle-o text-blue"></i> Roads</li>
+                            <li> <small class="label  bg-aqua">Water</small></li>
+                            <li> <small class="label  bg-red">Health</small></li>
+                             <li> <small class="label  bg-yellow">Education</small></li>
+                                <li> <small class="label  bg-green">Sanitation</small></li>
+                                <li> <small class="label  bg-purple">Solid Waste</small></li>
+                                <li> <small class="label  bg-maroon">Drainage</small></li>
+                                <li> <small class="label  bg-fuchsia">Energy</small></li>
+                                <li> <small class="label  bg-blue">Roads</small></li>
+
                             </ul>
                             <!-- Info Boxes Style 2 -->
 
@@ -854,9 +858,9 @@
 <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.1 -->
-<script src="../plugins/chartjs/Chart.min.js"></script>
+
 <script src="../plugins/chartjs/Chart.bundle.js"></script>
-<script src="../plugins/chartjs/utils.js"></script>
+
 
 
 
@@ -882,179 +886,21 @@
         });
     });
 </script>
-
 <script>
-
-    window.onload = function () {
-        <!--load left pie chart -->
-        var ct = document.getElementById("piemakina").getContext("2d");
-        window.myPieR = new Chart(ct, configs);
-        <!--load left pie chart -->
-        var cts = document.getElementById("piesara").getContext("2d");
-        window.myPieR = new Chart(cts, configa);
-        <!--load left pie chart -->
-        var ctd = document.getElementById("pielindi").getContext("2d");
-        window.myPieR = new Chart(ctd, configb);
-        <!--load left pie chart -->
-        var ctf = document.getElementById("piesaba").getContext("2d");
-        window.myPieR = new Chart(ctf, configc);
+    var randomScalingFactor = function() {
+        return Math.round(Math.random() * 100);
+    };
+    var randomColorFactor = function() {
+        return Math.round(Math.random() * 255);
+    };
+    var randomColor = function(opacity) {
+        return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
     };
 
-
-</script>
-<!-- page script -->
-<script>
-
-
-    var configs = {
-        <?php
-        $query = $conn->query("select * from resource where page='makina'");
-        while ($row = $query->fetch()) {
-
-        ?>
-        type: 'pie',
-        data: {
-            datasets: [{
-                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
-                <?php } ?>
-                backgroundColor: [
-                    window.chartColors.aqua,
-                    window.chartColors.red,
-                    window.chartColors.yellow,
-                    window.chartColors.green,
-                    window.chartColors.purple,
-                    window.chartColors.grey,
-                    window.chartColors.orange,
-                    window.chartColors.blue
-
-                ],
-                label: 'Dataset'
-            }],
-            labels: [
-                "Water",
-                "Health",
-                "Education",
-                "Sanitation",
-                "Solid Waste",
-                "Drainage",
-                "Energy",
-                "Roads"
-
-
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Project Based Resources Distribution'
-            }
-        }
-    };
-    var configa = {
-        <?php
-        $query = $conn->query("select * from resource where page='sara'");
-        while ($row = $query->fetch()) {
-
-        ?>
-        type: 'pie',
-        data: {
-            datasets: [{
-                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
-                <?php } ?>
-                backgroundColor: [
-                    window.chartColors.aqua,
-                    window.chartColors.red,
-                    window.chartColors.yellow,
-                    window.chartColors.green,
-                    window.chartColors.purple,
-                    window.chartColors.grey,
-                    window.chartColors.orange,
-                    window.chartColors.blue
-
-                ],
-                label: 'Dataset'
-            }],
-            labels: [
-                "Water",
-                "Health",
-                "Education",
-                "Sanitation",
-                "Solid Waste",
-                "Drainage",
-                "Energy",
-                "Roads"
-
-
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Project Based Resources Distribution'
-            }
-        }
-    };
-    var configb = {
-        <?php
-        $query = $conn->query("select * from resource where page='lindi'");
-        while ($row = $query->fetch()) {
-
-        ?>
-        type: 'pie',
-        data: {
-            datasets: [{
-                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
-                <?php } ?>
-                backgroundColor: [
-                    window.chartColors.aqua,
-                    window.chartColors.red,
-                    window.chartColors.yellow,
-                    window.chartColors.green,
-                    window.chartColors.purple,
-                    window.chartColors.grey,
-                    window.chartColors.orange,
-                    window.chartColors.blue
-
-                ],
-                label: 'Dataset'
-            }],
-            labels: [
-                "Water",
-                "Health",
-                "Education",
-                "Sanitation",
-                "Solid Waste",
-                "Drainage",
-                "Energy",
-                "Roads"
-
-
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Project Based Resources Distribution'
-            }
-        }
-    };
-    var configc = {
+    var config = {
         <?php
         $query = $conn->query("select * from resource where page='laini'");
         while ($row = $query->fetch()) {
-
         ?>
         type: 'pie',
         data: {
@@ -1062,17 +908,16 @@
                 data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
                 <?php } ?>
                 backgroundColor: [
-                    window.chartColors.aqua,
-                    window.chartColors.red,
-                    window.chartColors.yellow,
-                    window.chartColors.green,
-                    window.chartColors.purple,
-                    window.chartColors.grey,
-                    window.chartColors.orange,
-                    window.chartColors.blue
-
+                    "#7FDBFF",
+                    "#FF4136",
+                    "#FFDC00",
+                    "#2ECC40",
+                    "#B10DC9",
+                    "#85144b",
+                    "#F012BE",
+                    "#0074D9"
                 ],
-                label: 'Dataset'
+                label: 'Expenditures'
             }],
             labels: [
                 "Water",
@@ -1083,8 +928,6 @@
                 "Drainage",
                 "Energy",
                 "Roads"
-
-
             ]
         },
         options: {
@@ -1095,15 +938,42 @@
             title: {
                 display: true,
                 text: 'Project Based Resources Distribution'
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                            return previousValue + currentValue;
+                        });
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+                        return precentage + "%";
+                    }
+                }
             }
         }
     };
 
 
-    var colorNames = Object.keys(window.chartColors);
+    var ctx = document.getElementById("chart-area").getContext("2d");
+    window.myDoughnut = new Chart(ctx, config); {
+
+    }
+
+
+
+
+
+
 
 
 </script>
+
 <script src="../scroller/js/jssor.slider-21.1.6.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     jssor_1_slider_init = function() {
