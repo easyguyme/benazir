@@ -1713,18 +1713,30 @@
         labels: ["Makina", "Sarang'ombe", "Lindi", "Laini saba"],
         datasets: [
             {
+                <?php
+                $query = $conn->query("select * from resgraph where type='o'");
+                while ($row = $query->fetch()) {
+
+                ?>
                 label: "Ongoing",
                 backgroundColor: color(window.chartColors.blue).rgbString(),
                 borderColor: window.chartColors.green,
                 borderWidth: 1,
-                data: [65, 59, 60, 81]
+                data: [<?php echo $row['makina']; ?>, <?php echo $row['sara']; ?>,<?php echo $row['lindi']; ?>,<?php echo $row['saba']; ?>]
+                <?php } ?>
             },
             {
+                <?php
+                $query = $conn->query("select * from resgraph where type='p'");
+                while ($row = $query->fetch()) {
+
+                ?>
                 label: "Planned",
                 backgroundColor: color(window.chartColors.orange).rgbString(),
                 borderColor: window.chartColors.red,
                 borderWidth: 1,
-                data: [50, 48, 75,70]
+                data: [<?php echo $row['makina']; ?>, <?php echo $row['sara']; ?>,<?php echo $row['lindi']; ?>,<?php echo $row['saba']; ?>]
+                <?php } ?>
             }
         ]
     };
