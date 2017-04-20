@@ -33,6 +33,7 @@
         <section class="content">
             <!-- Top Info boxes -->
             <div class="row">
+
                 <div class="col-md-6">
                     <div class="box box-primary">
                         <div class="box-header with-border">
@@ -44,41 +45,196 @@
                                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Custom Tabs -->
+                                    <div class="nav-tabs-custom">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#makina" data-toggle="tab">MAKINA</a></li>
+                                            <li><a href="#sara" data-toggle="tab">SARANG'OMBE</a></li>
+                                            <li><a href="#lindi" data-toggle="tab">LINDI</a></li>
+                                            <li><a href="#saba" data-toggle="tab">LAINI SABA</a></li>
 
-                        <div class="box-body table-responsive">
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="makina">
 
-                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+                                                <!-- /.box-header -->
+                                                <div class="box-body table-responsive">
 
-                                <thead>
-                                <tr>
-                                    <th><span class="badge bg-blue">No.</span></th>
-                                    <th><span class="badge bg-light-blue">Planned</span></th>
-                                    <th><span class="badge bg-red">Ongoing</span></th>
+                                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
 
-
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $query = $conn->query("select * from dev_proj where page='makina' ");
-                                while ($row = $query->fetch()) {
-
-                                ?>
-                                <tr>
-                                    <th><?php echo $row['id']; ?></th>
-                                    <td><?php echo $row['planned']; ?></td>
-                                    <td><?php echo $row['ongoing']; ?></td>
-                                </tr>
-
-                                <?php };?>
+                                                        <thead>
+                                                        <tr>
+                                                            <th><span class="badge bg-blue">No.</span></th>
+                                                            <th><span class="badge bg-light-blue">Planned</span></th>
+                                                            <th><span class="badge bg-red">Ongoing</span></th>
 
 
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <?php
+                                                        $query = $conn->query("select * from dev_proj where page='makina' ");
+                                                        while ($row = $query->fetch()) {
+
+                                                            ?>
+                                                            <tr>
+                                                                <th><?php echo $row['id']; ?></th>
+                                                                <td><?php echo $row['planned']; ?></td>
+                                                                <td><?php echo $row['ongoing']; ?></td>
+                                                            </tr>
+
+                                                        <?php };?>
 
 
-                                </tbody>
-                            </table>
 
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                                <!-- /.box-body -->
+
+                                                <!-- /.box-body -->
+
+                                            </div>
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="sara">
+
+                                                <!-- /.box-header -->
+                                                <div class="box-body table-responsive">
+                                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+
+                                                        <thead>
+                                                        <tr>
+                                                            <th><span class="badge bg-blue">No.</span></th>
+                                                            <th><span class="badge bg-light-blue">Planned</span></th>
+                                                            <th><span class="badge bg-red">Ongoing</span></th>
+
+
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <?php
+                                                        $query = $conn->query("select * from dev_proj where page='sara' ");
+                                                        while ($row = $query->fetch()) {
+
+                                                            ?>
+                                                            <tr>
+                                                                <th><?php echo $row['id']; ?></th>
+                                                                <td><?php echo $row['planned']; ?></td>
+                                                                <td><?php echo $row['ongoing']; ?></td>
+                                                            </tr>
+
+                                                        <?php };?>
+
+
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /.box-body -->
+
+                                                <!-- /.box-footer -->
+                                            </div>
+
+                                            <!-- /.tab-pane -->
+                                            <div class="tab-pane" id="lindi">
+
+                                                <div class="box-body table-responsive">
+                                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+
+                                                        <thead>
+                                                        <tr>
+                                                            <th><span class="badge bg-blue">No.</span></th>
+                                                            <th><span class="badge bg-light-blue">Planned</span></th>
+                                                            <th><span class="badge bg-red">Ongoing</span></th>
+
+
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <?php
+                                                        $query = $conn->query("select * from dev_proj where page='lindi' ");
+                                                        while ($row = $query->fetch()) {
+
+                                                            ?>
+                                                            <tr>
+                                                                <th><?php echo $row['id']; ?></th>
+                                                                <td><?php echo $row['planned']; ?></td>
+                                                                <td><?php echo $row['ongoing']; ?></td>
+                                                            </tr>
+
+                                                        <?php };?>
+
+
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /.box-body -->
+
+
+
+                                                <!-- /.box-body -->
+
+                                            </div>
+                                            <div class="tab-pane" id="saba">
+
+                                                <div class="box-body table-responsive">
+                                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+
+                                                        <thead>
+                                                        <tr>
+                                                            <th><span class="badge bg-blue">No.</span></th>
+                                                            <th><span class="badge bg-light-blue">Planned</span></th>
+                                                            <th><span class="badge bg-red">Ongoing</span></th>
+
+
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <?php
+                                                        $query = $conn->query("select * from dev_proj where page='laini' ");
+                                                        while ($row = $query->fetch()) {
+
+                                                            ?>
+                                                            <tr>
+                                                                <th><?php echo $row['id']; ?></th>
+                                                                <td><?php echo $row['planned']; ?></td>
+                                                                <td><?php echo $row['ongoing']; ?></td>
+                                                            </tr>
+
+                                                        <?php };?>
+
+
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /.box-body -->
+
+
+
+                                                <!-- /.box-body -->
+
+                                            </div>
+                                            <!-- /.tab-pane -->
+                                        </div>
+                                        <!-- /.tab-content -->
+                                    </div>
+                                    <!-- nav-tabs-custom -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
                         </div>
+
 
 
                     </div>
