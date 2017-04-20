@@ -1557,7 +1557,7 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <div class="info-box bg-aqua">
+                            <div class="info-box bg-blue">
                                 <span class="info-box-icon"><i class="ion-ios-pulse-strong"></i></span>
 
                                 <div class="info-box-content">
