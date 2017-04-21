@@ -725,24 +725,24 @@
 
 
 
-                                                    <canvas id="chart-area"  style="height:300px"></canvas>
+                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="../dist/img/img.png" alt="Photo">
 
 
                                             </div>
                                             <!-- /.tab-pane -->
                                             <div class="tab-pane" id="saras">
+                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="../dist/img/img.png" alt="Photo">
 
-                                                <canvas id="chart-sar"  style="height:300px"></canvas>
                                             </div>
 
                                             <!-- /.tab-pane -->
                                             <div class="tab-pane" id="lindis">
 
-                                                <canvas id="chart-lin"  style="height:300px"></canvas>
+                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="../dist/img/img.png" alt="Photo">
                                             </div>
                                             <div class="tab-pane" id="sabas">
 
-                                                <canvas id="chart-saba"  style="height:300px"></canvas>
+                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="../dist/img/img.png" alt="Photo">
 
 
                                             </div>
