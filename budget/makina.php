@@ -732,17 +732,17 @@
                                             <!-- /.tab-pane -->
                                             <div class="tab-pane" id="saras">
 
-                                                <canvas id="piesara" style="height:300px"></canvas>
+                                                <canvas id="chart-sar"  style="height:300px"></canvas>
                                             </div>
 
                                             <!-- /.tab-pane -->
                                             <div class="tab-pane" id="lindis">
 
-                                                <canvas id="pielindi" style="height:300px"></canvas>
+                                                <canvas id="chart-lin"  style="height:300px"></canvas>
                                             </div>
                                             <div class="tab-pane" id="sabas">
 
-                                                <canvas id="piesaba" style="height:300px"></canvas>
+                                                <canvas id="chart-saba"  style="height:300px"></canvas>
 
 
                                             </div>
@@ -896,8 +896,195 @@
     var randomColor = function(opacity) {
         return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
     };
-
+    /*makina*/
     var config = {
+        <?php
+        $query = $conn->query("select * from resource where page='makina'");
+        while ($row = $query->fetch()) {
+        ?>
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
+                <?php } ?>
+                backgroundColor: [
+                    "#7FDBFF",
+                    "#FF4136",
+                    "#FFDC00",
+                    "#2ECC40",
+                    "#B10DC9",
+                    "#85144b",
+                    "#F012BE",
+                    "#0074D9"
+                ],
+                label: 'Expenditures'
+            }],
+            labels: [
+                "Water",
+                "Health",
+                "Education",
+                "Sanitation",
+                "Solid Waste",
+                "Drainage",
+                "Energy",
+                "Roads"
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Project Based Resources Distribution'
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                            return previousValue + currentValue;
+                        });
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+                        return precentage + "%";
+                    }
+                }
+            }
+        }
+    };
+    /*sara*/
+    var configz = {
+        <?php
+        $query = $conn->query("select * from resource where page='sara'");
+        while ($row = $query->fetch()) {
+        ?>
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
+                <?php } ?>
+                backgroundColor: [
+                    "#7FDBFF",
+                    "#FF4136",
+                    "#FFDC00",
+                    "#2ECC40",
+                    "#B10DC9",
+                    "#85144b",
+                    "#F012BE",
+                    "#0074D9"
+                ],
+                label: 'Expenditures'
+            }],
+            labels: [
+                "Water",
+                "Health",
+                "Education",
+                "Sanitation",
+                "Solid Waste",
+                "Drainage",
+                "Energy",
+                "Roads"
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Project Based Resources Distribution'
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                            return previousValue + currentValue;
+                        });
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+                        return precentage + "%";
+                    }
+                }
+            }
+        }
+    };
+    /*lindi*/
+    var configx = {
+        <?php
+        $query = $conn->query("select * from resource where page='lindi'");
+        while ($row = $query->fetch()) {
+        ?>
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [<?php echo $row['water']; ?>, <?php echo $row['health']; ?>,<?php echo $row['edu']; ?>, <?php echo $row['san']; ?>,<?php echo $row['waste']; ?>, <?php echo $row['drain']; ?>, <?php echo $row['energy']; ?>, <?php echo $row['road']; ?>],
+                <?php } ?>
+                backgroundColor: [
+                    "#7FDBFF",
+                    "#FF4136",
+                    "#FFDC00",
+                    "#2ECC40",
+                    "#B10DC9",
+                    "#85144b",
+                    "#F012BE",
+                    "#0074D9"
+                ],
+                label: 'Expenditures'
+            }],
+            labels: [
+                "Water",
+                "Health",
+                "Education",
+                "Sanitation",
+                "Solid Waste",
+                "Drainage",
+                "Energy",
+                "Roads"
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Project Based Resources Distribution'
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                            return previousValue + currentValue;
+                        });
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+                        return precentage + "%";
+                    }
+                }
+            }
+        }
+    };
+
+    /*lindi*/
+    var configv = {
         <?php
         $query = $conn->query("select * from resource where page='laini'");
         while ($row = $query->fetch()) {
@@ -960,14 +1147,39 @@
     };
 
 
+
+
+
+
+
+
+
+
+
+
+    /*makina*/
     var ctx = document.getElementById("chart-area").getContext("2d");
     window.myDoughnut = new Chart(ctx, config); {
 
     }
 
+    /*sara*/
+    var ctz = document.getElementById("chart-sar").getContext("2d");
+    window.myDoughnut = new Chart(ctz, configz); {
 
+    }
 
+    /*lindi*/
+    var cty = document.getElementById("chart-lin").getContext("2d");
+    window.myDoughnut = new Chart(cty, configx); {
 
+    }
+
+    /*saba*/
+    var ctv = document.getElementById("chart-saba").getContext("2d");
+    window.myDoughnut = new Chart(ctv, configv); {
+
+    }
 
 
 
