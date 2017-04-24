@@ -2,7 +2,7 @@
 if(!isset($_SESSION)){
     session_start();
 }
-$conn = new PDO('mysql:host=localhost;dbname=umande', 'root', 'password');
+$conn = new PDO('mysql:host=localhost;dbname=umande', 'root', '');
 //Check whether the session variable SESS_MEMBER_ID is present or not
 if (!isset($_SESSION['logged_in']) || (trim($_SESSION['logged_in']) == '')) { ?>
     <script>

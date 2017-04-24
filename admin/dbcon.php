@@ -1,7 +1,7 @@
 <?PHP
 try {
     $user					= 'root';
-    $pass					= 'password';
+    $pass					= '';
     $host					= 'localhost';
     $dbname					= 'umande';
     $conn					= new PDO('mysql:host=' . $host . ';dbname=' . $dbname, $user, $pass);

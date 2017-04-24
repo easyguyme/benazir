@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2017 at 03:30 PM
+-- Generation Time: Apr 24, 2017 at 04:10 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -1239,6 +1239,49 @@ INSERT INTO `quotes` (`id`, `title`, `cate`, `neno`, `who`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `recover_password`
+--
+
+CREATE TABLE `recover_password` (
+  `email` varchar(30) NOT NULL,
+  `recovery_code` varchar(200) NOT NULL,
+  `recovery_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration`
+--
+
+CREATE TABLE `registration` (
+  `user_id` int(10) NOT NULL,
+  `fname` text NOT NULL,
+  `sname` text NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `image` text NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `registration_date` date NOT NULL,
+  `is_account_banned` tinyint(1) NOT NULL,
+  `is_ip_banned` tinyint(1) NOT NULL,
+  `current_ip` varchar(39) NOT NULL,
+  `account_ban_date` date NOT NULL,
+  `account_unban_date` date NOT NULL,
+  `confirmation_code` varchar(200) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registration`
+--
+
+INSERT INTO `registration` (`user_id`, `fname`, `sname`, `username`, `email`, `image`, `password`, `registration_date`, `is_account_banned`, `is_ip_banned`, `current_ip`, `account_ban_date`, `account_unban_date`, `confirmation_code`) VALUES
+(29, 'Imran', 'Khamis', '', 'wangara88@gmail.com', 'avatar5.png', '5c62abadb37dc3372cee5e4a02d9ae95', '2017-02-04', 0, 0, '::1', '0000-00-00', '0000-00-00', ''),
+(28, 'Daniel', 'Craig', '', 'wangara881@gmail.com', '', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-03', 0, 0, '::1', '0000-00-00', '0000-00-00', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `resgraph`
 --
 
@@ -1582,7 +1625,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `username`, `password`, `firstname`, `lastname`) VALUES
 (13, 'teph', 'teph', 'Stephanie', 'villanueva'),
 (14, 'jkev', 'jkev', 'john kevin', 'lorayna'),
-(15, 'omottobe@gmail.com ', 'admin12345', 'admin', 'admin');
+(15, 'wangara88@gmail.com ', 'admin12345', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -2023,6 +2066,12 @@ ALTER TABLE `quotes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- Indexes for table `resgraph`
 --
 ALTER TABLE `resgraph`
@@ -2363,6 +2412,11 @@ ALTER TABLE `ptop`
 --
 ALTER TABLE `quotes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `resgraph`
 --
