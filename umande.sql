@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2017 at 10:55 AM
+-- Generation Time: Apr 24, 2017 at 03:30 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -93,12 +93,12 @@ CREATE TABLE `budget_makina` (
 
 INSERT INTO `budget_makina` (`id`, `cost`, `allocated`, `used`, `variance`, `head`) VALUES
 (1, '200 million', '150 mmillion', '100 millionn', '50 million', 'water'),
-(2, '200 million', '150 mmillion', '100 millionn', '50 million', 'health'),
+(2, '100 million', '100 mmillion', '100 millionn', '500 million', 'health'),
 (3, '200 million', '150 mmillion', '100 millionn', '50 million', 'edu'),
 (4, '200 million', '150 mmillion', '100 millionn', '50 million', 'san'),
 (5, '200 million', '150 mmillion', '100 millionn', '50 million', 'solid'),
 (6, '200 million', '150 mmillion', '100 millionn', '50 million', 'drain'),
-(7, '200 million', '150 mmillion', '100 millionn', '50 million', 'energy'),
+(7, '20 million', '15 mmillion', '10 millionn', '5 million', 'energy'),
 (8, '200 million', '150 mmillion', '100 millionn', '50 million', 'road');
 
 -- --------------------------------------------------------
@@ -121,7 +121,7 @@ CREATE TABLE `budget_saba` (
 --
 
 INSERT INTO `budget_saba` (`id`, `cost`, `allocated`, `used`, `variance`, `head`) VALUES
-(1, '200 million', '150 mmillion', '100 millionn', '50 million', 'water'),
+(1, '2000 million', '1500 mmillion', '1000 millionn', '500 million', 'water'),
 (2, '200 million', '150 mmillion', '100 millionn', '50 million', 'health'),
 (3, '200 million', '150 mmillion', '100 millionn', '50 million', 'edu'),
 (4, '200 million', '150 mmillion', '100 millionn', '50 million', 'san'),
@@ -180,7 +180,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `pob`, `loc`, `phone`, `mail`, `hours`, `url`) VALUES
-(1, ' Umande Trust<br> P.O. BOX 43691-00100,<br> Nairobi, Kenya.', 'Kibra Ground,Off Kibera Drive', '0772092343', 'info@umande.org', ' 8a.m - 5 p.m', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7716310403957!2d36.776046814754!3d-1.3124399990427569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a80eb306e8f%3A0x9ad959333195432b!2sUmande+Trust+Nairobi!5e0!3m2!1sen!2s!4v1482308845602');
+(1, ' Umande Trust<br> P.O. BOX 43691-00100,<br> Nairobi, Kenya.', 'Kibra Ground,Off Kibera Drive', '0772092343', 'info@umande.org', ' 8a.m - 5 p.m', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.781210672407!2d36.786886314754035!3d-1.3064199990471481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTgnMjMuMSJTIDM2wrA0NycyMC43IkU!5e0!3m2!1sen!2s!4v1491825853835');
 
 -- --------------------------------------------------------
 
@@ -211,22 +211,90 @@ INSERT INTO `demo_data` (`id`, `makina`, `sara`, `lindi`, `laini`, `head`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dev_proj`
+-- Table structure for table `dev_lindi`
 --
 
-CREATE TABLE `dev_proj` (
+CREATE TABLE `dev_lindi` (
   `id` int(11) NOT NULL,
   `planned` text NOT NULL,
-  `ongoing` text NOT NULL,
-  `page` text NOT NULL
+  `ongoing` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dev_proj`
+-- Dumping data for table `dev_lindi`
 --
 
-INSERT INTO `dev_proj` (`id`, `planned`, `ongoing`, `page`) VALUES
-(1, 'Water pump installation', 'Borehole drilling', 'makina');
+INSERT INTO `dev_lindi` (`id`, `planned`, `ongoing`) VALUES
+(1, 'Water pump installation', 'Borehole drilling'),
+(2, 'Parafin pump installation', 'church painting'),
+(3, 'Electricity installation', 'road construction'),
+(4, 'Bio gas installation', 'training');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dev_makina`
+--
+
+CREATE TABLE `dev_makina` (
+  `id` int(11) NOT NULL,
+  `planned` text NOT NULL,
+  `ongoing` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dev_makina`
+--
+
+INSERT INTO `dev_makina` (`id`, `planned`, `ongoing`) VALUES
+(1, 'Water pump installation', 'Borehole drilling'),
+(2, 'Parafin pump installation', 'church painting'),
+(3, 'Electricity installation', 'road construction'),
+(4, 'Bio gas installation', 'training');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dev_saba`
+--
+
+CREATE TABLE `dev_saba` (
+  `id` int(11) NOT NULL,
+  `planned` text NOT NULL,
+  `ongoing` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dev_saba`
+--
+
+INSERT INTO `dev_saba` (`id`, `planned`, `ongoing`) VALUES
+(1, 'Water pump installation', 'Borehole drilling'),
+(2, 'Parafin pump installation', 'church painting'),
+(3, 'Electricity installation', 'road construction'),
+(4, 'Bio gas installation', 'training');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dev_sara`
+--
+
+CREATE TABLE `dev_sara` (
+  `id` int(11) NOT NULL,
+  `planned` text NOT NULL,
+  `ongoing` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dev_sara`
+--
+
+INSERT INTO `dev_sara` (`id`, `planned`, `ongoing`) VALUES
+(1, 'Water pump installation', 'Borehole drilling'),
+(2, 'Parafin pump installation', 'church painting'),
+(3, 'Electricity installation', 'road construction'),
+(4, 'Bio gas installation', 'training');
 
 -- --------------------------------------------------------
 
@@ -249,7 +317,11 @@ CREATE TABLE `downloads` (
 --
 
 INSERT INTO `downloads` (`id`, `name`, `sub`, `des`, `link`, `date`, `page`) VALUES
-(1, 'Newsletter', 'Download our March newsletter', 'This is our first newsletter..............', '#', '2017-03-22 16:02:45', 'makina');
+(1, 'Newsletter', 'Download our March newsletter', 'This is our first newsletter..............', '#', '2017-03-22 16:02:45', 'makina'),
+(2, 'Article about bio gas', 'Download this article and share', 'This article was written by .....', '#', '2017-03-22 16:02:45', 'makina'),
+(3, 'Newsletter', 'Download our March newsletter', 'This is our first newsletter..............', '#', '2017-03-22 16:02:45', 'saba'),
+(4, 'Article about bio gas', 'Download this article and share', 'This article was written by .....', '#', '2017-03-22 16:02:45', 'sara'),
+(5, 'Newsletter', 'Download our March newsletter', 'This is our first newsletter..............', '#', '2017-03-22 16:02:45', 'lindi');
 
 -- --------------------------------------------------------
 
@@ -274,7 +346,10 @@ CREATE TABLE `events` (
 
 INSERT INTO `events` (`id`, `name`, `venue`, `date`, `time`, `description`, `status`, `page`) VALUES
 (1, 'Facebook Live', 'Facebook', '02/03/2017', '12:45 pm', 'Facebook Event will be officiated by His excellency the ...............', 'Cancelled', 'makina'),
-(2, 'Facebook Live', 'Facebook', '02/03/2017', '12:45 pm', 'Facebook Event will be officiated by His excellency the ...............', 'Cancelled', 'makina');
+(2, 'Facebook Live', 'Facebook', '02/03/2017', '12:45 pm', 'Facebook Event will be officiated by His excellency the ...............', 'Cancelled', 'makina'),
+(3, 'Facebook Live', 'Facebook', '02/03/2017', '12:45 pm', 'Facebook Event will be officiated by His excellency the ...............', 'Cancelled', 'sara'),
+(4, 'Facebook Live', 'Facebook', '02/03/2017', '12:45 pm', 'Facebook Event will be officiated by His excellency the ...............', 'Cancelled', 'saba'),
+(5, 'Facebook Live', 'Facebook', '02/03/2017', '12:45 pm', 'Facebook Event will be officiated by His excellency the ...............', 'Cancelled', 'lindi');
 
 -- --------------------------------------------------------
 
@@ -342,7 +417,7 @@ CREATE TABLE `hlocation` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
   `linfo` varchar(200) NOT NULL,
-  `contact` varchar(200) NOT NULL,
+  `description` varchar(200) NOT NULL,
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -350,11 +425,11 @@ CREATE TABLE `hlocation` (
 -- Dumping data for table `hlocation`
 --
 
-INSERT INTO `hlocation` (`id`, `name`, `linfo`, `contact`, `email`) VALUES
-(1, 'Sarangombe voice centere', ' near Ghetto sana', '+254712345678', 'info@wangara.com'),
-(2, 'Makina Voice centres', ' near Ghetto primary school', '+254712345678', 'INFO@WHO.WHAT'),
-(3, 'Laini Saba Voice centres', ' near Ghetto primary school', '+254712345678', 'INFO@WHO.WHAT'),
-(4, 'Lindi  Voice centre', ' near Ghetto primary school', '+254712345678', 'INFO@WHO.WHAT');
+INSERT INTO `hlocation` (`id`, `name`, `linfo`, `description`, `email`) VALUES
+(1, 'Sarangombe voice centere', 'TOSHA I', 'Gastukera', 'info@wangara.com'),
+(2, 'Makina Voice centres', 'Stara bio centre', 'Kajiado', 'INFO@WHO.WHAT'),
+(3, 'Laini Saba Voice centres', ' Soweto Highrise Bio centre', 'Laini saba', 'INFO@WHO.WHAT'),
+(4, 'Lindi  Voice centre', 'Lindi Usafi', 'Lindi Usafi', 'INFO@WHO.WHAT');
 
 -- --------------------------------------------------------
 
@@ -406,7 +481,7 @@ CREATE TABLE `home` (
 --
 
 INSERT INTO `home` (`id`, `logo`, `title`, `info`, `remo`) VALUES
-(1, 'uploads/trust.jpg', 'Project Introduction.', 'There is a gap in gender representation among the people of Kibera in regards to having the womenâ€™s voices heard on issues involving their community and the society they live in. This project, Womenâ€™s Voices, seeks to capture womenâ€™s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. ""', ' To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the communityâ€™s thoughts into action. The womenâ€™s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Womenâ€™s Voices will be run through four of Kiberaâ€™s bio-sanitation facilities since they are already a focal point for men and women in the community.');
+(1, 'uploads/main.jpeg', 'Project Introduction.', 'There is a gap in gender representation among the people of Kibera in regards to having the womenâ€™s voices heard on issues involving their community and the society they live in. This project, Womenâ€™s Voices, seeks to capture womenâ€™s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. ""', ' To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the communityâ€™s thoughts into action. The womenâ€™s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Womenâ€™s Voices will be run through four of Kiberaâ€™s bio-sanitation facilities since they are already a focal point for men and women in the community.');
 
 -- --------------------------------------------------------
 
@@ -897,7 +972,10 @@ CREATE TABLE `plans_county` (
 --
 
 INSERT INTO `plans_county` (`id`, `type`, `period`, `location`, `budget`, `page`) VALUES
-(1, 'Construction of classroom', '2 months', 'Umande', '20,524,888', 'makina');
+(1, 'Construction of classroom', '2 months', 'Umande', '20,524,888', 'makina'),
+(2, 'Construction of classroom', '2 months', 'Umande', '20,524,888', 'sara'),
+(3, 'Construction of classroom', '2 months', 'Umande', '20,524,888', 'saba'),
+(4, 'Construction of classroom', '2 months', 'Umande', '20,524,888', 'lindi');
 
 -- --------------------------------------------------------
 
@@ -917,7 +995,10 @@ CREATE TABLE `plan_comm` (
 --
 
 INSERT INTO `plan_comm` (`id`, `prior`, `description`, `page`) VALUES
-(1, 'Bio gas', 'Provide bio gas to 23345 households', 'makina');
+(1, 'Bio gas', 'Provide bio gas to 23345 households', 'makina'),
+(2, 'Bio gas', 'Provide bio gas to 23345 households', 'saba'),
+(3, 'Bio gas', 'Provide bio gas to 23345 households', 'sara'),
+(4, 'Bio gas', 'Provide bio gas to 23345 households', 'lindi');
 
 -- --------------------------------------------------------
 
@@ -1006,6 +1087,7 @@ CREATE TABLE `profiles` (
   `age` text NOT NULL,
   `image` text NOT NULL,
   `page` text NOT NULL,
+  `leader` tinyint(1) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -1013,9 +1095,31 @@ CREATE TABLE `profiles` (
 -- Dumping data for table `profiles`
 --
 
-INSERT INTO `profiles` (`id`, `name`, `education`, `designation`, `location`, `bio`, `hobby4`, `hobby3`, `hobby2`, `hobby1`, `skill4`, `skill3`, `skill2`, `skill1`, `age`, `image`, `page`, `date`) VALUES
-(1, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27 years', '1.jpg', 'makina', '2014-01-23 02:53:13'),
-(15, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27 years', '2.jpg', 'makina', '2014-01-23 02:53:13');
+INSERT INTO `profiles` (`id`, `name`, `education`, `designation`, `location`, `bio`, `hobby4`, `hobby3`, `hobby2`, `hobby1`, `skill4`, `skill3`, `skill2`, `skill1`, `age`, `image`, `page`, `leader`, `date`) VALUES
+(1, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'makina', 1, '2014-01-23 02:53:13'),
+(15, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'makina', 2, '2014-01-23 02:53:13'),
+(21, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'makina', 5, '2014-01-23 02:53:13'),
+(22, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'makina', 6, '2014-01-23 02:53:13'),
+(20, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'makina', 4, '2014-01-23 02:53:13'),
+(19, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'makina', 3, '2014-01-23 02:53:13'),
+(23, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'lindi', 1, '2014-01-23 02:53:13'),
+(24, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'lindi', 2, '2014-01-23 02:53:13'),
+(25, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'lindi', 3, '2014-01-23 02:53:13'),
+(26, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'lindi', 4, '2014-01-23 02:53:13'),
+(27, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'lindi', 5, '2014-01-23 02:53:13'),
+(28, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'lindi', 6, '2014-01-23 02:53:13'),
+(29, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'sara', 1, '2014-01-23 02:53:13'),
+(30, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'sara', 2, '2014-01-23 02:53:13'),
+(31, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'sara', 3, '2014-01-23 02:53:13'),
+(32, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'sara', 4, '2014-01-23 02:53:13'),
+(33, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'sara', 5, '2014-01-23 02:53:13'),
+(34, 'John Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'sara', 6, '2014-01-23 02:53:13'),
+(35, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'saba', 1, '2014-01-23 02:53:13'),
+(36, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'saba', 2, '2014-01-23 02:53:13'),
+(37, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'saba', 3, '2014-01-23 02:53:13'),
+(38, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'saba', 4, '2014-01-23 02:53:13'),
+(39, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'saba', 5, '2014-01-23 02:53:13'),
+(40, 'Jane Doe', 'B.S. in Computer Science from the University of Tennessee at Knoxville', 'Ward Leader', 'Makina, Kibera', 'I am an outspoken bla bla bla', 'Swimming', 'Driving', 'Sky Diving', 'camping', 'programming', 'Cooking', 'Project management', 'Crowd sourcing', '27', '../media/pp.jpg', 'saba', 6, '2014-01-23 02:53:13');
 
 -- --------------------------------------------------------
 
@@ -1039,7 +1143,10 @@ CREATE TABLE `profile_tbl` (
 --
 
 INSERT INTO `profile_tbl` (`id`, `area`, `population`, `village`, `fund`, `mca`, `admin`, `page`) VALUES
-(1, '2,236', '55,000', '7', '2,222,333', 'Benazir Omotto', 'Omotto Benazir ', 'makina');
+(1, '2,236', '55,000', '7', '2,222,333', 'Benazir Omotto', 'Omotto Benazir ', 'makina'),
+(2, '2,236', '55,000', '7', '2,222,333', 'Benazir Omotto', 'Omotto Benazir ', 'lindi'),
+(3, '2,236', '55,000', '7', '2,222,333', 'Benazir Omotto', 'Omotto Benazir ', 'sara'),
+(4, '2,236', '55,000', '7', '2,222,333', 'Benazir Omotto', 'Omotto Benazir ', 'saba');
 
 -- --------------------------------------------------------
 
@@ -1066,9 +1173,18 @@ CREATE TABLE `proj_status` (
 --
 
 INSERT INTO `proj_status` (`id`, `water`, `health`, `education`, `sanitation`, `waste`, `drain`, `energy`, `road`, `page`, `body`) VALUES
-(1, '50', '60', '70', '80', '20', '45', '55', '40', 'makina', 'cbo'),
+(1, '50', '40', '20', '60', '20', '45', '55', '10', 'makina', 'cbo'),
 (2, '50', '60', '70', '80', '20', '45', '55', '40', 'makina', 'county'),
-(3, '50', '60', '70', '80', '20', '45', '55', '40', 'makina', 'ngo');
+(3, '50', '60', '70', '80', '20', '45', '55', '40', 'makina', 'ngo'),
+(4, '50', '60', '70', '80', '20', '45', '55', '40', 'sara', 'cbo'),
+(5, '50', '60', '70', '80', '20', '45', '55', '40', 'sara', 'county'),
+(6, '50', '60', '70', '80', '20', '45', '55', '40', 'sara', 'ngo'),
+(7, '50', '60', '70', '80', '20', '45', '55', '40', 'lindi', 'cbo'),
+(8, '50', '60', '70', '80', '20', '45', '55', '40', 'lindi', 'county'),
+(9, '50', '60', '70', '80', '20', '45', '55', '40', 'lindi', 'ngo'),
+(10, '50', '60', '70', '80', '20', '45', '55', '40', 'laini', 'cbo'),
+(11, '50', '60', '70', '80', '20', '45', '55', '40', 'laini', 'county'),
+(12, '60', '50', '70', '90', '20', '20', '10', '60', 'laini', 'ngo');
 
 -- --------------------------------------------------------
 
@@ -1123,6 +1239,29 @@ INSERT INTO `quotes` (`id`, `title`, `cate`, `neno`, `who`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `resgraph`
+--
+
+CREATE TABLE `resgraph` (
+  `id` int(11) NOT NULL,
+  `sara` text NOT NULL,
+  `makina` text NOT NULL,
+  `lindi` text NOT NULL,
+  `saba` text NOT NULL,
+  `type` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `resgraph`
+--
+
+INSERT INTO `resgraph` (`id`, `sara`, `makina`, `lindi`, `saba`, `type`) VALUES
+(1, '10', '12', '5', '9', 'p'),
+(2, '9', '10', '9', '6', 'o');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `resource`
 --
 
@@ -1135,15 +1274,19 @@ CREATE TABLE `resource` (
   `waste` text NOT NULL,
   `drain` text NOT NULL,
   `energy` text NOT NULL,
-  `road` text NOT NULL
+  `road` text NOT NULL,
+  `page` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `resource`
 --
 
-INSERT INTO `resource` (`id`, `water`, `health`, `edu`, `san`, `waste`, `drain`, `energy`, `road`) VALUES
-(1, '30', '50', '40', '60', '80', '40', '20', '40');
+INSERT INTO `resource` (`id`, `water`, `health`, `edu`, `san`, `waste`, `drain`, `energy`, `road`, `page`) VALUES
+(1, '50', '30', '60', '50', '44', '40', '20', '40', 'makina'),
+(2, '30', '50', '40', '60', '80', '40', '20', '40', 'lindi'),
+(3, '50', '20', '70', '20', '30', '10', '20', '30', 'sara'),
+(4, '40', '60', '40', '70', '20', '10', '20', '60', 'laini');
 
 -- --------------------------------------------------------
 
@@ -1363,7 +1506,34 @@ CREATE TABLE `social_audit` (
 INSERT INTO `social_audit` (`id`, `name`, `stage`, `stake`, `finding`, `page`) VALUES
 (1, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'makina'),
 (2, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'makina'),
-(3, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'makina');
+(3, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'makina'),
+(4, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'sara'),
+(5, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'lindi'),
+(6, 'Bio Gas', 'Final stage', 'USAID', 'You tell me', 'saba');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stories`
+--
+
+CREATE TABLE `stories` (
+  `id` int(11) NOT NULL,
+  `img` text NOT NULL,
+  `head` text NOT NULL,
+  `description` text NOT NULL,
+  `link` text NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stories`
+--
+
+INSERT INTO `stories` (`id`, `img`, `head`, `description`, `link`, `date`) VALUES
+(1, 'dist/img/photo1.png', 'First Women''s Voices Champions Meeting', 'Today Umande held the first of many meetings for the Women''s Voices project champions. The 20 women champions met with some of the Umande staff at the Harlequins Suites Hotel...', 'http://umandetrust.blogspot.co.ke/2016/11/today-umande-held-first-of-many.html', '0000-00-00 00:00:00'),
+(2, 'dist/img/photo1.png', 'Women''s Voices ICT Choices', 'Umande Trust is in the process of launching a new project that aims to increase the representation of Women''s voices when making decisions about their own communities, specifically within Kibera...', 'http://umandetrust.blogspot.co.ke/2016/11/womens-voices-ict-choices.html', '0000-00-00 00:00:00'),
+(3, 'dist/img/photo1.png', 'Global Handwashing Day 2016', 'Yesterday, October 15th, schools and organizations in various countries around the world celebrated Global Handwashing Day...', 'http://umandetrust.blogspot.co.ke/2016/10/global-handwashing-day-2016.html', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1514,6 +1684,45 @@ INSERT INTO `user_log` (`user_log_id`, `username`, `login_date`, `logout_date`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ward`
+--
+
+CREATE TABLE `ward` (
+  `id` int(11) NOT NULL,
+  `img` text NOT NULL,
+  `brief` text NOT NULL,
+  `info` text NOT NULL,
+  `location` text NOT NULL,
+  `funding` text NOT NULL,
+  `obj1` text NOT NULL,
+  `obj2` text NOT NULL,
+  `obj3` text NOT NULL,
+  `obj4` text NOT NULL,
+  `act1` text NOT NULL,
+  `act2` text NOT NULL,
+  `act3` text NOT NULL,
+  `act4` text NOT NULL,
+  `ach1` text NOT NULL,
+  `ach2` text NOT NULL,
+  `ach3` text NOT NULL,
+  `ach4` text NOT NULL,
+  `map` text NOT NULL,
+  `page` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ward`
+--
+
+INSERT INTO `ward` (`id`, `img`, `brief`, `info`, `location`, `funding`, `obj1`, `obj2`, `obj3`, `obj4`, `act1`, `act2`, `act3`, `act4`, `ach1`, `ach2`, `ach3`, `ach4`, `map`, `page`) VALUES
+(1, '../media/Star.JPG', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the community''s thoughts into action. The women''s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Women''s Voices will be run through four of Kibera''s bio-sanitation facilities since they are already a focal point for men and women in the community.', 'This centre was started in 2014 to cater for ...........', 'Makina ward, Stara', 'Unep', 'Objective', 'Objective', 'Objective', 'Objective', 'Activity', 'Activity', 'Activity', 'Activity', 'Achievement', 'Achievement', 'Achievement', 'Achievement', 'https://www.google.com/maps/d/embed?mid=1P16zI5wBQLpLOjeZ9lpFCWnUYHM', 'makina'),
+(2, '../media/Star.JPG', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the community''s thoughts into action. The women''s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Women''s Voices will be run through four of Kibera''s bio-sanitation facilities since they are already a focal point for men and women in the community.', 'This centre was started in 2014 to cater for ...........', 'Makina ward, Stara', 'Unep', 'Objective', 'Objective', 'Objective', 'Objective', 'Activity', 'Activity', 'Activity', 'Activity', 'Achievement', 'Achievement', 'Achievement', 'Achievement', 'https://www.google.com/maps/d/embed?mid=1P16zI5wBQLpLOjeZ9lpFCWnUYHM', 'sara'),
+(3, '../media/Star.JPG', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the community''s thoughts into action. The women''s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Women''s Voices will be run through four of Kibera''s bio-sanitation facilities since they are already a focal point for men and women in the community.', 'This centre was started in 2014 to cater for ...........', 'Makina ward, Stara', 'Unep', 'Objective', 'Objective', 'Objective', 'Objective', 'Activity', 'Activity', 'Activity', 'Activity', 'Achievement', 'Achievement', 'Achievement', 'Achievement', 'https://www.google.com/maps/d/embed?mid=1P16zI5wBQLpLOjeZ9lpFCWnUYHM', 'saba'),
+(4, '../media/Star.JPG', 'There is a gap in gender representation among the people of Kibera in regards to having the women''s voices heard on issues involving their community and the society they live in. This project, Women''s Voices, seeks to capture women''s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the community''s thoughts into action. The women''s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Women''s Voices will be run through four of Kibera''s bio-sanitation facilities since they are already a focal point for men and women in the community.', 'This centre was started in 2014 to cater for ...........', 'Makina ward, Stara', 'Unep', 'Objective', 'Objective', 'Objective', 'Objective', 'Activity', 'Activity', 'Activity', 'Activity', 'Achievement', 'Achievement', 'Achievement', 'Achievement', 'https://www.google.com/maps/d/embed?mid=1P16zI5wBQLpLOjeZ9lpFCWnUYHM', 'lindi');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ward_rep`
 --
 
@@ -1574,9 +1783,27 @@ ALTER TABLE `demo_data`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `dev_proj`
+-- Indexes for table `dev_lindi`
 --
-ALTER TABLE `dev_proj`
+ALTER TABLE `dev_lindi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dev_makina`
+--
+ALTER TABLE `dev_makina`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dev_saba`
+--
+ALTER TABLE `dev_saba`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dev_sara`
+--
+ALTER TABLE `dev_sara`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1796,6 +2023,12 @@ ALTER TABLE `quotes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `resgraph`
+--
+ALTER TABLE `resgraph`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `resource`
 --
 ALTER TABLE `resource`
@@ -1856,6 +2089,12 @@ ALTER TABLE `social_audit`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `stories`
+--
+ALTER TABLE `stories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `testimony`
 --
 ALTER TABLE `testimony`
@@ -1872,6 +2111,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `user_log`
   ADD PRIMARY KEY (`user_log_id`);
+
+--
+-- Indexes for table `ward`
+--
+ALTER TABLE `ward`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `ward_rep`
@@ -1919,20 +2164,35 @@ ALTER TABLE `contact`
 ALTER TABLE `demo_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `dev_proj`
+-- AUTO_INCREMENT for table `dev_lindi`
 --
-ALTER TABLE `dev_proj`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `dev_lindi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `dev_makina`
+--
+ALTER TABLE `dev_makina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `dev_saba`
+--
+ALTER TABLE `dev_saba`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `dev_sara`
+--
+ALTER TABLE `dev_sara`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `downloads`
 --
 ALTER TABLE `downloads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `hevents`
 --
@@ -2057,12 +2317,12 @@ ALTER TABLE `planned`
 -- AUTO_INCREMENT for table `plans_county`
 --
 ALTER TABLE `plans_county`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `plan_comm`
 --
 ALTER TABLE `plan_comm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `prioinfo`
 --
@@ -2082,17 +2342,17 @@ ALTER TABLE `prior_county`
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT for table `profile_tbl`
 --
 ALTER TABLE `profile_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `proj_status`
 --
 ALTER TABLE `proj_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `ptop`
 --
@@ -2104,10 +2364,15 @@ ALTER TABLE `ptop`
 ALTER TABLE `quotes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `resgraph`
+--
+ALTER TABLE `resgraph`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `resource`
 --
 ALTER TABLE `resource`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `sabacurrent`
 --
@@ -2152,6 +2417,11 @@ ALTER TABLE `social`
 -- AUTO_INCREMENT for table `social_audit`
 --
 ALTER TABLE `social_audit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `stories`
+--
+ALTER TABLE `stories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `testimony`
@@ -2168,6 +2438,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `user_log`
   MODIFY `user_log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+--
+-- AUTO_INCREMENT for table `ward`
+--
+ALTER TABLE `ward`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `ward_rep`
 --
