@@ -20,7 +20,7 @@
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="../index.php"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="makina.php"><i class="fa  fa-sticky-note"></i> Makina</a></li>
                 <li class="active">Events</li>
             </ol>
@@ -142,62 +142,7 @@
             </div>
 
             <div class="row">
-                <h2 class="page-header text-center"><dt>OUR PARTNERS</dt></h2>
-                <div class="box-default">
-                    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 980px; height: 100px; overflow: hidden; visibility: hidden;">
-                        <!-- Loading Screen -->
-                        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-                            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-                            <div style="position:absolute;display:block;background:url('scroller/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-                        </div>
-                        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 980px; height: 100px; overflow: hidden;">
-                            <div>
-                                <img data-u="image" src="../scroller/img/13.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/14.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/12.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/11.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/10.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/9.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/8.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/7.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/6.PNG" />
-                            </div>
-                            <a data-u="any" href="http://www.jssor.com" style="display:none">Our Partners</a>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/5.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/4.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/3.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/1.PNG" />
-                            </div>
-                            <div style="display: none;">
-                                <img data-u="image" src="../scroller/img/2.PNG" />
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                <?php include('partners.php'); ?>
             </div>
 
             <!-- /.row -->
@@ -206,89 +151,10 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Developed by <a href="#">Mitchsofts</a>
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">Umande Trust</a>.</strong> All rights reserved.
-    </footer>
+    <?php include('../footer.php'); ?>
 
     <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <!-- Home tab content -->
-            <div class="tab-pane" id="control-sidebar-home-tab">
-                <h3 class="control-sidebar-heading">Recent Activity</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                                <p>Will be 23 on April 24th</p>
-                            </div>
-                        </a>
-                    </li>
-
-
-
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
-
-                <!-- /.control-sidebar-menu -->
-
-            </div>
-            <!-- /.tab-pane -->
-
-            <!-- Settings tab content -->
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-                <form method="post">
-                    <h3 class="control-sidebar-heading">General Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Report panel usage
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Some information about this general settings option
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-
-                    <!-- /.form-group -->
-
-
-                    <!-- /.form-group -->
-
-
-
-
-                    <!-- /.form-group -->
-
-
-                    <!-- /.form-group -->
-
-
-                    <!-- /.form-group -->
-                </form>
-            </div>
-            <!-- /.tab-pane -->
-        </div>
-    </aside>
+   
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->

@@ -35,8 +35,8 @@
                         <div class="info-box-content">
 
 
-                            <span class="info-box-number"><strong><a href="project/makina.php" class="uppercase">Projects</a></strong></span>
-                            <span class="info-box-number" style="font-size: x-small;"><a href="project/makina.php" class="uppercase">Complete | Current </a></span>
+                            <span class="info-box-number"><strong><a href="project/sara.php" class="uppercase">Projects</a></strong></span>
+                            <span class="info-box-number" style="font-size: x-small;"><a href="project/sara.php" class="uppercase">Complete | Current </a></span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -48,8 +48,8 @@
                         <span class="info-box-icon bg-aqua"><i class="fa fa-calendar-check-o"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-number" style="font-size: large"><strong><a href="event/makina.php" class="uppercase">Events & Activities</a></strong></span>
-                            <span class="info-box-number" style="font-size: x-small;"><a href="event/makina.php" class="uppercase">Upcoming | Ongoing | Cancelled</a></span>
+                            <span class="info-box-number" style="font-size: large"><strong><a href="event/sara.php" class="uppercase">Events & Activities</a></strong></span>
+                            <span class="info-box-number" style="font-size: x-small;"><a href="event/sara.php" class="uppercase">Upcoming | Ongoing | Cancelled</a></span>
 
                         </div>
                         <!-- /.info-box-content -->
@@ -68,8 +68,8 @@
 
                         <div class="info-box-content">
 
-                            <span class="info-box-number" style="font-size: large"><strong> <a href="plans/makina.php" class="uppercase">Plans & Budgets</a></strong></span>
-                            <span class="info-box-number" style="font-size: x-small;"><a href="plans/makina.php" class="uppercase">Community priorities | County priorities</a></span>
+                            <span class="info-box-number" style="font-size: large"><strong> <a href="plans/sara.php" class="uppercase">Plans & Budgets</a></strong></span>
+                            <span class="info-box-number" style="font-size: x-small;"><a href="plans/sara.php" class="uppercase">Community priorities | County priorities</a></span>
                         </div>
 
                         <!-- /.info-box-content -->
@@ -106,7 +106,7 @@
                             <div class="box-tools pull-right">
                                 <?php
 
-                                $query = $conn->query("select * from profiles where page='makina'") or die(mysql_error());
+                                $query = $conn->query("select * from profiles where page='sara'") or die(mysql_error());
                                 $count = $query->rowcount();
 
 
@@ -124,14 +124,14 @@
 
                                 <?php
 
-                                $query = $conn->query("select * from profiles where page='makina'") or die(mysql_error());
+                                $query = $conn->query("select * from profiles where page='sara'") or die(mysql_error());
                                 while ($row = $query->fetch()) {
 
 
                                     ?>
                                     <li>
-                                        <img src="makina/<?php echo $row['image']; ?>" alt="User Image">
-                                        <a class="users-list-name" href="profile/makina.php"><?php echo $row['name']; ?></a>
+                                        <img src="sara/<?php echo $row['image']; ?>" alt="User Image">
+                                        <a class="users-list-name" href="profile/sara.php"><?php echo $row['name']; ?></a>
                                         <span class="users-list-date"><?php echo $row['age']; ?></span>
                                     </li>
                                 <?php }?>
@@ -140,7 +140,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/makina.php" class="uppercase">View All Champions</a>
+                            <a href="profile/sara.php" class="uppercase">View All Champions</a>
                         </div>
                         <!-- /.box-footer -->
                     </div>
@@ -172,7 +172,7 @@
                                 </tr>
                                 <?php
 
-                                $query = $conn->query("select * from profile_tbl where page='makina'") or die(mysql_error());
+                                $query = $conn->query("select * from profile_tbl where page='sara'") or die(mysql_error());
                                 while ($row = $query->fetch()) {
 
 
@@ -220,7 +220,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/makina.php" class="uppercase">Read More</a>
+                            <a href="profile/sara.php" class="uppercase">Read More</a>
                         </div>
                         <!-- /.box-footer-->
                     </div>
@@ -259,7 +259,7 @@
 
 
 
-                            $query = $conn->query("select * from magallery") or die(mysql_error());
+                            $query = $conn->query("select * from sagallery") or die(mysql_error());
                             $count = $query->rowcount();
                             $slides='';
                             $Indicators='';
@@ -275,7 +275,7 @@
                                 {
                                     $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
                                     $slides .= '<div class="item active">
-            <img src="makina/'.$image.'" alt="'.$title.'" />
+            <img src="sara/'.$image.'" alt="'.$title.'" />
             <div class="carousel-caption">
               <h3>'.$title.'</h3>
               <p>'.$desc.'.</p>
@@ -287,7 +287,7 @@
                                 {
                                     $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
                                     $slides .= '<div class="item">
-            <img src="makina/'.$image.'" alt="'.$title.'" />
+            <img src="sara/'.$image.'" alt="'.$title.'" />
             <div class="carousel-caption">
               <h3>'.$title.'</h3>
               <p>'.$desc.'.</p>
@@ -319,7 +319,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer text-center">
-                            <a href="profile/makina.php" class="uppercase">View More</a>
+                            <a href="profile/sara.php" class="uppercase">View More</a>
                         </div>
                     </div>
                     <!-- /.box -->

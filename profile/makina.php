@@ -19,7 +19,7 @@
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="../index.php"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="makina.php"><i class="fa  fa-sticky-note"></i> Makina</a></li>
                 <li class="active">Women Profiles
                 </li>
@@ -35,11 +35,16 @@
                     <!-- Profile Image -->
                     <div class="box box-primary">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="../dist/img/pp.jpg" alt="User profile picture">
+                            <?php
+                            $query = $conn->query("select * from profiles where page='makina' and leader='1'");
+                            while ($row = $query->fetch()) {
 
-                            <h3 class="profile-username text-center">Benazir Omotto</h3>
+                            ?>
+                            <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                            <p class="text-muted text-center">Ward Leader</p>
+                            <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+
+                            <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                             <div class="box box-primary">
                                 <div class="box-header with-border">
                                     <h3 class="box-title"><dt>About Me</dt></h3>
@@ -49,48 +54,49 @@
                                     <strong><i class="fa fa-comment margin-r-1"></i> Bio</strong>
 
                                     <p class="text-muted">
-                                        I am an outspoken bla bla bla
+                                        <?php echo $row['bio']; ?>
                                     </p>
 
                                     <hr>
                                     <strong><i class="fa fa-university margin-r-1"></i> Education</strong>
 
                                     <p class="text-muted">
-                                        B.S. in Computer Science from the University of Tennessee at Knoxville
+                                        <?php echo $row['education']; ?>
                                     </p>
 
                                     <hr>
 
                                     <strong><i class="fa fa-circle-o-notch margin-r-5"></i> Age</strong>
 
-                                    <span class="label label-danger">21</span>
+                                    <span class="label label-danger"><?php echo $row['age']; ?> Years</span>
 
                                     <hr>
 
 
                                     <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-                                    <p class="text-muted">Makina, Kibera</p>
+                                    <p class="text-muted"><?php echo $row['location']; ?></p>
 
                                     <hr>
                                     <strong><i class="fa fa-wrench margin-r-5"></i> Skills</strong><br>
                                     <p>
-                                        <span class="label label-danger">programming</span>
-                                        <span class="label label-success">Cooking</span>
-                                        <span class="label label-info">Project management</span>
+                                        <span class="label label-danger"><?php echo $row['skill1']; ?></span>
+                                        <span class="label label-success"><?php echo $row['skill2']; ?></span>
+                                        <span class="label label-info"><?php echo $row['skill3']; ?></span>
+                                        <span class="label label-warning"><?php echo $row['skill4']; ?></span>
 
                                     </p>
                                     <strong><i class="fa fa-pencil margin-r-5"></i> Hobbies</strong>
 
                                     <p>
-                                        <span class="label label-danger">Swimming</span>
-                                        <span class="label label-success">Cooking</span>
-                                        <span class="label label-info">Travelling</span>
-                                        <span class="label label-warning">Driving</span>
-                                        <span class="label label-primary">Camping</span>
+                                        <span class="label label-danger"><?php echo $row['hobby1']; ?></span>
+                                        <span class="label label-success"><?php echo $row['hobby2']; ?></span>
+                                        <span class="label label-info"><?php echo $row['hobby3']; ?></span>
+                                        <span class="label label-warning"><?php echo $row['hobby4']; ?></span>
+
 
                                     </p>
-
+                                    <?php } ?>
                                 </div>
                                 <!-- /.box-body -->
                             </div>
@@ -127,14 +133,20 @@
                                     <!-- /.box-header -->
                                     <div class="box-body">
                                         <div class="col-sm-3">
-                                            <img class="img-responsive" src="../dist/img/Star.JPG" alt="Photo">
+                                            <?php
+                                            $query = $conn->query("select * from ward where page='makina'");
+                                            while ($row = $query->fetch()) {
+
+                                            ?>
+                                            <img class="img-responsive" src="<?php echo $row['img']; ?>" alt="Photo">
                                         </div>
                                         <div class="col-sm-9">
                                             <dl>
 
-                                                <dd>There is a gap in gender representation among the people of Kibera in regards to having the women’s voices heard on issues involving their community and the society they live in.  This project, Women’s Voices, seeks to capture women’s views and ideas about county development, and make sure, these ideas are shared with the relevant authorities. It looks to address four main themes of governance, transparency, accountability, and anti-corruption. To do this, we plan to train women in the community to be representatives of the rest of the community, called women voices champions. These women will be in charge of collection and analyzing data from and about the community as well as other administrative work. The women will also be in charge of updating a dashboard that connects the project to the community and the rest of the world through social media, and updating the dashboard with real time information about what is happening in the community. The information they work to collect and present will be shared with the relevant county officials, so they can put the community’s thoughts into action. The women’s voices champions will help to give voice to other female members of the community whose ideas and opinions may not have been able to be shared without this project. Women’s Voices will be run through four of Kibera’s bio-sanitation facilities since they are already a focal point for men and women in the community. </dd>
+                                                <dd><?php echo $row['brief']; ?> </dd>
 
                                             </dl>
+                                            <?php } ?>
                                         </div>
 
                                     </div>
@@ -148,48 +160,68 @@
                                     <div class="col-md-6">
                                         <div class="box box-primary">
                                             <div class="box-body box-profile">
-                                                <img class="profile-user-img img-responsive img-circle" src="../dist/img/pp.jpg" alt="User profile picture">
+                                                <?php
+                                                $query = $conn->query("select * from profiles where page='makina' and leader='2'");
+                                                while ($row = $query->fetch()) {
 
-                                                <h3 class="profile-username text-center">Benazir Omotto</h3>
+                                                ?>
+                                                <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                <p class="text-muted text-center">Woman champion</p>
+                                                <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+
+                                                <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                                 <div class="box box-primary">
                                                     <div class="box-header with-border">
-                                                        <h3 class="box-title">About Me</h3>
+                                                        <h3 class="box-title"><dt>About Me</dt></h3>
                                                     </div>
                                                     <!-- /.box-header -->
                                                     <div class="box-body">
+                                                        <strong><i class="fa fa-comment margin-r-1"></i> Bio</strong>
+
+                                                        <p class="text-muted">
+                                                            <?php echo $row['bio']; ?>
+                                                        </p>
+
+                                                        <hr>
                                                         <strong><i class="fa fa-university margin-r-1"></i> Education</strong>
 
                                                         <p class="text-muted">
-                                                            B.S. in Computer Science from the University of Tennessee at Knoxville
+                                                            <?php echo $row['education']; ?>
                                                         </p>
 
                                                         <hr>
 
+                                                        <strong><i class="fa fa-circle-o-notch margin-r-5"></i> Age</strong>
+
+                                                        <span class="label label-danger"><?php echo $row['age']; ?> Years</span>
+
+                                                        <hr>
+
+
                                                         <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-                                                        <p class="text-muted">Makina, Kibera</p>
+                                                        <p class="text-muted"><?php echo $row['location']; ?></p>
 
                                                         <hr>
                                                         <strong><i class="fa fa-wrench margin-r-5"></i> Skills</strong><br>
                                                         <p>
-                                                            <span class="label label-danger">programming</span>
-                                                            <span class="label label-success">Cooking</span>
-                                                            <span class="label label-info">Project management</span>
+                                                            <span class="label label-danger"><?php echo $row['skill1']; ?></span>
+                                                            <span class="label label-success"><?php echo $row['skill2']; ?></span>
+                                                            <span class="label label-info"><?php echo $row['skill3']; ?></span>
+                                                            <span class="label label-warning"><?php echo $row['skill4']; ?></span>
 
                                                         </p>
                                                         <strong><i class="fa fa-pencil margin-r-5"></i> Hobbies</strong>
 
                                                         <p>
-                                                            <span class="label label-danger">Swimming</span>
-                                                            <span class="label label-success">Cooking</span>
-                                                            <span class="label label-info">Travelling</span>
-                                                            <span class="label label-warning">Driving</span>
-                                                            <span class="label label-primary">Camping</span>
+                                                            <span class="label label-danger"><?php echo $row['hobby1']; ?></span>
+                                                            <span class="label label-success"><?php echo $row['hobby2']; ?></span>
+                                                            <span class="label label-info"><?php echo $row['hobby3']; ?></span>
+                                                            <span class="label label-warning"><?php echo $row['hobby4']; ?></span>
+
 
                                                         </p>
-
+                                                        <?php } ?>
                                                     </div>
                                                     <!-- /.box-body -->
                                                 </div>
@@ -199,56 +231,73 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="box box-primary">
-                                            <div class="box-body box-profile">
-                                                <img class="profile-user-img img-responsive img-circle" src="../dist/img/pp.jpg" alt="User profile picture">
+                                        <div class="box-body box-profile">
+                                            <?php
+                                            $query = $conn->query("select * from profiles where page='makina' and leader='3'");
+                                            while ($row = $query->fetch()) {
 
-                                                <h3 class="profile-username text-center">Benazir Omotto</h3>
+                                            ?>
+                                            <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                <p class="text-muted text-center">Woman champion</p>
-                                                <div class="box box-primary">
-                                                    <div class="box-header with-border">
-                                                        <h3 class="box-title">About Me</h3>
-                                                    </div>
-                                                    <!-- /.box-header -->
-                                                    <div class="box-body">
-                                                        <strong><i class="fa fa-university margin-r-1"></i> Education</strong>
+                                            <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
 
-                                                        <p class="text-muted">
-                                                            B.S. in Computer Science from the University of Tennessee at Knoxville
-                                                        </p>
-
-                                                        <hr>
-
-                                                        <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-
-                                                        <p class="text-muted">Makina, Kibera</p>
-
-                                                        <hr>
-                                                        <strong><i class="fa fa-wrench margin-r-5"></i> Skills</strong><br>
-                                                        <p>
-                                                            <span class="label label-danger">programming</span>
-                                                            <span class="label label-success">Cooking</span>
-                                                            <span class="label label-info">Project management</span>
-
-                                                        </p>
-                                                        <strong><i class="fa fa-pencil margin-r-5"></i> Hobbies</strong>
-
-                                                        <p>
-                                                            <span class="label label-danger">Swimming</span>
-                                                            <span class="label label-success">Cooking</span>
-                                                            <span class="label label-info">Travelling</span>
-                                                            <span class="label label-warning">Driving</span>
-                                                            <span class="label label-primary">Camping</span>
-
-                                                        </p>
-
-                                                    </div>
-                                                    <!-- /.box-body -->
+                                            <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
+                                            <div class="box box-primary">
+                                                <div class="box-header with-border">
+                                                    <h3 class="box-title"><dt>About Me</dt></h3>
                                                 </div>
+                                                <!-- /.box-header -->
+                                                <div class="box-body">
+                                                    <strong><i class="fa fa-comment margin-r-1"></i> Bio</strong>
 
+                                                    <p class="text-muted">
+                                                        <?php echo $row['bio']; ?>
+                                                    </p>
+
+                                                    <hr>
+                                                    <strong><i class="fa fa-university margin-r-1"></i> Education</strong>
+
+                                                    <p class="text-muted">
+                                                        <?php echo $row['education']; ?>
+                                                    </p>
+
+                                                    <hr>
+
+                                                    <strong><i class="fa fa-circle-o-notch margin-r-5"></i> Age</strong>
+
+                                                    <span class="label label-danger"><?php echo $row['age']; ?> Years</span>
+
+                                                    <hr>
+
+
+                                                    <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+
+                                                    <p class="text-muted"><?php echo $row['location']; ?></p>
+
+                                                    <hr>
+                                                    <strong><i class="fa fa-wrench margin-r-5"></i> Skills</strong><br>
+                                                    <p>
+                                                        <span class="label label-danger"><?php echo $row['skill1']; ?></span>
+                                                        <span class="label label-success"><?php echo $row['skill2']; ?></span>
+                                                        <span class="label label-info"><?php echo $row['skill3']; ?></span>
+                                                        <span class="label label-warning"><?php echo $row['skill4']; ?></span>
+
+                                                    </p>
+                                                    <strong><i class="fa fa-pencil margin-r-5"></i> Hobbies</strong>
+
+                                                    <p>
+                                                        <span class="label label-danger"><?php echo $row['hobby1']; ?></span>
+                                                        <span class="label label-success"><?php echo $row['hobby2']; ?></span>
+                                                        <span class="label label-info"><?php echo $row['hobby3']; ?></span>
+                                                        <span class="label label-warning"><?php echo $row['hobby4']; ?></span>
+
+
+                                                    </p>
+                                                    <?php } ?>
+                                                </div>
+                                                <!-- /.box-body -->
                                             </div>
-                                            <!-- /.box-body -->
+
                                         </div>
                                     </div>
 
@@ -257,48 +306,68 @@
                                     <div class="col-md-6">
                                         <div class="box box-primary">
                                             <div class="box-body box-profile">
-                                                <img class="profile-user-img img-responsive img-circle" src="../dist/img/pp.jpg" alt="User profile picture">
+                                                <?php
+                                                $query = $conn->query("select * from profiles where page='makina' and leader='4'");
+                                                while ($row = $query->fetch()) {
 
-                                                <h3 class="profile-username text-center">Benazir Omotto</h3>
+                                                ?>
+                                                <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                <p class="text-muted text-center">Woman champion</p>
+                                                <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+
+                                                <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                                 <div class="box box-primary">
                                                     <div class="box-header with-border">
-                                                        <h3 class="box-title">About Me</h3>
+                                                        <h3 class="box-title"><dt>About Me</dt></h3>
                                                     </div>
                                                     <!-- /.box-header -->
                                                     <div class="box-body">
+                                                        <strong><i class="fa fa-comment margin-r-1"></i> Bio</strong>
+
+                                                        <p class="text-muted">
+                                                            <?php echo $row['bio']; ?>
+                                                        </p>
+
+                                                        <hr>
                                                         <strong><i class="fa fa-university margin-r-1"></i> Education</strong>
 
                                                         <p class="text-muted">
-                                                            B.S. in Computer Science from the University of Tennessee at Knoxville
+                                                            <?php echo $row['education']; ?>
                                                         </p>
 
                                                         <hr>
 
+                                                        <strong><i class="fa fa-circle-o-notch margin-r-5"></i> Age</strong>
+
+                                                        <span class="label label-danger"><?php echo $row['age']; ?> Years</span>
+
+                                                        <hr>
+
+
                                                         <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-                                                        <p class="text-muted">Makina, Kibera</p>
+                                                        <p class="text-muted"><?php echo $row['location']; ?></p>
 
                                                         <hr>
                                                         <strong><i class="fa fa-wrench margin-r-5"></i> Skills</strong><br>
                                                         <p>
-                                                            <span class="label label-danger">programming</span>
-                                                            <span class="label label-success">Cooking</span>
-                                                            <span class="label label-info">Project management</span>
+                                                            <span class="label label-danger"><?php echo $row['skill1']; ?></span>
+                                                            <span class="label label-success"><?php echo $row['skill2']; ?></span>
+                                                            <span class="label label-info"><?php echo $row['skill3']; ?></span>
+                                                            <span class="label label-warning"><?php echo $row['skill4']; ?></span>
 
                                                         </p>
                                                         <strong><i class="fa fa-pencil margin-r-5"></i> Hobbies</strong>
 
                                                         <p>
-                                                            <span class="label label-danger">Swimming</span>
-                                                            <span class="label label-success">Cooking</span>
-                                                            <span class="label label-info">Travelling</span>
-                                                            <span class="label label-warning">Driving</span>
-                                                            <span class="label label-primary">Camping</span>
+                                                            <span class="label label-danger"><?php echo $row['hobby1']; ?></span>
+                                                            <span class="label label-success"><?php echo $row['hobby2']; ?></span>
+                                                            <span class="label label-info"><?php echo $row['hobby3']; ?></span>
+                                                            <span class="label label-warning"><?php echo $row['hobby4']; ?></span>
+
 
                                                         </p>
-
+                                                        <?php } ?>
                                                     </div>
                                                     <!-- /.box-body -->
                                                 </div>
@@ -310,48 +379,68 @@
                                     <div class="col-md-6">
                                         <div class="box box-primary">
                                             <div class="box-body box-profile">
-                                                <img class="profile-user-img img-responsive img-circle" src="../dist/img/pp.jpg" alt="User profile picture">
+                                                <?php
+                                                $query = $conn->query("select * from profiles where page='makina' and leader='5'");
+                                                while ($row = $query->fetch()) {
 
-                                                <h3 class="profile-username text-center">Benazir Omotto</h3>
+                                                ?>
+                                                <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                <p class="text-muted text-center">Woman champion</p>
+                                                <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+
+                                                <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                                 <div class="box box-primary">
                                                     <div class="box-header with-border">
-                                                        <h3 class="box-title">About Me</h3>
+                                                        <h3 class="box-title"><dt>About Me</dt></h3>
                                                     </div>
                                                     <!-- /.box-header -->
                                                     <div class="box-body">
+                                                        <strong><i class="fa fa-comment margin-r-1"></i> Bio</strong>
+
+                                                        <p class="text-muted">
+                                                            <?php echo $row['bio']; ?>
+                                                        </p>
+
+                                                        <hr>
                                                         <strong><i class="fa fa-university margin-r-1"></i> Education</strong>
 
-                                                        <p class="text-muted">MySQL - umande@localhost
-                                                            B.S. in Computer Science from the University of Tennessee at Knoxville
+                                                        <p class="text-muted">
+                                                            <?php echo $row['education']; ?>
                                                         </p>
 
                                                         <hr>
 
+                                                        <strong><i class="fa fa-circle-o-notch margin-r-5"></i> Age</strong>
+
+                                                        <span class="label label-danger"><?php echo $row['age']; ?> Years</span>
+
+                                                        <hr>
+
+
                                                         <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-                                                        <p class="text-muted">Makina, Kibera</p>
+                                                        <p class="text-muted"><?php echo $row['location']; ?></p>
 
                                                         <hr>
                                                         <strong><i class="fa fa-wrench margin-r-5"></i> Skills</strong><br>
                                                         <p>
-                                                            <span class="label label-danger">programming</span>
-                                                            <span class="label label-success">Cooking</span>
-                                                            <span class="label label-info">Project management</span>
+                                                            <span class="label label-danger"><?php echo $row['skill1']; ?></span>
+                                                            <span class="label label-success"><?php echo $row['skill2']; ?></span>
+                                                            <span class="label label-info"><?php echo $row['skill3']; ?></span>
+                                                            <span class="label label-warning"><?php echo $row['skill4']; ?></span>
 
                                                         </p>
                                                         <strong><i class="fa fa-pencil margin-r-5"></i> Hobbies</strong>
 
                                                         <p>
-                                                            <span class="label label-danger">Swimming</span>
-                                                            <span class="label label-success">Cooking</span>
-                                                            <span class="label label-info">Travelling</span>
-                                                            <span class="label label-warning">Driving</span>
-                                                            <span class="label label-primary">Camping</span>
+                                                            <span class="label label-danger"><?php echo $row['hobby1']; ?></span>
+                                                            <span class="label label-success"><?php echo $row['hobby2']; ?></span>
+                                                            <span class="label label-info"><?php echo $row['hobby3']; ?></span>
+                                                            <span class="label label-warning"><?php echo $row['hobby4']; ?></span>
+
 
                                                         </p>
-
+                                                        <?php } ?>
                                                     </div>
                                                     <!-- /.box-body -->
                                                 </div>
@@ -367,48 +456,68 @@
                                         <div class="col-md-6">
                                             <div class="box box-primary">
                                                 <div class="box-body box-profile">
-                                                    <img class="profile-user-img img-responsive img-circle" src="../dist/img/pp.jpg" alt="User profile picture">
+                                                    <?php
+                                                    $query = $conn->query("select * from profiles where page='makina' and leader='6'");
+                                                    while ($row = $query->fetch()) {
 
-                                                    <h3 class="profile-username text-center">Benazir Omotto</h3>
+                                                    ?>
+                                                    <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                    <p class="text-muted text-center">Woman champion</p>
+                                                    <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+
+                                                    <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                                     <div class="box box-primary">
                                                         <div class="box-header with-border">
-                                                            <h3 class="box-title">About Me</h3>
+                                                            <h3 class="box-title"><dt>About Me</dt></h3>
                                                         </div>
                                                         <!-- /.box-header -->
                                                         <div class="box-body">
+                                                            <strong><i class="fa fa-comment margin-r-1"></i> Bio</strong>
+
+                                                            <p class="text-muted">
+                                                                <?php echo $row['bio']; ?>
+                                                            </p>
+
+                                                            <hr>
                                                             <strong><i class="fa fa-university margin-r-1"></i> Education</strong>
 
-                                                            <p class="text-muted">MySQL - umande@localhost
-                                                                B.S. in Computer Science from the University of Tennessee at Knoxville
+                                                            <p class="text-muted">
+                                                                <?php echo $row['education']; ?>
                                                             </p>
 
                                                             <hr>
 
+                                                            <strong><i class="fa fa-circle-o-notch margin-r-5"></i> Age</strong>
+
+                                                            <span class="label label-danger"><?php echo $row['age']; ?> Years</span>
+
+                                                            <hr>
+
+
                                                             <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-                                                            <p class="text-muted">Makina, Kibera</p>
+                                                            <p class="text-muted"><?php echo $row['location']; ?></p>
 
                                                             <hr>
                                                             <strong><i class="fa fa-wrench margin-r-5"></i> Skills</strong><br>
                                                             <p>
-                                                                <span class="label label-danger">programming</span>
-                                                                <span class="label label-success">Cooking</span>
-                                                                <span class="label label-info">Project management</span>
+                                                                <span class="label label-danger"><?php echo $row['skill1']; ?></span>
+                                                                <span class="label label-success"><?php echo $row['skill2']; ?></span>
+                                                                <span class="label label-info"><?php echo $row['skill3']; ?></span>
+                                                                <span class="label label-warning"><?php echo $row['skill4']; ?></span>
 
                                                             </p>
                                                             <strong><i class="fa fa-pencil margin-r-5"></i> Hobbies</strong>
 
                                                             <p>
-                                                                <span class="label label-danger">Swimming</span>
-                                                                <span class="label label-success">Cooking</span>
-                                                                <span class="label label-info">Travelling</span>
-                                                                <span class="label label-warning">Driving</span>
-                                                                <span class="label label-primary">Camping</span>
+                                                                <span class="label label-danger"><?php echo $row['hobby1']; ?></span>
+                                                                <span class="label label-success"><?php echo $row['hobby2']; ?></span>
+                                                                <span class="label label-info"><?php echo $row['hobby3']; ?></span>
+                                                                <span class="label label-warning"><?php echo $row['hobby4']; ?></span>
+
 
                                                             </p>
-
+                                                            <?php } ?>
                                                         </div>
                                                         <!-- /.box-body -->
                                                     </div>
@@ -439,19 +548,29 @@
                                             <div class="col-sm-12">
                                                 <div class="row">
                                                     <div class="col-sm-6">
+                                                        <?php
+                                                        $query = $conn->query("select * from ward where page='makina'");
+                                                        while ($row = $query->fetch()) {
+
+                                                        ?>
                                                         <div class="box-header with-border">
                                                             <h3 class="box-title">Map to this centre</h3>
                                                         </div>
                                                         <div class="box-body">
-                                                            <iframe src="https://www.google.com/maps/d/embed?mid=1P16zI5wBQLpLOjeZ9lpFCWnUYHM" width="340" height="380"></iframe>
+                                                            <iframe src="<?php echo $row['map']; ?>" width="340" height="380"></iframe>
 
-
+                                                            <?php } ?>
                                                         </div>
                                                         <!-- /.box-body -->
 
                                                     </div>
                                                     <!-- /.col -->
                                                     <div class="col-sm-6">
+                                                        <?php
+                                                        $query = $conn->query("select * from ward where page='makina'");
+                                                        while ($row = $query->fetch()) {
+
+                                                        ?>
                                                         <div class="box-header with-border">
                                                             <h3 class="box-title">About this centre</h3>
                                                         </div>
@@ -460,55 +579,55 @@
                                                             <strong><i class="fa fa-book margin-r-5"></i> Background info</strong>
 
                                                             <p class="text-muted">
-                                                                This centre was started in 2014 to cater for ...........
+                                                                <?php echo $row['info']; ?>
                                                             </p>
 
                                                             <hr>
 
                                                             <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-                                                            <p class="text-muted">Makina ward, Stara</p>
+                                                            <p class="text-muted"><?php echo $row['location']; ?></p>
 
                                                             <hr>
                                                             <strong><i class="fa fa-money margin-r-5"></i> Funding Agency</strong>
 
-                                                            <p class="text-muted">Unep</p>
+                                                            <p class="text-muted"><?php echo $row['funding']; ?></p>
 
                                                             <hr>
                                                             <strong><i class="fa fa-database margin-r-5"></i>Objectives</strong>
 
                                                             <p>
-                                                                <span class="label label-danger">Objective</span>
-                                                                <span class="label label-success">Objective</span>
-                                                                <span class="label label-info">Objective</span>
-                                                                <span class="label label-warning">Objective</span>
-                                                                <span class="label label-primary">Objective</span>
+                                                                <span class="label label-danger"><?php echo $row['obj1']; ?></span>
+                                                                <span class="label label-success"><?php echo $row['obj2']; ?></span>
+                                                                <span class="label label-info"><?php echo $row['obj3']; ?></span>
+                                                                <span class="label label-warning"><?php echo $row['obj4']; ?></span>
+
                                                             </p>
 
                                                             <hr>
                                                             <strong><i class="fa fa-list-alt margin-r-5"></i>Activities</strong>
 
                                                             <p>
-                                                                <span class="label label-danger">Activities</span>
-                                                                <span class="label label-success">Activities</span>
-                                                                <span class="label label-info">Activities</span>
-                                                                <span class="label label-warning">Activities</span>
-                                                                <span class="label label-primary">Activities</span>
+                                                                <span class="label label-danger"><?php echo $row['act1']; ?></span>
+                                                                <span class="label label-success"><?php echo $row['act2']; ?></span>
+                                                                <span class="label label-info"><?php echo $row['act3']; ?></span>
+                                                                <span class="label label-warning"><?php echo $row['act4']; ?></span>
+
                                                             </p>
 
 
                                                             <strong><i class="fa fa-line-chart margin-r-5"></i>Achievements</strong>
 
                                                             <p>
-                                                                <span class="label label-danger">Achievements</span>
-                                                                <span class="label label-success">Achievements</span>
-                                                                <span class="label label-info">Achievements</span>
-                                                                <span class="label label-warning">Achievements</span>
-                                                                <span class="label label-primary">Achievements</span>
+                                                                <span class="label label-danger"><?php echo $row['ach1']; ?></span>
+                                                                <span class="label label-success"><?php echo $row['ach2']; ?></span>
+                                                                <span class="label label-info"><?php echo $row['ach3']; ?></span>
+                                                                <span class="label label-warning"><?php echo $row['ach4']; ?></span>
+
                                                             </p>
 
 
-
+                                                            <?php } ?>
 
                                                         </div>
                                                     </div>
@@ -537,14 +656,7 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Developed by <a href="#">Mitchsofts</a>
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">Umande Trust</a>.</strong> All rights reserved.
-    </footer>
+    <?php include "../footer.php" ?>
 
     <!-- Control Sidebar -->
 

@@ -22,7 +22,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="../index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="makina.php"><i class="fa  fa-sticky-note"></i> Makina</a></li>
+                <li><a href="../makina.php"><i class="fa  fa-sticky-note"></i> Makina</a></li>
                 <li class="active">Projects</li>
             </ol>
         </section>
@@ -114,7 +114,7 @@
 
 
 
-                            $query = $conn->query("select * from magallery") or die(mysql_error());
+                            $query = $conn->query("select * from maproimg") or die(mysql_error());
                             $count = $query->rowcount();
                             $slides='';
                             $Indicators='';
