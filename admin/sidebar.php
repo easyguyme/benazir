@@ -40,7 +40,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="makina/"><i class="fa fa-female"></i>Makina</a></li>
+                    <li><a href="makina.php"><i class="fa fa-female"></i>Makina</a></li>
                     <li><a href="sara.php"><i class="fa fa-female"></i>Sarangombe</a></li>
                     <li><a href="lindi.php"><i class="fa fa-female"></i>Lindi</a></li>
                     <li><a href="saba.php"><i class="fa fa-female"></i>Laini Saba</a></li>
@@ -54,7 +54,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="stats/makina.html"><i class="fa fa-female"></i>Makina</a></li>
+                    <li><a href="#"><i class="fa fa-female"></i>Makina</a></li>
                     <li><a href="#"><i class="fa fa-female"></i>Sarangombe</a></li>
                     <li><a href="#"><i class="fa fa-female"></i>Lindi</a></li>
                     <li><a href="#"><i class="fa fa-female"></i>Laini Saba</a></li>

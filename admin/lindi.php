@@ -36,7 +36,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">To Edit Projects</a></span>
-                                <span class="info-box-number"> <a  href="makina_project.php">click me</a></span>
+                                <span class="info-box-number"> <a  href="lin_project.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -50,7 +50,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">To Edit Events and Activities</a></span>
-                                <span class="info-box-number"> <a  href="makina_event.php">click me</a></span>
+                                <span class="info-box-number"> <a  href="_event.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -134,7 +134,7 @@
                 <!-- ./col -->
             </div>
             <!--            second row-->
-            
+
 
             <!--            social media-->
 

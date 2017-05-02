@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="../plugins/iCheck/all.css">
 <!-- Bootstrap Color Picker -->
 <link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
-
 <!-- Bootstrap time Picker -->
 <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
 <!-- Select2 -->
@@ -16,7 +15,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-
+<!-- Makina county complete projects -->
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
@@ -41,38 +40,101 @@
         <!-- Main content -->
         <!--todo add editable heading-->
         <section class="content">
-<div class="col-md-6">
-    <?php include('add_event.php'); ?>
+            <div class="col-md-6">
+                <?php $get_id = $_GET['id']; ?>
 
-</div>
+                <div class="box box-info">
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Edit Projects to Social Audit</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form  method="post">
+                        <?php
+                        include('dbcon.php');
+                        $query = $conn->query("select * from social_audit where id='$get_id'");
+                        while ($row = $query->fetch()) {
+
+                            ?>
+                            <div class="box-body">
+                                <div class="form-group col-sm-10">
+                                    <label>Project name:</label>
+
+                                    <div class="input-group  col-sm-8">
+
+                                        <input type="text" name="name" class="form-control"  placeholder="Project name" value="<?php echo $row['name']; ?>" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group col-sm-10">
+                                    <label>Social audit stage:</label>
+
+                                    <div class="input-group  col-sm-8">
+
+                                        <input type="text" name="stage" class="form-control"  placeholder="Social audit stage" value="<?php echo $row['stage']; ?>" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-10">
+                                    <label>Stake Holder:</label>
+
+                                    <div class="input-group  col-sm-8">
+
+                                        <input type="text" name="stake" class="form-control"  placeholder="Project Stake Holder" value="<?php echo $row['stake']; ?>" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-10">
+                                    <label>Project Findings:</label>
+
+                                    <div class="input-group  col-sm-8">
+
+                                        <input type="text" name="finding" class="form-control"  placeholder="Project findings" value="<?php echo $row['finding']; ?>" required>
+                                    </div>
+
+                                </div>
+
+                                <!-- /.input group -->
+
+
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button  name="update" class="btn btn-info">Update changes</button>
+                            </div>
+                        <?php } ?>
+                    </form>
+                </div>
+
+            </div>
             <div class="col-md-6">
                 <div class="box box-info">
                     <div class="row-fluid">
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="box-header with-border">
-                                <h3 class="box-title">View Events</h3>
+                                <h3 class="box-title">View Projects to Social Audit</h3>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form action="delete_event.php" method="post">
+                                    <form action="editsarasoc.php" method="post">
                                         <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-                                            <a data-toggle="modal" href="#eventdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
-                                            <?php include('modal_delete.php'); ?>
+
                                             <thead>
                                             <tr>
                                                 <th></th>
-                                                <th>Event</th>
-                                                <th>Venue</th>
-                                                <th>Start date</th>
-                                                <th>End date</th>
-                                                <th>Status</th>
+                                                <th>Project name</th>
+                                                <th>Social Audit stage</th>
+                                                <th>Stake holders involved</th>
+                                                <th>Findings</th>
                                                 <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $query = $conn->query("select * from hevents ORDER by tarehes DESC ");
+                                            $query = $conn->query("select * from social_audit where page='sara' ");
                                             while ($row = $query->fetch()) {
                                                 $id = $row['id'];
                                                 ?>
@@ -81,12 +143,12 @@
                                                     <td width="30">
                                                         <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                                     </td>
-                                                    <td><?php echo $row['event']; ?></td>
-                                                    <td><?php echo $row['venue']; ?></td>
-                                                    <td><?php echo $row['sdate']; ?></td>
-                                                    <td><?php echo $row['edate']; ?></td>
-                                                    <td><?php echo $row['status']; ?></td>
-                                                    <td width="30"><a href="editevent.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                    <td><?php echo $row['name']; ?></td>
+
+                                                    <td><?php echo $row['stage']; ?></td>
+                                                    <td><?php echo $row['stake']; ?></td>
+                                                    <td><?php echo $row['finding']; ?></td>
+                                                    <td width="30"><a href="editsarasoc.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                 </tr>
@@ -101,10 +163,10 @@
 
 
 
+                    </div>
+
+
                 </div>
-
-
-            </div>
 
 
         </section>
@@ -153,8 +215,6 @@
         background: transparent !important;
     }
 </style>
-
-<!-- jQuery 2.2.3 -->
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -183,72 +243,28 @@
 <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
-<script>
-    $(function () {
-        //Initialize Select2 Elements
-        $(".select2").select2();
+<!-- Page script -->
+<?php
+include('dbcon.php');
+if (isset($_POST['update'])){
+    $name = $_POST['name'];
+    $stage = $_POST['stage'];
+    $stake = $_POST['stake'];
+    $finding = $_POST['finding'];
 
-        //Datemask dd/mm/yyyy
-        $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
-        //Datemask2 mm/dd/yyyy
-        $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
-        //Money Euro
-        $("[data-mask]").inputmask();
 
-        //Date range picker
-        $('#reservation').daterangepicker();
-        //Date range picker with time picker
-        $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
-        //Date range as a button
-        $('#daterange-btn').daterangepicker(
-            {
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                },
-                startDate: moment().subtract(29, 'days'),
-                endDate: moment()
-            },
-            function (start, end) {
-                $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-            }
-        );
 
-        //Date picker
-        $('#datepicker').datepicker({
-            autoclose: true
-        });
-        $('#datepicker2').datepicker({
-            autoclose: true
-        });
-        //iCheck for checkbox and radio inputs
-        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-            checkboxClass: 'icheckbox_minimal-blue',
-            radioClass: 'iradio_minimal-blue'
-        });
-        //Red color scheme for iCheck
-        $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-            checkboxClass: 'icheckbox_minimal-red',
-            radioClass: 'iradio_minimal-red'
-        });
-        //Flat red color scheme for iCheck
-        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-            checkboxClass: 'icheckbox_flat-green',
-            radioClass: 'iradio_flat-green'
-        });
 
-        //Colorpicker
-        $(".my-colorpicker1").colorpicker();
-        //color picker with addon
-        $(".my-colorpicker2").colorpicker();
+    $conn->query("update social_audit set name = '$name',stage='$stage' ,stake='$stake',finding='$finding'  where id = '$get_id' ")or die(mysql_error());
 
-        //Timepicker
-        $(".timepicker").timepicker({
-            showInputs: false
-        });
-    });
-</script>
+
+    ?>
+    <script>
+        window.location = "editsarasoc.php<?php echo '?id='.$get_id; ?>";
+    </script>
+    <?php
+
+}
+?>
+
+

@@ -254,7 +254,7 @@ if (isset($_POST['save'])){
 
     $conn->query("insert into hgallery (title,descp,image) values('$title','$descp','$location')")or die(mysql_error());
 
-mysql_close($conn);
+
 exit;
 
 

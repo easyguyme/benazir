@@ -31,7 +31,7 @@
         {
 
             $title = $row['title'];
-            $desc = $row['dscn'];
+            $desc = $row['desc'];
             $image = $row['image'];
             if($counter == 0)
             {

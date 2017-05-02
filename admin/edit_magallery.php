@@ -63,7 +63,7 @@
                                             <label for="type" class="col-sm-2 control-label">Description:</label>
 
                                             <div class="col-sm-10 input-sm">
-                                                <input type="text" name="desc" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['dscn']; ?>"  required>
+                                                <input type="text" name="desc" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['desc']; ?>"  required>
                                             </div>
                                         </div>
                                         <div class="form-group">

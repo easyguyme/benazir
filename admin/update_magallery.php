@@ -130,7 +130,7 @@
                                                                 <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                                             </td>
                                                             <td><?php echo $row['title']; ?></td>
-                                                            <td><?php echo $row['dscn']; ?></td>
+                                                            <td><?php echo $row['desc']; ?></td>
                                                             <td><?php echo $row['image']; ?></td>
                                                             <td><?php echo $row['date']; ?></td>
                                                             <td width="30"><a href="edit_magallery.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
@@ -211,7 +211,7 @@ if (isset($_POST['save'])){
 
 
 
-    $conn->query("insert into magallery (title,dscn,image) values('$title','$descp','$location')")or die(mysql_error());
+    $conn->query("insert into magallery (title,desc,image) values('$title','$descp','$location')")or die(mysql_error());
 
 
 

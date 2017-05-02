@@ -49,7 +49,7 @@
 
                                 <thead>
                                 <tr>
-                                    <th><span class="badge bg-aqua">#</span></th>
+                                   
                                     <th><span class="badge bg-light-blue">Project Name</span></th>
                                     <th><span class="badge bg-red">Social Audit Stage</span></th>
                                     <th><span class="badge bg-green">Stake Holders Involved</span></th>
@@ -65,7 +65,7 @@
                                     ?>
                                     <tr>
 
-                                        <td><?php echo $row['id']; ?></td>
+
                                         <td><?php echo $row['name']; ?></td>
                                         <td><?php echo $row['stage']; ?></td>
                                         <td><?php echo $row['stake']; ?></td>

@@ -1,5 +1,6 @@
 <?php  include('session.php'); ?>
 <?php include('header.php'); ?>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
@@ -43,35 +44,35 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form method="post" class="form-horizontal">
+                        <form method="post" class="form-horizontal" accept-charset="utf-8" enctype="multipart/form-data">
 
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="name" class="col-sm-2 control-label">Name:</label>
+                                    <label for="name" class="col-sm-2 control-label">Voice center name:</label>
 
                                     <div class="col-sm-10 input-sm">
                                         <input type="text" name="name" class="form-control" id="name" placeholder="Name" value="<?php echo $row['name']; ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="linfo" class="col-sm-2 control-label">Location:</label>
+                                    <label for="linfo" class="col-sm-2 control-label">Name:</label>
 
                                     <div class="col-sm-10 input-sm">
                                         <input type="text" name="linfo" class="form-control" id="linfo" placeholder="Location" value="<?php echo $row['linfo']; ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="url" class="col-sm-2 control-label">Phone:</label>
+                                    <label for="description" class="col-sm-2 control-label">Location:</label>
 
                                     <div class="col-sm-10 input-sm">
-                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone" value="<?php echo $row['contact']; ?>" required>
+                                        <input type="text" name="description" class="form-control" id="description" placeholder="Description" value="<?php echo $row['description']; ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="url" class="col-sm-2 control-label">Url:</label>
+                                    <label for="cord" class="col-sm-2 control-label">Cordinates:</label>
 
                                     <div class="col-sm-10 input-sm">
-                                        <input type="email" name="email" class="form-control" id="email" placeholder="email" value="<?php echo $row['email']; ?>" required>
+                                        <input type="text" name="cord" class="form-control" id="cord" placeholder="cord" value="<?php echo htmlentities($row['cord']); ?>" required>
                                     </div>
                                 </div>
 
@@ -133,11 +134,11 @@ include('dbcon.php');
 if (isset($_POST['update'])){
     $name = $_POST['name'];
     $linfo = $_POST['linfo'];
-    $contact = $_POST['phone'];
-    $email = $_POST['email'];
+    $description = $_POST['description'];
+    $cord =$_POST['cord'];
+$cords= addslashes($cord);
 
-
-    $conn->query("update hlocation set name = '$name', linfo='$linfo', contact ='$contact', email='$email'   where id = '$get_id' ")or die(mysql_error());
+    $conn->query("update hlocation set name = '$name', linfo='$linfo', description ='$description', cord='$cords'   where id = '$get_id' ")or die(mysql_error());
 
 
     ?>
