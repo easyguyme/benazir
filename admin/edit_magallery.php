@@ -63,7 +63,7 @@
                                             <label for="type" class="col-sm-2 control-label">Description:</label>
 
                                             <div class="col-sm-10 input-sm">
-                                                <input type="text" name="desc" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['desc']; ?>"  required>
+                                                <input type="text" name="desc" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['dsc']; ?>"  required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -155,7 +155,7 @@ if (isset($_POST['save'])){
     $location =  $_FILES["image"]["name"];
 
 
-    $conn->query("update magallery set title='$title' , dscn ='$descp' , image='$location' where id = '$get_id' ")or die(mysql_error());
+    $conn->query("update magallery set title='$title' , dsc ='$descp' , image='$location' where id = '$get_id' ")or die(mysql_error());
 
 
 

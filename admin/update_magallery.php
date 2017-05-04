@@ -28,7 +28,89 @@
 
                 <div class="row">
 
-                    <?php include ('magallery.php')?>
+                    <div class="col-md-6">
+                        <div class="box box-solid">
+                            <div class="box-header with-border">
+
+                                <h3 class="box-title"><dt> View Uploaded Images</dt></h3>
+
+                            </div>
+                            <!-- /.box-header -->
+                            <style>
+
+
+                                .carousel-inner>.item>img, .carousel-inner>.item>a>img
+                                {
+                                    height:300px;
+                                    width:700px;
+                                }
+
+                            </style>
+                            <?php
+
+
+
+
+                            $query = $conn->query("select * from magallery order by date desc") or die(mysql_error());
+                            $count = $query->rowcount();
+                            $slides='';
+                            $Indicators='';
+                            $counter=0;
+
+                            while ($row = $query->fetch())
+                            {
+
+                                $title = $row['title'];
+                                $desc = $row['dsc'];
+                                $image = $row['image'];
+                                if($counter == 0)
+                                {
+                                    $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
+                                    $slides .= '<div class="item active">
+            <img src="../makina/' .$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+
+                                }
+                                else
+                                {
+                                    $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
+                                    $slides .= '<div class="item">
+            <img src="../makina/' .$image.'" alt="'.$title.'" />
+            <div class="carousel-caption">
+              <h3>'.$title.'</h3>
+              <p>'.$desc.'.</p>
+            </div>
+          </div>';
+                                }
+                                $counter++;
+                            }
+
+                            ?>
+                            <div class="box-body">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <?php echo $Indicators; ?>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <?php echo $slides; ?>
+                                    </div>
+
+                                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                        <span class="fa fa-angle-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                        <span class="fa fa-angle-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
 
                     <div class="col-md-6">
                         <div class="box box-info">
@@ -60,7 +142,7 @@
                                         <label for="type" class="col-sm-2 control-label">Description:</label>
 
                                         <div class="col-sm-10 input-sm">
-                                            <input type="text" name="desc" class="form-control" id="desc" placeholder="Type of quote" required>
+                                            <input type="text" name="descrip" class="form-control" id="desc" placeholder="Type of quote" required>
                                         </div>
                                     </div>
 
@@ -130,7 +212,7 @@
                                                                 <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                                             </td>
                                                             <td><?php echo $row['title']; ?></td>
-                                                            <td><?php echo $row['desc']; ?></td>
+                                                            <td><?php echo $row['dsc']; ?></td>
                                                             <td><?php echo $row['image']; ?></td>
                                                             <td><?php echo $row['date']; ?></td>
                                                             <td width="30"><a href="edit_magallery.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
@@ -199,7 +281,7 @@
 include('dbcon.php');
 if (isset($_POST['save'])){
     $title = $_POST['title'];
-    $descp = $_POST['desc'];
+    $descp = $_POST['descrip'];
 
 
     $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
@@ -211,7 +293,7 @@ if (isset($_POST['save'])){
 
 
 
-    $conn->query("insert into magallery (title,desc,image) values('$title','$descp','$location')")or die(mysql_error());
+    $conn->query("insert into magallery (title,dsc,image) values('$title','$descp','$location')")or die(mysql_error());
 
 
 
@@ -221,5 +303,8 @@ if (isset($_POST['save'])){
     </script>
     <?php
 
+}else{
+
+    echo 'not updated';
 }
 ?>
