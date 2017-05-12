@@ -1,6 +1,7 @@
 <?php  include('session.php'); ?>
 <?php include('header.php'); ?>
     <!-- daterange picker -->
+<?php $get_id = $_GET['id']; ?>
     <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
     <!-- bootstrap datepicker -->
     <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
@@ -55,63 +56,69 @@
                             <!-- form start -->
                             <form  method="post">
                                 <div class="box-body">
-                                    <div class="form-group col-sm-10">
-                                        <label>Event name:</label>
+                                    <?php
 
-                                        <div class="input-group  col-sm-8">
+                                    $query = $conn->query("select * from events where id='$get_id'");
+                                    while ($row = $query->fetch()) {
+                                        ?>
+                                        <div class="form-group col-sm-10">
+                                            <label>Event name:</label>
 
-                                            <input type="text" name="event" class="form-control"  placeholder="Event name" required>
-                                        </div>
+                                            <div class="input-group  col-sm-8">
 
-                                    </div>
-
-                                    <div class="form-group col-sm-10">
-                                        <label>Venue:</label>
-
-                                        <div class="input-group  col-sm-8">
-
-                                            <input type="text" name="venue" class="form-control"  placeholder="Venue" required>
-                                        </div>
-
-                                    </div>
-                                    <div class="form-group col-sm-7">
-                                        <label>Start Date:</label>
-
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
+                                                <input type="text" name="event" class="form-control"  placeholder="Event name" value="<?php echo $row['namew']; ?>" required>
                                             </div>
-                                            <input type="text" name="datew" class="form-control pull-right" id="datepicker" placeholder="Date" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-sm-7 bootstrap-timepicker">
-                                        <label>Time:</label>
 
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-clock-o"></i>
+                                        </div>
+                                        <div class="form-group col-sm-10">
+                                            <label>Venue:</label>
+
+                                            <div class="input-group  col-sm-8">
+
+                                                <input type="text" name="venue" class="form-control"  placeholder="Venue" value="<?php echo $row['venue']; ?>" required>
                                             </div>
-                                            <input type="text" name="timew" class="form-control timepicker">
+
                                         </div>
-                                    </div>
-                                    <div class="form-group col-sm-7">
-                                        <label>Status:</label>
-                                        <select name="status" class="form-control select2" style="width: 100%;">
-                                            <option selected="selected">Upcoming</option>
-                                            <option>Ongoing</option>
-                                            <option>Canceled</option>
+                                        <div class="form-group col-sm-7">
+                                            <label>Start Date:</label>
 
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-sm-10">
-                                        <label>Description:</label>
-
-                                        <div class="input-group  col-sm-8">
-
-                                            <input type="text" name="description" class="form-control"  placeholder="description" required>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                                <input type="text" name="datew" class="form-control pull-right" id="datepicker" placeholder="Date"  value="<?php echo $row['datew']; ?>" required>
+                                            </div>
                                         </div>
+                                        <div class="form-group col-sm-7 bootstrap-timepicker">
+                                            <label>Time:</label>
 
-                                    </div>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock-o"></i>
+                                                </div>
+                                                <input type="text" name="timew" class="form-control timepicker" value="<?php echo $row['timew']; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-7">
+                                            <label>Status:</label>
+                                            <select name="status" class="form-control select2" style="width: 100%;" >
+                                                <option selected="selected"><?php echo $row['status']; ?></option>
+                                                <option>Ongoing</option>
+                                                <option>Canceled</option>
+                                                <option>Upcoming</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-10">
+                                            <label>Description:</label>
+
+                                            <div class="input-group  col-sm-8">
+
+                                                <input type="text" name="description" class="form-control"  placeholder="description" value="<?php echo $row['description']; ?>" required>
+                                            </div>
+
+                                        </div>
+                                    <?php }?>
 
                                     <!-- /.input group -->
 
@@ -139,23 +146,7 @@
                                         <div class="span12">
                                             <form action="makina_event.php" method="post">
                                                 <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-                                                    <a data-toggle="modal" href="#evedelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
-                                                    <div id="evedelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                                            <h3 id="myModalLabel">Delete Event?</h3>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="alert alert-danger">
-                                                                <p>Are you sure you want to delete the event you checked?.</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
-                                                            <button name="delete_eve" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
-                                                        </div>
-                                                    </div>
-                                                    <thead>
+                                                  <thead>
                                                     <tr>
                                                         <th></th>
                                                         <th>Event name</th>
@@ -192,8 +183,8 @@
                                                     </tbody>
                                                 </table>
 
-                                             
-                                        </form>
+
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -208,19 +199,21 @@
 
                     </div>
 
-
                 </div>
 
-            <!-- /.content -->
+
         </div>
-        <!-- /.content-wrapper -->
 
-        <!-- Main Footer -->
-        <?php include('footer.php'); ?>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
+    <!-- Main Footer -->
+    <?php include('footer.php'); ?>
 
-        <div class="control-sidebar-bg"></div>
+    <!-- Control Sidebar -->
+
+    <div class="control-sidebar-bg"></div>
 
     </div>
     <!-- ./wrapper -->
@@ -357,24 +350,8 @@
     </script>
     <!-- Page script -->
 
-<?php
-include('dbcon.php');
-if (isset($_POST['delete_eve'])){
-    $id=$_POST['selector'];
-    $N = count($id);
-    for($i=0; $i < $N; $i++)
-    {
-        $query = $conn->query("DELETE FROM events where id='$id[$i]'");
-    }
 
-    ?>
-    <script>
-        window.location = "makina_event.php";
-    </script>
-    <?php
 
-}
-?>
 <?php
 error_reporting(E_ALL);
 
@@ -388,8 +365,8 @@ if (isset($_POST['save'])){
     $page='makina';
 
 
-    $conn->query("insert into events (namew,venue,datew,timew,status,description,page) values('$name','$venue','$date','$time','$status','$description','$page')")or die(mysql_error());
-
+    //$conn->query("insert into events (namew,venue,datew,timew,status,description,page) values('$name','$venue','$date','$time','$status','$description','$page')")or die(mysql_error());
+    $conn->query("update events set namew = '$name', venue='$venue' ,datew='$date' , timew='$time', status='$status', description='$description', page='$page' where id = '$get_id' ")or die(mysql_error());
     ?>
     <script>
         window.location = "makina_event.php";
@@ -398,5 +375,3 @@ if (isset($_POST['save'])){
 
 }
 ?>
-
-

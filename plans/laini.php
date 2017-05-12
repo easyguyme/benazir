@@ -48,7 +48,7 @@
 
                                 <thead>
                                 <tr>
-                                    <th><span class="badge bg-aqua">#</span></th>
+                                    
                                     <th><span class="badge bg-light-blue">Project Name/Type</span></th>
                                     <th><span class="badge bg-red">Project period</span></th>
                                     <th><span class="badge bg-green">Project Location</span></th>
@@ -66,8 +66,8 @@
 
                                     ?>
                                     <tr>
-                                        <td><?php echo $row['id']; ?>.</td>
-                                        <td><?php echo $row['type']; ?></td>
+                                       
+                                        <td><?php echo $row['types']; ?></td>
                                         <td><?php echo $row['period']; ?></td>
                                         <td><?php echo $row['location']; ?></td>
                                         <td>Ksh. <?php echo $row['budget']; ?></td>
@@ -103,7 +103,7 @@
 
                                 <thead>
                                 <tr>
-                                    <th><span class="badge bg-aqua">#</span></th>
+                                    
                                     <th><span class="badge bg-light-blue">Priority</span></th>
                                     <th><span class="badge bg-red">Priority Description</span></th>
 
@@ -119,7 +119,7 @@
 
                                     ?>
                                     <tr>
-                                        <td><?php echo $row['id']; ?>.</td>
+                                       
                                         <td><?php echo $row['prior']; ?></td>
                                         <td><?php echo $row['description']; ?></td>
 

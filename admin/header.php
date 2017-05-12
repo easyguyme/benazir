@@ -16,17 +16,7 @@
     <link rel="stylesheet" href="../plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
-    <link href="vendors/fullcalendar/fullcalendar.css" rel="stylesheet" media="screen">
-    <script src="vendors/jquery-1.9.1.min.js"></script>
-    <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <!-- data table -->
-    <link href="assets/DT_bootstrap.css" rel="stylesheet" media="screen">
-    <!-- notification  -->
-    <link href="vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
-    <!-- wysiwug  -->
-    <link rel="stylesheet" type="text/css" href="vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css">
 
-    <script src="vendors/jGrowl/jquery.jgrowl.js"></script>
 
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
@@ -46,8 +36,7 @@
             background: transparent !important;
         }
     </style>
-    <script src="assets/DT_bootstrap.js"></script>
-    <script src="vendors/datatables/css/demo_table.css"></script>
+   
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

@@ -30,26 +30,14 @@
                     <div class="box-header with-border">
 
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-aqua"><i class="fa fa-cubes"></i></span>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="makina_project.php">To Edit Projects</a></span>
-                                <span class="info-box-number"> <a  href="makina_project.php">click me</a></span>
-                            </div>
-
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
                     <!-- /.col -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-sm-6 ">
                         <div class="info-box">
-                            <span class="info-box-icon bg-red"><i class="fa fa-calendar"></i></span>
+                            <span class="info-box-icon bg-red"><i class="fa fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="makina_event.php">To Edit Events and Activities</a></span>
+                                <span class="info-box-text"> <a href="#">To Edit County Government Priorities</a></span>
                                 <span class="info-box-number"> <a  href="makina_event.php">click me</a></span>
                             </div>
 
@@ -62,13 +50,13 @@
                     <!-- fix for small devices only -->
                     <div class="clearfix visible-sm-block"></div>
 
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-sm-6 ">
                         <div class="info-box">
-                            <span class="info-box-icon bg-green"><i class="fa fa-line-chart"></i></span>
+                            <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="makpb.php">To Edit Plans and Budget</a></span>
-                                <span class="info-box-number"> <a  href="makpb.php">click me</a></span>
+                                <span class="info-box-text"> <a href="#">To Edit Community Priorities PROJECTS</a></span>
+                                <span class="info-box-number"> <a data-toggle="modal" href="#">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -84,28 +72,18 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-xs-6">
+                <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                            <h3> Ward & Women Profiles</h3>
 
-                            <p>To edit Ward & Women Profiles</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-camera"></i>
-                        </div>
-                        <a href="#"  class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-4 col-xs-6">
+                <div class="col-lg-6 col-xs-6">
                     <!-- small box -->
-                    <div class="small-box bg-green">
+                    <div class="small-box bg-blue">
                         <div class="inner">
-                            <h3>Area Profile Table</h3>
+                            <h3>Downloads and Publications</h3>
 
-                            <p>To edit Area Profile Table</p>
+                            <p>To edit Downloads and Publications</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-information"></i>
@@ -115,26 +93,16 @@
                     </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-4 col-xs-6">
+                <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
-                    <div class="small-box bg-red-gradient">
-                        <div class="inner">
-                            <h3>Gallery</h3>
 
-                            <p>To upload pictures on the gallery</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-camera"></i>
-                        </div>
-                        <a href="update_magallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
                 </div>
                 <!-- ./col -->
                 <!---->
                 <!-- ./col -->
             </div>
             <!--            second row-->
-            
+
 
             <!--            social media-->
 

@@ -48,7 +48,7 @@
 
                                 <thead>
                                 <tr>
-                                    <th><span class="badge bg-aqua">#</span></th>
+
                                     <th><span class="badge bg-light-blue">Event Name</span></th>
                                     <th><span class="badge bg-red">Event Venue</span></th>
                                     <th><span class="badge bg-green">Event Date</span></th>
@@ -66,11 +66,11 @@
 
                                     ?>
                                     <tr>
-                                        <td><?php echo $row['id']; ?>.</td>
-                                        <td><?php echo $row['name']; ?></td>
+
+                                        <td><?php echo $row['namew']; ?></td>
                                         <td><?php echo $row['venue']; ?></td>
-                                        <td><?php echo $row['date']; ?></td>
-                                        <td><?php echo $row['time']; ?></td>
+                                        <td><?php echo $row['datew']; ?></td>
+                                        <td><?php echo $row['timew']; ?></td>
                                         <td><?php echo $row['status']; ?></td>
 
                                     </tr>
@@ -103,7 +103,7 @@
 
                                 <thead>
                                 <tr>
-                                    <th><span class="badge bg-aqua">#</span></th>
+                                    
                                     <th><span class="badge bg-light-blue">Event Name</span></th>
                                     <th><span class="badge bg-red">Event Description</span></th>
 
@@ -119,8 +119,8 @@
 
                                     ?>
                                     <tr>
-                                        <td><?php echo $row['id']; ?>.</td>
-                                        <td><?php echo $row['name']; ?></td>
+
+                                        <td><?php echo $row['namew']; ?></td>
                                         <td><?php echo $row['description']; ?></td>
 
 

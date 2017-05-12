@@ -83,57 +83,6 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-12 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>N.G.O Projects</h3>
-
-                                    <p>To edit N.G.O Projects</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-grid"></i>
-                                </div>
-                                <a href="mcnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
-
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-12 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-red-gradient">
-                                <div class="inner">
-                                    <h3>C.B.O Projects</h3>
-
-                                    <p>To edit C.B.O Projects</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-grid"></i>
-                                </div>
-                                <a href="mcbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Complete Projects</h3>
-                        </div>
-                        <div class="col-lg-12 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-aqua">
-                                <div class="inner">
-                                    <h3>County Projects</h3>
-
-                                    <p>To edit County Projects</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-grid"></i>
-                                </div>
                                 <a href="ccp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -169,6 +118,58 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Complete Projects</h3>
+                        </div>
+                        <div class="col-lg-12 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>County Projects</h3>
+
+                                    <p>To edit County Projects</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-grid"></i>
+                                </div>
+                                <a href="mccp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-12 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>N.G.O Projects</h3>
+
+                                    <p>To edit N.G.O Projects</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-grid"></i>
+                                </div>
+                                <a href="mcnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-12 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red-gradient">
+                                <div class="inner">
+                                    <h3>C.B.O Projects</h3>
+
+                                    <p>To edit C.B.O Projects</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-grid"></i>
+                                </div>
+                                <a href="mcbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
 
 
