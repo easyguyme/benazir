@@ -166,7 +166,7 @@
                                 <div class="timeline-item">
                                     <span class="time">Posted by: <i class="fa fa-user"></i> Admin</span>
 
-                                    <h3 class="timeline-header"><a href="#"><?php echo $row['name']; ?></a> <?php echo $row['sub']; ?></h3>
+                                    <h3 class="timeline-header"><a href="#"><?php echo $row['named']; ?></a> <?php echo $row['sub']; ?></h3>
 
                                     <div class="timeline-body">
                                         <?php echo $row['des']; ?>
