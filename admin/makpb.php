@@ -37,8 +37,8 @@
                             <span class="info-box-icon bg-red"><i class="fa fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit County Government Priorities</a></span>
-                                <span class="info-box-number"> <a  href="makina_event.php">click me</a></span>
+                                <span class="info-box-text"> <a href="macop.php">To Edit County Government Priorities</a></span>
+                                <span class="info-box-number"> <a  href="macop.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -55,8 +55,8 @@
                             <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Community Priorities PROJECTS</a></span>
-                                <span class="info-box-number"> <a data-toggle="modal" href="#">click me</a></span>
+                                <span class="info-box-text"> <a href="mapp.php">To Edit Community Priorities PROJECTS</a></span>
+                                <span class="info-box-number"> <a  href="mapp.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->

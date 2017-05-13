@@ -50,51 +50,33 @@
                     <div class="box box-info">
 
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add County Government Priority</h3>
+                            <h3 class="box-title">Add Community Priority Project</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form  method="post">
                             <div class="box-body">
                                 <div class="form-group col-sm-10">
-                                    <label>Project name:</label>
+                                    <label>Priority:</label>
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="type" class="form-control"  placeholder="Project name/type" required>
+                                        <input type="text" name="priority" class="form-control"  placeholder="Priority" required>
                                     </div>
 
                                 </div>
 
                                 <div class="form-group col-sm-10">
-                                    <label>Project Period:</label>
+                                    <label>Priority description:</label>
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="period" class="form-control"  placeholder="Period" required>
+                                        <input type="text" name="description" class="form-control"  placeholder="Description" required>
                                     </div>
 
                                 </div>
 
-                                <div class="form-group col-sm-10">
-                                    <label>Project Location:</label>
 
-                                    <div class="input-group  col-sm-8">
-
-                                        <input type="text" name="location" class="form-control"  placeholder="location" required>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group col-sm-10">
-                                    <label>Project Budget:</label>
-
-                                    <div class="input-group  col-sm-8">
-
-                                        <input type="text" name="budget" class="form-control"  placeholder="Ksh." required>
-                                    </div>
-
-                                </div>
 
                                 <!-- /.input group -->
 
@@ -113,7 +95,7 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>County Government Priorities</dt></h3>
+                            <h3 class="box-title"><dt>Communities Priorities Projects</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -123,7 +105,7 @@
                         </div>
 
                         <div class="box-body table-responsive">
-                            <form action="macop.php" method="post">
+                            <form action="mapp.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                     <a data-toggle="modal" href="#macopdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                     <div id="macopdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -138,17 +120,16 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
-                                            <button name="delete_macop" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+                                            <button name="delete_mapp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
                                         </div>
                                     </div>
 
                                     <thead>
                                     <tr>
                                         <th></th>
-                                        <th><span class="badge bg-light-blue">Project Name/Type</span></th>
-                                        <th><span class="badge bg-red">Project period</span></th>
-                                        <th><span class="badge bg-green">Project Location</span></th>
-                                        <th><span class="badge bg-purple">Project Budget</span></th>
+                                        <th><span class="badge bg-light-blue">Priority</span></th>
+                                        <th><span class="badge bg-red">Description</span></th>
+
                                         <th></th>
 
 
@@ -157,7 +138,7 @@
                                     <tbody>
                                     <?php
 
-                                    $query = $conn->query("select * from plans_county where page='makina'") or die(mysql_error());
+                                    $query = $conn->query("select * from plan_comm where page='makina'") or die(mysql_error());
                                     while ($row = $query->fetch()) {
                                         $id = $row['id'];
 
@@ -166,11 +147,10 @@
                                             <td width="30">
                                                 <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                             </td>
-                                            <td><?php echo $row['types']; ?></td>
-                                            <td><?php echo $row['period']; ?></td>
-                                            <td><?php echo $row['location']; ?></td>
-                                            <td>Ksh. <?php echo $row['budget']; ?></td>
-                                            <td width="30"><a href="editmacop.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                            <td><?php echo $row['prio']; ?></td>
+                                            <td><?php echo $row['description']; ?></td>
+
+                                            <td width="30"><a href="editmapp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
 
@@ -361,18 +341,17 @@
 error_reporting(E_ALL);
 
 if (isset($_POST['save'])){
-    $type = $_POST['type'];
-    $period = $_POST['period'];
-    $location = $_POST['location'];
-    $budget = $_POST['budget'];
+    $prior = $_POST['priority'];
+    $description = $_POST['description'];
+
     $page='makina';
 
 
-    $conn->query("insert into plans_county (types,period,location,budget,page) values('$type','$period','$location','$budget','$page')")or die(mysql_error());
+    $conn->query("insert into plan_comm (prio,description,page) values('$prior','$description','$page')")or die(mysql_error());
 
     ?>
     <script>
-        window.location = "macop.php";
+        window.location = "mapp.php";
     </script>
     <?php
 
@@ -381,17 +360,17 @@ if (isset($_POST['save'])){
 
 <?php
 include('dbcon.php');
-if (isset($_POST['delete_macop'])){
+if (isset($_POST['delete_mapp'])){
     $id=$_POST['selector'];
     $N = count($id);
     for($i=0; $i < $N; $i++)
     {
-        $query = $conn->query("DELETE FROM plans_county where id='$id[$i]'");
+        $query = $conn->query("DELETE FROM plan_comm where id='$id[$i]'");
     }
 
     ?>
     <script>
-        window.location = "macop.php";
+        window.location = "mapp.php";
     </script>
     <?php
 

@@ -120,7 +120,7 @@
                                 ?>
                                 <tr>
                                    
-                                    <td><?php echo $row['prior']; ?></td>
+                                    <td><?php echo $row['prio']; ?></td>
                                     <td><?php echo $row['description']; ?></td>
 
                                 </tr>
