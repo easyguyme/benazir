@@ -261,7 +261,20 @@
 <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
-
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#exampl2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
+    });
+</script>
 <script>
     $(function () {
         //Initialize Select2 Elements
@@ -333,20 +346,7 @@
     });
 </script>
 <!-- Page script -->
-<script>
-    $(function () {
-        $("#example1").DataTable();
-        $('#exampl2').DataTable({
-            "paging": true,
-            "lengthChange": true,
-            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
-            "searching": true,
-            "ordering": false,
-            "info": true,
-            "autoWidth": true
-        });
-    });
-</script>
+
 
 <?php
 error_reporting(E_ALL);

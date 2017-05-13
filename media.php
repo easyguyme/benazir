@@ -185,7 +185,7 @@
 
                         <div class="timeline-item">
 
-                            <h3 class="timeline-header"><a href="<?php echo $row['link']; ?>" target="_blank"><?php echo $row['name']; ?></a> <?php echo $row['sub']; ?></h3>
+                            <h3 class="timeline-header"><a href="<?php echo $row['link']; ?>" target="_blank"><?php echo $row['named']; ?></a> <?php echo $row['sub']; ?></h3>
 
                             <div class="timeline-body">
                                 <?php echo $row['des']; ?>

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="../plugins/iCheck/all.css">
 <!-- Bootstrap Color Picker -->
 <link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
-
+<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
 <!-- Bootstrap time Picker -->
 <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
 <!-- Select2 -->
@@ -56,7 +56,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
                                     <form action="delete_event.php" method="post">
-                                        <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                             <a data-toggle="modal" href="#eventdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                             <?php include('modal_delete.php'); ?>
                                             <thead>
@@ -161,6 +161,8 @@
 <!-- Select2 -->
 <script src="../plugins/select2/select2.full.min.js"></script>
 <!-- InputMask -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="../plugins/input-mask/jquery.inputmask.js"></script>
 <script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
@@ -183,6 +185,20 @@
 <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#exampl2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
+    });
+</script>
 <script>
     $(function () {
         //Initialize Select2 Elements
