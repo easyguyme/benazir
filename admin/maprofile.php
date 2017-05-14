@@ -72,9 +72,7 @@
                         <a href="update_magallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
-                <!---->
-                <!-- ./col -->
+               
             </div>
             <!--            second row-->
 
