@@ -13,6 +13,7 @@
 <!-- Select2 -->
 <link rel="stylesheet" href="../plugins/select2/select2.min.css">
 <!-- Theme style -->
+<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
 <!-- Makina county complete projects -->
@@ -55,7 +56,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
                                     <form action="delete_cbp.php" method="post">
-                                        <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                             <a data-toggle="modal" href="#cbpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                             <?php include('modal_delete.php'); ?>
                                             <thead>
@@ -178,6 +179,24 @@
 <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#exampl2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
+    });
+</script>
+
+
 <!-- Page script -->
 <script>
     $(function () {

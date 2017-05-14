@@ -55,7 +55,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
                                     <form action="delete_mcnp.php" method="post">
-                                        <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                             <a data-toggle="modal" href="#mcnpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                             <?php include('modal_delete.php'); ?>
                                             <thead>
@@ -180,6 +180,23 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 <!-- Page script -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#exampl2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
+    });
+</script>
 <script>
     $(function () {
         //Initialize Select2 Elements

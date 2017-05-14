@@ -9,6 +9,7 @@
 <!-- Bootstrap Color Picker -->
 <link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
 <!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
 <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
 <!-- Select2 -->
 <link rel="stylesheet" href="../plugins/select2/select2.min.css">
@@ -120,7 +121,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
                                     <form action="editmaksoc.php" method="post">
-                                        <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                            
                                             <thead>
                                             <tr>
@@ -238,12 +239,29 @@
 <!-- iCheck 1.0.1 -->
 <script src="../plugins/iCheck/icheck.min.js"></script>
 <!-- FastClick -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="../plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 <!-- Page script -->
+
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#exampl2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
+    });
+</script>
 <?php
 include('dbcon.php');
 if (isset($_POST['update'])){

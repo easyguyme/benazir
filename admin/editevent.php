@@ -3,6 +3,7 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
 <!-- bootstrap datepicker -->
+<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
 <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
 <!-- iCheck for checkboxes and radio inputs -->
 <link rel="stylesheet" href="../plugins/iCheck/all.css">
@@ -56,7 +57,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
                                     <form action="delete_event.php" method="post">
-                                        <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                             <a data-toggle="modal" href="#eventdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
 
                                             <?php include('modal_delete.php'); ?>
@@ -140,6 +141,20 @@
 </body>
 </html>
 <?php include('logo_modal.php'); ?>
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#exampl2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
+    });
+</script>
 <style>
     .example-modal .modal {
         position: relative;
@@ -183,6 +198,8 @@
 <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- Page script -->
 <script>
     $(function () {
