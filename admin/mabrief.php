@@ -121,7 +121,7 @@
                                                             <td><?php echo $row['img']; ?></td>
                                                             <td><?php echo $row['brief']; ?></td>
 
-                                                            <td width="30"><a href="edit_hgallery.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                            <td width="30"><a href="editmabrief.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                         </tr>

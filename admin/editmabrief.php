@@ -46,7 +46,7 @@
 
                                 <div class="box-body">
                                     <?php
-                                    $query = $conn->query("select * from hgallery where id='$get_id'");
+                                    $query = $conn->query("select * from ward where page='makina' AND id='$get_id'");
                                     while ($row = $query->fetch()) {
 
                                         ?>
@@ -55,7 +55,7 @@
                                             <label for="type" class="col-sm-2 control-label">Image Path:</label>
 
                                             <div class="col-sm-10 input-sm">
-                                                <input type="text" name="img" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['image']; ?>"  disabled>
+                                                <input type="text" name="img" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['img']; ?>"  disabled>
                                             </div>
                                         </div>
 
@@ -69,13 +69,13 @@
 
 
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group"  ">
 
                                             <label for="name" class="col-sm-2 control-label">Brief info:</label>
 
-                                            <div class="col-sm-10 input-sm">
-                                                <textarea  name="description"  rows="4" cols="50" placeholder="Description" required><?php echo $row['title']; ?></textarea>
-                                                
+                                            <div class="col-sm-10 ">
+                                                <textarea  name="brief" style="width: 45pc; height: 15pc; placeholder="Description" required><?php echo $row['brief']; ?></textarea>
+
                                             </div>
                                         </div>
 
@@ -139,25 +139,29 @@
 <?php
 include('dbcon.php');
 if (isset($_POST['save'])){
-    $title = $_POST['title'];
-    $descp = $_POST['desc'];
+
+    $brief = $_POST['brief'];
 
 
     $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
     $image_name = addslashes($_FILES['image']['name']);
     $image_size = getimagesize($_FILES['image']['tmp_name']);
 
-    move_uploaded_file($_FILES["image"]["tmp_name"], "gallery/" . $_FILES["image"]["name"]);
-    $location =  $_FILES["image"]["name"];
+    move_uploaded_file($_FILES["image"]["tmp_name"], "media/" . $_FILES["image"]["name"]);
+    $location = "media/". $_FILES["image"]["name"];
 
 
-    $conn->query("update hgallery set title='$title' , descp='$descp' , image='$location' where id = '$get_id' ")or die(mysql_error());
+    $query="update ward  set brief= :brief, img='$location' where id = '$get_id' " or die(mysql_error());
 
+    $stmt=$conn->prepare($query);
+    $stmt->bindParam(':brief', $_POST['brief'], PDO::PARAM_STR);
+    $stmt->bindParam(':img', $location, PDO::PARAM_STR);
 
+    $stmt->execute();
 
     ?>
     <script>
-        window.location = "update_hgallery.php";
+        window.location = "mabrief.php";
     </script>
     <?php
 
