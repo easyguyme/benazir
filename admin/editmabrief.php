@@ -154,7 +154,7 @@ if (isset($_POST['save'])){
     $query="update ward  set brief=:brief, img=:img where id =:id " or die(mysqli_error());
 
     $stmt=$conn->prepare($query);
-    //$stmt->bind_param('sssssdddd', $phone_number, $street_name, $city, $county, $zip_code, $day_date, $month_date, $year_date, $account_id);
+   
     $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
     $stmt->bindParam(':img', $location, PDO::PARAM_STR);
     $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
