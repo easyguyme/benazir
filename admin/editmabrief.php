@@ -147,17 +147,20 @@ if (isset($_POST['save'])){
     $image_name = addslashes($_FILES['image']['name']);
     $image_size = getimagesize($_FILES['image']['tmp_name']);
 
-    move_uploaded_file($_FILES["image"]["tmp_name"], "media/" . $_FILES["image"]["name"]);
-    $location = "media/". $_FILES["image"]["name"];
+    move_uploaded_file($_FILES["image"]["tmp_name"], "../media/" . $_FILES["image"]["name"]);
+    $location = "../media/". $_FILES["image"]["name"];
 
 
-    $query="update ward  set brief= :brief, img='$location' where id = '$get_id' " or die(mysql_error());
+    $query="update ward  set brief=:brief, img=:img where id =:id " or die(mysqli_error());
 
     $stmt=$conn->prepare($query);
-    $stmt->bindParam(':brief', $_POST['brief'], PDO::PARAM_STR);
+    //$stmt->bind_param('sssssdddd', $phone_number, $street_name, $city, $county, $zip_code, $day_date, $month_date, $year_date, $account_id);
+    $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
     $stmt->bindParam(':img', $location, PDO::PARAM_STR);
+    $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
 
     $stmt->execute();
+
 
     ?>
     <script>
