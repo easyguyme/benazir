@@ -131,7 +131,7 @@
                                     ?>
                                     <li>
                                         <img src="lindi/<?php echo $row['image']; ?>" alt="User Image">
-                                        <a class="users-list-name" href="profile/lindi.php"><?php echo $row['name']; ?></a>
+                                        <a class="users-list-name" href="profile/lindi.php"><?php echo $row['named']; ?></a>
                                         <span class="users-list-date"><?php echo $row['age']; ?></span>
                                     </li>
                                 <?php }?>

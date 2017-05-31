@@ -64,7 +64,7 @@
                                             <label for="name" class="col-sm-2 control-label">Designation:</label>
 
                                             <div class="col-sm-6">
-                                                <input type="text" name="desig" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['designation']; ?>"  required>
+                                                <input type="text" name="designation" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['designation']; ?>"  required>
 
                                             </div>
                                         </div>
@@ -82,7 +82,7 @@
                                             <label for="name" class="col-sm-2 control-label">Age:</label>
 
                                             <div class="col-sm-4 ">
-                                                <input type="text" name="name" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['age']; ?>"  required>
+                                                <input type="text" name="age" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['age']; ?>"  required>
 
                                             </div>
                                         </div>
@@ -120,7 +120,7 @@
                                             <label for="name" class="col-sm-2 control-label">Education:</label>
 
                                             <div class="col-sm-10 ">
-                                                <textarea  name="bio" style="width: 40pc; height: 5pc; placeholder="Description" required><?php echo $row['education']; ?></textarea>
+                                                <textarea  name="education" style="width: 40pc; height: 5pc; placeholder="Description" required><?php echo $row['education']; ?></textarea>
 
                                             </div>
                                         </div>
@@ -208,7 +208,16 @@
 include('dbcon.php');
 if (isset($_POST['save'])){
 
-    $brief = $_POST['brief'];
+    $name = $_POST['name'];
+    $designation = $_POST['designation'];
+    $locate = $_POST['location'];
+    $age = $_POST['age'];
+    $bio = $_POST['bio'];
+    $education = $_POST['education'];
+    $skill =$_POST['skill'];
+    list($skill1,$skill2,$skill3,$skill4)=explode(",",$skill);
+    $hobby =$_POST['hobby'];
+    list($hobby1,$hobby2,$hobby3,$hobby4)=explode(",",$hobby);
 
 
     $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
@@ -219,10 +228,18 @@ if (isset($_POST['save'])){
     $location = "../media/". $_FILES["image"]["name"];
 
 
-    $query="update ward  set brief=:brief, img=:img where id =:id " or die(mysqli_error());
+    $query="update profiles  set named=:named, img=:img where id =:id " or die(mysqli_error());
 
     $stmt=$conn->prepare($query);
-
+    $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
+    $stmt->bindParam(':img', $location, PDO::PARAM_STR);
+    $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
+    $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
+    $stmt->bindParam(':img', $location, PDO::PARAM_STR);
+    $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
+    $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
+    $stmt->bindParam(':img', $location, PDO::PARAM_STR);
+    $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
     $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
     $stmt->bindParam(':img', $location, PDO::PARAM_STR);
     $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
@@ -232,7 +249,7 @@ if (isset($_POST['save'])){
 
     ?>
     <script>
-        window.location = "mabrief.php";
+        window.location = "machamp.php";
     </script>
     <?php
 

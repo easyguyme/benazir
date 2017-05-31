@@ -42,7 +42,7 @@
                             ?>
                             <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                            <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+                            <h3 class="profile-username text-center"><?php echo $row['named']; ?></h3>
 
                             <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                             <div class="box box-primary">
@@ -167,7 +167,7 @@
                                                 ?>
                                                 <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+                                                <h3 class="profile-username text-center"><?php echo $row['named']; ?></h3>
 
                                                 <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                                 <div class="box box-primary">
@@ -239,7 +239,7 @@
                                             ?>
                                             <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                            <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+                                            <h3 class="profile-username text-center"><?php echo $row['named']; ?></h3>
 
                                             <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                             <div class="box box-primary">
@@ -313,7 +313,7 @@
                                                 ?>
                                                 <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+                                                <h3 class="profile-username text-center"><?php echo $row['named']; ?></h3>
 
                                                 <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                                 <div class="box box-primary">
@@ -386,7 +386,7 @@
                                                 ?>
                                                 <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+                                                <h3 class="profile-username text-center"><?php echo $row['named']; ?></h3>
 
                                                 <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                                 <div class="box box-primary">
@@ -463,7 +463,7 @@
                                                     ?>
                                                     <img class="profile-user-img img-responsive img-circle" src="<?php echo $row['image']; ?>" alt="User profile picture">
 
-                                                    <h3 class="profile-username text-center"><?php echo $row['name']; ?></h3>
+                                                    <h3 class="profile-username text-center"><?php echo $row['named']; ?></h3>
 
                                                     <p class="text-muted text-center"><?php echo $row['designation']; ?></p>
                                                     <div class="box box-primary">
