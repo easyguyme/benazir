@@ -66,7 +66,7 @@
                                                     <tr>
 
                                                         <td><img class="img-responsive" style="height:100px;width: 100px; " src="<?php echo $row['image']; ?>" alt="Photo"></td>
-                                                        <td><?php echo $row['name']; ?></td>
+                                                        <td><?php echo $row['named']; ?></td>
                                                         <td><?php echo $row['designation']; ?></td>
                                                         <td><?php echo $row['age']; ?></td>
 

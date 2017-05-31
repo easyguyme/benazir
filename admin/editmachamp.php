@@ -55,7 +55,7 @@
                                             <label for="name" class="col-sm-2 control-label">Names:</label>
 
                                             <div class="col-sm-6 ">
-                                                <input type="text" name="name" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['name']; ?>"  required>
+                                                <input type="text" name="named" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['named']; ?>"  required>
 
                                             </div>
                                         </div>
@@ -208,9 +208,9 @@
 include('dbcon.php');
 if (isset($_POST['save'])){
 
-    $name = $_POST['name'];
+    $named = $_POST['named'];
     $designation = $_POST['designation'];
-    $locate = $_POST['location'];
+    $location = $_POST['location'];
     $age = $_POST['age'];
     $bio = $_POST['bio'];
     $education = $_POST['education'];
@@ -225,28 +225,14 @@ if (isset($_POST['save'])){
     $image_size = getimagesize($_FILES['image']['tmp_name']);
 
     move_uploaded_file($_FILES["image"]["tmp_name"], "../media/" . $_FILES["image"]["name"]);
-    $location = "../media/". $_FILES["image"]["name"];
+    $path = "../media/". $_FILES["image"]["name"];
+
+    $conn->query("update profiles  set named='$named',designation='$designation', location='$location', age='$age', bio='$bio',education='$education', skill1='$skill1', skill2='$skill2', skill3='$skill3',skill4='$skill4',hobby1='$hobby1',hobby2='$hobby2',hobby3='$hobby3',hobby4='$hobby4',image='$path' where id ='$get_id' ") or die(mysqli_error());
 
 
-    $query="update profiles  set named=:named, img=:img where id =:id " or die(mysqli_error());
-
-    $stmt=$conn->prepare($query);
-    $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
-    $stmt->bindParam(':img', $location, PDO::PARAM_STR);
-    $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
-    $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
-    $stmt->bindParam(':img', $location, PDO::PARAM_STR);
-    $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
-    $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
-    $stmt->bindParam(':img', $location, PDO::PARAM_STR);
-    $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
-    $stmt->bindParam(':brief', $brief, PDO::PARAM_STR);
-    $stmt->bindParam(':img', $location, PDO::PARAM_STR);
-    $stmt->bindParam(':id', $get_id, PDO::PARAM_STR);
-
-    $stmt->execute();
 
 
+    
     ?>
     <script>
         window.location = "machamp.php";
