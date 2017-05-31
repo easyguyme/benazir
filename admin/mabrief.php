@@ -1,7 +1,7 @@
 <?php  include('session.php'); ?>
 <?php include('header.php'); ?>
-    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
-    <body class="hold-transition skin-red sidebar-mini">
+<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+<body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">
 
         <?php include('top.php'); ?>

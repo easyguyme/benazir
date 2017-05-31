@@ -13,7 +13,7 @@
             <div class="form-group">
                 <label for="message" class="col-sm-2 control-label">Message:</label>
 
-              <textarea rows="4" cols="50" name="message" placeholder="Message" required> </textarea>
+                <textarea rows="4" cols="50" name="message" placeholder="Message" required> </textarea>
             </div>
             <div class="form-group col-sm-10">
                 <label>Name:</label>

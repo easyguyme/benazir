@@ -51,7 +51,7 @@
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="name" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['name']; ?>" required>
+                                        <input type="text" name="name" class="form-control" id="event" placeholder="Publication Heading" value="<?php echo $row['named']; ?>" required>
                                     </div>
 
                                 </div>

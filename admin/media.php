@@ -44,9 +44,9 @@
                     <div class="col-md-6">
                         <div class="small-box bg-green-active">
                             <div class="inner">
-                                <h3>Publications</h3>
+                                <h3>Downloads and Publications</h3>
 
-                                <p>To update or add publications on the media page</p>
+                                <p>To update or add Downloads and Publications on the media page</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-printer"></i>
@@ -57,15 +57,28 @@
      <!-- ./col -->
             </div>
             <!--third row-->
+
             <div   class="row">
 
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-6">
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>Stories</h3>
+
+                            <p>To update Our Stories</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-chatbubbles"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
                     <div class="small-box bg-blue">
                         <div class="inner">
                             <h3>Testimonials</h3>
 
-                            <p>To update or add testimonials</p>
+                            <p>To update Downloads and Publications</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-speakerphone"></i>
@@ -73,12 +86,11 @@
                         <a href="addtestimony.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
+
 
 
 
             </div>
-
             <!--            social media-->
 
 

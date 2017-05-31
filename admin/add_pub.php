@@ -75,7 +75,7 @@ if (isset($_POST['save'])){
 
 
 
-    $conn->query("insert into downloads (name,sub,des,link) values('$name','$sub','$descp','$location')")or die(mysql_error());
+    $conn->query("insert into downloads (named,sub,des,link) values('$name','$sub','$descp','$location')")or die(mysql_error());
     ?>
     <script>
         window.location = "addpub.php";

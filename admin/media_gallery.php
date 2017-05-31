@@ -1,5 +1,6 @@
 <?php  include('session.php'); ?>
 <?php include('header.php'); ?>
+<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
@@ -145,7 +146,7 @@
                                 <div class="block-content collapse in">
                                     <div class="span12">
                                         <form action="delete_media.php" method="post">
-                                            <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+                                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example12">
                                                 <a data-toggle="modal" href="#mediadelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
 
                                                 <?php include('modal_delete.php'); ?>
@@ -221,7 +222,26 @@
 
 <!-- jQuery 2.2.3 -->
 <?php include('hscripts.php'); ?>
+<script>
+    $(function () {
+        $('#example12').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true
+        });
 
+
+
+
+
+    });
+</script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 
 <script type="text/javascript">
     $("#read").click(function() {
