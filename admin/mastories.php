@@ -65,7 +65,7 @@
                                         <label for="name" class="col-sm-2 control-label">Description:</label>
 
                                         <div class="col-sm-10 ">
-                                            <textarea  name="description:" style="width: 30pc; height: 5pc; placeholder="Description" required></textarea>
+                                            <textarea  name="description" style="width: 30pc; height: 5pc; placeholder="Description" required></textarea>
 
                                         </div>
                                     </div>
@@ -115,7 +115,7 @@
                                 <!-- block -->
                                 <div id="block_bg" class="block">
                                     <div class="box-header with-border">
-                                        <h3 class="box-title">Edit Uploaded Pics</h3>
+                                        <h3 class="box-title">Edit Stories Pics</h3>
                                     </div>
                                     <div class="block-content collapse in">
                                         <div class="span12">
@@ -257,31 +257,35 @@
 <?php
 include('dbcon.php');
 if (isset($_POST['save'])){
-    $title = $_POST['title'];
-    $descp = $_POST['descrip'];
+    $heading = $_POST['heading'];
+    $description =$_POST['description'];
+    $link = $_POST['link'];
 
 
     $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
     $image_name = addslashes($_FILES['image']['name']);
     $image_size = getimagesize($_FILES['image']['tmp_name']);
 
-    move_uploaded_file($_FILES["image"]["tmp_name"], "../makina/" . $_FILES["image"]["name"]);
-    $location =  $_FILES["image"]["name"];
+    move_uploaded_file($_FILES["image"]["tmp_name"], "dist/img/" . $_FILES["image"]["name"]);
+
+    $img= "dist/img/" . $_FILES["image"]["name"];
 
 
+    $query="insert into stories (img,head,description,link) values(:img,:heading,:description,:link)";
+    $stmt=$conn->prepare($query);
+    $stmt->bindParam(':img', $img, PDO::PARAM_STR);
+    $stmt->bindParam(':heading', $_POST['heading'], PDO::PARAM_STR);
+    $stmt->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
+    $stmt->bindParam(':link', $_POST['link'], PDO::PARAM_STR);
 
-    $conn->query("insert into magallery (title,dsc,image) values('$title','$descp','$location')")or die(mysql_error());
-
+    $stmt->execute();
 
 
     ?>
     <script>
-        window.location = "update_magallery.php";
+        window.location = "mastories.php";
     </script>
     <?php
 
-}else{
-
-    echo 'not updated';
 }
 ?>

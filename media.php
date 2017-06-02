@@ -268,6 +268,6 @@
 <?php include('hscripts.php'); ?>
 <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
-<script src="saa/js/index.js"></script>
+
 </body>
 </html>
