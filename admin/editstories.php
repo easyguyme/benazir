@@ -154,7 +154,7 @@ if (isset($_POST['save'])){
     $image_name = addslashes($_FILES['image']['name']);
     $image_size = getimagesize($_FILES['image']['tmp_name']);
 
-    move_uploaded_file($_FILES["image"]["tmp_name"], "dist/img/" . $_FILES["image"]["name"]);
+    move_uploaded_file($_FILES["image"]["tmp_name"], "../dist/img/" . $_FILES["image"]["name"]);
 
     $img= "dist/img/" . $_FILES["image"]["name"];
 
