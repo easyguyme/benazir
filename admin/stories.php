@@ -40,7 +40,7 @@
 
                             <div class="box-header with-border">
 
-                                <h3 class="box-title">Update Makina stories</h3>
+                                <h3 class="box-title">Update  Stories</h3>
 
                             </div>
                             <!-- main header title -->
@@ -149,7 +149,7 @@
                                                             <td><?php echo $row['head']; ?></td>
                                                             <td><?php echo $row['description']; ?></td>
                                                             <td><?php echo $row['link']; ?></td>
-                                                            <td width="30"><a href="edit_magallery.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                            <td width="30"><a href="editstories.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                         </tr>
@@ -283,7 +283,7 @@ if (isset($_POST['save'])){
 
     ?>
     <script>
-        window.location = "mastories.php";
+        window.location = "stories.php";
     </script>
     <?php
 
