@@ -119,9 +119,9 @@
                                     </div>
                                     <div class="block-content collapse in">
                                         <div class="span12">
-                                            <form action="makina_pics.php" method="post">
+                                            <form action="storydel.php" method="post">
                                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
-                                                    <a data-toggle="modal" href="#makinadelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
+                                                    <a data-toggle="modal" href="#storydelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
 
                                                     <?php include('modal_delete.php'); ?>
                                                     <thead>
