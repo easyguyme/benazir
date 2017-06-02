@@ -54,10 +54,10 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-female"></i>Makina</a></li>
-                    <li><a href="#"><i class="fa fa-female"></i>Sarangombe</a></li>
-                    <li><a href="#"><i class="fa fa-female"></i>Lindi</a></li>
-                    <li><a href="#"><i class="fa fa-female"></i>Laini Saba</a></li>
+                    <li><a href="demograph.php"><i class="fa fa-pie-chart"></i>Demographic Data</a></li>
+                    <li><a href="projects.php"><i class="fa fa-cubes"></i>Project Priorities</a></li>
+                    <li><a href="develop.php"><i class="fa fa-database"></i>Development Projects</a></li>
+                    <li><a href="budget.php"><i class="fa fa-money"></i>Budget Allocation</a></li>
                 </ul>
             </li>
             <li><a href="addevent.php"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
