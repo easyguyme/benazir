@@ -189,7 +189,7 @@
                             <h3 class="timeline-header"><a href="<?php echo $row['link']; ?>" target="_blank"><?php echo $row['named']; ?></a> <?php echo $row['sub']; ?></h3>
 
                             <div class="timeline-body">
-                                <?php echo $row['des']; ?>
+                                <p><?php echo $row['des']; ?></p>
                             </div>
                             <div class="timeline-footer">
                                 <a href="<?php echo $row['link']; ?>" class="btn  fa fa-download " target="_blank"> Download</a>

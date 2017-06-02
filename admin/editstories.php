@@ -92,7 +92,7 @@
                                 <!-- /.box-body -->
                                 <div class="box-footer">
 
-                                    <button name="save" class="btn btn-info">Add</button>
+                                    <button name="save" class="btn btn-warning">Update</button>
 
                                 </div>
                                 <!-- /.box-footer -->

@@ -5,7 +5,12 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-
+<style>
+    p.test {
+        width: 15em;
+        word-wrap: break-word;
+    }
+</style>
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
@@ -30,11 +35,11 @@
         <!-- Main content -->
         <!--todo add editable heading-->
         <section class="content">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <?php include('add_pub.php'); ?>
 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="box box-info">
                     <div class="row-fluid">
                         <!-- block -->
@@ -71,7 +76,7 @@
                                                     </td>
                                                     <td><?php echo $row['named']; ?></td>
                                                     <td><?php echo $row['sub']; ?></td>
-                                                    <td><?php echo $row['link']; ?></td>
+                                                    <td ><p class="test"><?php echo $row['link']; ?></p></td>
 
                                                     <td width="30"><a href="edit_pub.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
@@ -142,6 +147,7 @@
 </style>
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
+
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <!-- Select2 -->
 <script src="../plugins/select2/select2.full.min.js"></script>

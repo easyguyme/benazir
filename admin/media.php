@@ -70,7 +70,7 @@
                         <div class="icon">
                             <i class="ion ion-chatbubbles"></i>
                         </div>
-                        <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="stories.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6">
