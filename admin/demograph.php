@@ -24,73 +24,132 @@
         <!-- Main content -->
         <!--todo add editable heading-->
         <section class="content">
-            <div class="row">
+             <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title"><dt>Demographic Data</dt></h3>
 
-                <div class="box box-danger">
-                    <div class="box-header with-border">
-
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-aqua"><i class="fa fa-cubes"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Makina Demographic Data</a></span>
-                                <span class="info-box-number"> <a  href="#">click me</a></span>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
-
-                            <!-- /.info-box-content -->
                         </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"><i class="fa fa-cubes"></i></span>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Sarang'ombe Demographic Data</a></span>
-                                <span class="info-box-number"> <a  href="#">click me</a></span>
-                            </div>
+                        <div class="box-body table-responsive">
 
-                            <!-- /.info-box-content -->
+                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+
+                                <thead>
+                                <tr>
+                                    <th><span class="badge bg-light-blue"></span></th>
+                                    <th><span class="badge bg-light-blue"></span></th>
+                                    <th><span class="badge bg-red">MAKINA</span></th>
+                                    <th><span class="badge bg-green">SARANG'OMBE</span></th>
+                                    <th><span class="badge bg-purple">LINDI</span></th>
+                                    <th><span class="badge bg-yellow">LAINI SABA</span></th>
+                                    <th></th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+
+                                    <?php
+                                    $query = $conn->query("select * from demo_data where head='area'");
+                                    while ($row = $query->fetch()) {
+                                        $id = $row['head'];
+                                        ?>
+                                        <th>AREA. (Km<sup>2</sup>)</th>
+                                        <td></td>
+                                        <td><?php echo $row['makina']; ?></td>
+                                        <td><?php echo $row['sara']; ?></td>
+                                        <td><?php echo $row['lindi']; ?></td>
+                                        <td><?php echo $row['laini']; ?></td>
+                                        <td width="30"><a href="editdemo.php<?php echo '?head='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                    <?php } ?>
+
+                                </tr>
+                                <tr>
+                                    <?php
+                                    $query = $conn->query("select * from demo_data where head='population'");
+                                    while ($row = $query->fetch()) {
+                                        $id = $row['head'];
+                                        ?>
+
+                                        <th>POPULATION SIZE.</th>
+                                        <td></td>
+                                        <td><?php echo $row['makina']; ?></td>
+                                        <td><?php echo $row['sara']; ?></td>
+                                        <td><?php echo $row['lindi']; ?></td>
+                                        <td><?php echo $row['laini']; ?></td>
+                                        <td width="30"><a href="editdemo.php<?php echo '?head='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                    <?php } ?>
+                                </tr>
+                                <tr>
+                                    <?php
+                                    $query = $conn->query("select * from demo_data where head='density'");
+                                    while ($row = $query->fetch()) {
+                                        $id = $row['head'];
+                                        ?>
+
+                                        <th>POPULATION DENSITY.</th>
+                                        <td></td>
+                                        <td><?php echo $row['makina']; ?></td>
+                                        <td><?php echo $row['sara']; ?></td>
+                                        <td><?php echo $row['lindi']; ?></td>
+                                        <td><?php echo $row['laini']; ?></td>
+                                        <td width="30"><a href="editdemo.php<?php echo '?head='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                    <?php } ?>
+                                </tr>
+                                <tr>
+                                    <?php
+                                    $query = $conn->query("select * from demo_data where head='male'");
+                                    while ($row = $query->fetch()) {
+                                        $id = $row['head'];
+                                        ?>
+
+                                        <th rowspan="2" >GENDER:</th>
+                                        <th><span class="badge bg-red">Male</span></th>
+
+                                        <td><?php echo $row['makina']; ?></td>
+                                        <td><?php echo $row['sara']; ?></td>
+                                        <td><?php echo $row['lindi']; ?></td>
+                                        <td><?php echo $row['laini']; ?></td>
+                                        <td width="30"><a href="editdemo.php<?php echo '?head='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+
+                                    <?php } ?>
+                                </tr>
+                                <tr>
+                                    <?php
+                                    $query = $conn->query("select * from demo_data where head='female'");
+                                    while ($row = $query->fetch()) {
+                                        $id = $row['head'];
+                                        ?>
+
+                                        <th><span class="badge bg-green">Female</span></th>
+                                        <td><?php echo $row['makina']; ?></td>
+                                        <td><?php echo $row['sara']; ?></td>
+                                        <td><?php echo $row['lindi']; ?></td>
+                                        <td><?php echo $row['laini']; ?></td>
+                                        <td width="30"><a href="editdemo.php<?php echo '?head='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+
+                                    <?php } ?>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+
                         </div>
-                        <!-- /.info-box -->
+
+
                     </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-blue"><i class="fa fa-cubes"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Laini saba Demographic Data</a></span>
-                                <span class="info-box-number"> <a  href="#">click me</a></span>
-                            </div>
-
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- fix for small devices only -->
-                    <div class="clearfix visible-sm-block"></div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-green"><i class="fa fa-cubes"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Lindi Demographic Data</a></span>
-                                <span class="info-box-number"> <a  href="#">click me</a></span>
-                            </div>
-
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-
 
                 </div>
+
 
                 <!-- /.col -->
             </div>
@@ -111,7 +170,7 @@
 
                     </div>
                 </div>
-                    <!-- small box -->
+                <!-- small box -->
                 <div class="col-sm-6 ">
                     <!-- small box -->
                     <div class="small-box bg-aqua">
@@ -127,14 +186,6 @@
 
                     </div>
                 </div>
-                </div>
-                <!-- ./col -->
-
-                <!-- ./col -->
-
-                <!-- ./col -->
-                <!---->
-                <!-- ./col -->
             </div>
             <!--            second row-->
 
