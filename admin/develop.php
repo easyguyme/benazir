@@ -40,31 +40,32 @@
 
                         <div class="box-body">
                             <div class="info-box">
-                                <span class="info-box-icon bg-purple"><i class="fa fa-cubes"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Sarang'ombe Development Projects</span>
-                                    <a href="update_cubes.php<?php echo '?id=1'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                            <!-- /.description-block -->
-                            <div class="info-box">
                                 <span class="info-box-icon bg-green"><i class="fa fa-cubes"></i></span>
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Makina Development Projects</span>
-                                    <a href="update_cubes.php<?php echo '?id=2'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="makdev.php" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
+                            <div class="info-box">
+                                <span class="info-box-icon bg-purple"><i class="fa fa-cubes"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Sarang'ombe Development Projects</span>
+                                    <a href="sardev.php" class="uppercase"><dt>Click to edit details</dt></a>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.description-block -->
+
                             <!-- /.description-block -->
                             <div class="info-box">
                                 <span class="info-box-icon bg-blue"><i class="fa fa-cubes"></i></span>
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Laini Development Projects</span>
-                                    <a href="update_cubes.php<?php echo '?id=3'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="lainidev.php" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -74,7 +75,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Lindi Development Projects</span>
-                                    <a href="update_cubes.php<?php echo '?id=4'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="lindev.php" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -99,13 +100,13 @@
                         <div class="icon">
                             <i class="ion ion-information"></i>
                         </div>
-                        <a href="#pdMakina" data-toggle="modal" data-target="#pdMakina" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="graphres.php"  class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
 
                     </div>
                 </div>
                 <!-- /.col -->
-            </div>
 
+    </div>
             <div class="row">
                 <div class="col-md-4 ">
                     <div class="box box-danger">
@@ -125,7 +126,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Sarang'ombe Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=1'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=sara&body=cbo'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -135,7 +136,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Makina Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=2'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=makina&body=cbo'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -145,7 +146,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Laini Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=3'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=laini&body=cbo'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -155,7 +156,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Lindi Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=4'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=lindi&body=cbo'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -188,7 +189,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Sarang'ombe Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=1'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=sara&body=ngo'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -198,7 +199,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Makina Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=2'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=makina&body=ngo'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -208,7 +209,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Laini Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=3'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=laini&body=ngo'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -218,7 +219,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Lindi Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=4'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=lindi&body=ngo'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -250,7 +251,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Sarang'ombe Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=1'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=sara&body=county'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -260,7 +261,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Makina Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=2'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=makina&body=county'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -270,7 +271,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Laini Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=3'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=laini&body=county'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -280,7 +281,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Lindi Project status</span>
-                                    <a href="update_cube.php<?php echo '?id=4'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
+                                    <a href="editprojstat.php<?php echo '?page=lindi&body=county'; ?>" class="uppercase"><dt>Click to edit details</dt></a>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>

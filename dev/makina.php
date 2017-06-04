@@ -67,7 +67,7 @@
 
                                                         <thead>
                                                         <tr>
-                                                            <th><span class="badge bg-blue">No.</span></th>
+
                                                             <th><span class="badge bg-light-blue">Planned</span></th>
                                                             <th><span class="badge bg-red">Ongoing</span></th>
 
@@ -81,7 +81,7 @@
 
                                                             ?>
                                                             <tr>
-                                                                <th><?php echo $row['id']; ?></th>
+
                                                                 <td><?php echo $row['planned']; ?></td>
                                                                 <td><?php echo $row['ongoing']; ?></td>
                                                             </tr>
@@ -109,7 +109,7 @@
 
                                                         <thead>
                                                         <tr>
-                                                            <th><span class="badge bg-blue">No.</span></th>
+
                                                             <th><span class="badge bg-light-blue">Planned</span></th>
                                                             <th><span class="badge bg-red">Ongoing</span></th>
 
@@ -123,7 +123,7 @@
 
                                                             ?>
                                                             <tr>
-                                                                <th><?php echo $row['id']; ?></th>
+
                                                                 <td><?php echo $row['planned']; ?></td>
                                                                 <td><?php echo $row['ongoing']; ?></td>
                                                             </tr>
@@ -149,7 +149,7 @@
 
                                                         <thead>
                                                         <tr>
-                                                            <th><span class="badge bg-blue">No.</span></th>
+
                                                             <th><span class="badge bg-light-blue">Planned</span></th>
                                                             <th><span class="badge bg-red">Ongoing</span></th>
 
@@ -163,7 +163,7 @@
 
                                                             ?>
                                                             <tr>
-                                                                <th><?php echo $row['id']; ?></th>
+
                                                                 <td><?php echo $row['planned']; ?></td>
                                                                 <td><?php echo $row['ongoing']; ?></td>
                                                             </tr>
@@ -190,7 +190,7 @@
 
                                                         <thead>
                                                         <tr>
-                                                            <th><span class="badge bg-blue">No.</span></th>
+
                                                             <th><span class="badge bg-light-blue">Planned</span></th>
                                                             <th><span class="badge bg-red">Ongoing</span></th>
 
@@ -204,7 +204,7 @@
 
                                                             ?>
                                                             <tr>
-                                                                <th><?php echo $row['id']; ?></th>
+
                                                                 <td><?php echo $row['planned']; ?></td>
                                                                 <td><?php echo $row['ongoing']; ?></td>
                                                             </tr>
@@ -1559,10 +1559,15 @@
                         <div class="box-body">
                             <div class="info-box bg-blue">
                                 <span class="info-box-icon"><i class="ion-ios-pulse-strong"></i></span>
+                                <?php
+                                $query = $conn->prepare("select  SUM(makina+sara+lindi+saba) as total from resgraph where type='o'");
+                                $query->execute();
+                                $row = $query->fetch(PDO::FETCH_ASSOC)
 
+                                ?>
                                 <div class="info-box-content">
                                     <span class="info-box-text">ONGOING</span>
-                                    <span class="info-box-number">163,921</span>
+                                    <span class="info-box-number"><?php echo $row['total']; ?></span>
 
 
 
@@ -1572,10 +1577,15 @@
                             <!-- /.info-box -->
                             <div class="info-box bg-orange">
                                 <span class="info-box-icon"><i class="ion ion-load-a"></i></span>
+                                <?php
+                                $query = $conn->prepare("select  SUM(makina+sara+lindi+saba) as total from resgraph where type='p'");
+                                $query->execute();
+                                $row = $query->fetch(PDO::FETCH_ASSOC)
 
+                                ?>
                                 <div class="info-box-content">
                                     <span class="info-box-text">PLANNED</span>
-                                    <span class="info-box-number">114,381</span>
+                                    <span class="info-box-number"><?php echo $row['total']; ?></span>
 
 
 

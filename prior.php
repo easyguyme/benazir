@@ -50,7 +50,7 @@
                                 <thead>
                                 <tr>
 
-                                    <th><span class="badge bg-light-blue">#</span></th>
+
                                     <th><span class="badge bg-red">Makina</span></th>
                                     <th><span class="badge bg-green">Sarang'ombe</span></th>
                                     <th><span class="badge bg-purple">Lindi</span></th>
@@ -60,12 +60,12 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                $query = $conn->query("select * from prior_county where page='makina'");
+                                $query = $conn->query("select * from prior_county");
                                 while ($row = $query->fetch()) {
 
                                 ?>
                                 <tr>
-                                    <td><?php echo $row['id']; ?></td>
+                                    
                                     <td><?php echo $row['makina']; ?></td>
                                     <td><?php echo $row['sara']; ?></td>
                                     <td><?php echo $row['lindi']; ?></td>
@@ -104,7 +104,7 @@
                                 <thead>
                                 <tr>
 
-                                    <th><span class="badge bg-light-blue">#</span></th>
+                                  
                                     <th><span class="badge bg-red">Makina</span></th>
                                     <th><span class="badge bg-green">Sarang'ombe</span></th>
                                     <th><span class="badge bg-purple">Lindi</span></th>
@@ -114,12 +114,12 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                $query = $conn->query("select * from prior_com where page='makina'");
+                                $query = $conn->query("select * from prior_com");
                                 while ($row = $query->fetch()) {
 
                                 ?>
                                     <tr>
-                                        <td><?php echo $row['id']; ?></td>
+                                       
                                         <td><?php echo $row['makina']; ?></td>
                                         <td><?php echo $row['sara']; ?></td>
                                         <td><?php echo $row['lindi']; ?></td>

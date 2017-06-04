@@ -40,7 +40,8 @@
                 <li class="active">Dashboard</li>
             </ol>
         </section>
-        <?php $get_id = $_GET['head']; ?>
+        <?php $get_page = $_GET['page']; ?>
+        <?php $get_body = $_GET['body']; ?>
         <!-- Main content -->
         <!--todo add editable heading-->
         <section class="content">
@@ -51,62 +52,99 @@
                     <div class="box box-info">
                         <?php
 
-                        $query = $conn->query("select * from demo_data  where head='$get_id'") or die(mysql_error());
+                        $query = $conn->query("select * from proj_status  where page='$get_page' AND body='$get_body'") or die(mysql_error());
                         while ($row = $query->fetch()) {
 
 
-                        ?>
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Edit <?php echo $row['head']; ?> demographic data</h3>
-                        </div>
+                            ?>
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Edit  <?php echo $row['page']; ?> <?php echo $row['body']; ?></h3>
+                                <h4 class="box-title">(Do not Exceed 100% )</h4>
+                            </div>
                         <?php }?>
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form  method="post">
                             <?php
 
-                            $query = $conn->query("select * from demo_data  where head='$get_id'") or die(mysql_error());
+                            $query = $conn->query("select * from proj_status  where page='$get_page' AND body='$get_body'") or die(mysql_error());
                             while ($row = $query->fetch()) {
 
 
                             ?>
                             <div class="box-body">
                                 <div class="form-group col-sm-10">
-                                    <label for="area" class="control-label">Makina:</label>
+                                    <label for="area" class="control-label">Water:</label>
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="makina" class="form-control" id="area" placeholder="makina" value="<?php echo $row['makina']; ?>" required>
+                                        <input type="text" name="water" class="form-control" id="area" placeholder="Water" value="<?php echo $row['water']; ?>" required>
                                     </div>
 
                                 </div>
 
                                 <div class="form-group col-sm-10">
-                                    <label for="population" class=" control-label">Sarang'ombe:</label>
+                                    <label for="population" class=" control-label">Health:</label>
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="sara" class="form-control" id="population" placeholder="sarangombe" value="<?php echo $row['sara']; ?>" required>
+                                        <input type="text" name="health" class="form-control" id="population" placeholder="Health" value="<?php echo $row['health']; ?>" required>
                                     </div>
 
                                 </div>
 
                                 <div class="form-group col-sm-10">
-                                    <label for="village" class=" control-label">Lindi:</label>
+                                    <label for="village" class=" control-label">Education:</label>
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="lindi" class="form-control" id="village" placeholder="lindi" value="<?php echo $row['lindi']; ?>" required>
+                                        <input type="text" name="education" class="form-control" id="village" placeholder="Education" value="<?php echo $row['education']; ?>" required>
                                     </div>
 
                                 </div>
 
                                 <div class="form-group col-sm-10">
-                                    <label for="fund" class=" control-label">Laini Saba:</label>
+                                    <label for="fund" class=" control-label">Sanitation:</label>
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="laini" class="form-control" id="fund" placeholder="laini" value="<?php echo $row['laini']; ?>" required>
+                                        <input type="text" name="sanitation" class="form-control" id="fund" placeholder="Sanitation" value="<?php echo $row['sanitation']; ?>" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-10">
+                                    <label for="fund" class=" control-label">Solid Waste:</label>
+
+                                    <div class="input-group  col-sm-8">
+
+                                        <input type="text" name="waste" class="form-control" id="fund" placeholder="Solid waste" value="<?php echo $row['waste']; ?>" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-10">
+                                    <label for="fund" class=" control-label">Drainage:</label>
+
+                                    <div class="input-group  col-sm-8">
+
+                                        <input type="text" name="drainage" class="form-control" id="fund" placeholder="Drainage" value="<?php echo $row['drain']; ?>" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-10">
+                                    <label for="fund" class=" control-label">Energy:</label>
+
+                                    <div class="input-group  col-sm-8">
+
+                                        <input type="text" name="energy" class="form-control" id="fund" placeholder="Energy" value="<?php echo $row['energy']; ?>" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-10">
+                                    <label for="fund" class=" control-label">Roads:</label>
+
+                                    <div class="input-group  col-sm-8">
+
+                                        <input type="text" name="road" class="form-control" id="fund" placeholder="Roads" value="<?php echo $row['road']; ?>" required>
                                     </div>
 
                                 </div>
@@ -182,23 +220,27 @@
 error_reporting(E_ALL);
 
 if (isset($_POST['save'])){
-    $makina = $_POST['makina'];
-    $sara = $_POST['sara'];
-    $lindi = $_POST['lindi'];
-    $laini = $_POST['laini'];
-    
+    $water = $_POST['water'];
+    $health = $_POST['health'];
+    $education = $_POST['education'];
+    $sanitation = $_POST['sanitation'];
+    $waste = $_POST['waste'];
+    $drainage = $_POST['drainage'];
+    $energy = $_POST['energy'];
+    $road = $_POST['road'];
 
 
 
 
-    $conn->query("update demo_data set makina = '$makina', sara='$sara' ,lindi='$lindi',laini='$laini' where head = '$get_id' ")or die(mysql_error());
+
+    $conn->query("update proj_status set water = '$water', health='$health' ,education='$education',sanitation='$sanitation', waste='$waste',drain='$drainage',energy='$energy',road='$road' where page='$get_page' AND body='$get_body' ")or die(mysql_error());
 
 
 
 
     ?>
     <script>
-        window.location = "demograph.php";
+        window.location = "editprojstat.php<?php echo '?page='.$get_page.'&body='.$get_body ?>";
     </script>
     <?php
 

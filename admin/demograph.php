@@ -28,7 +28,7 @@
                 <div class="col-md-12">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>Demographic Data</dt></h3>
+                            <h3 class="box-title"><dt>Demographic Data and Graph</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -154,39 +154,7 @@
                 <!-- /.col -->
             </div>
 
-            <div class="row">
-                <div class="col-sm-6 ">
-                    <!-- small box -->
-                    <div class="small-box bg-blue">
-                        <div class="inner">
-                            <h3>Demographic Graph</h3>
-
-                            <p>To edit Area Demographic Graph</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-information"></i>
-                        </div>
-                        <a href="#pdMakina" data-toggle="modal" data-target="#pdMakina" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
-
-                    </div>
-                </div>
-                <!-- small box -->
-                <div class="col-sm-6 ">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                            <h3>Population Density</h3>
-
-                            <p>To edit Population Density</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-information"></i>
-                        </div>
-                        <a href="#pdMakina" data-toggle="modal" data-target="#pdMakina" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
-
-                    </div>
-                </div>
-            </div>
+          
             <!--            second row-->
 
 

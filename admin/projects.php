@@ -38,7 +38,7 @@
                         <div class="icon">
                             <i class="ion ion-information"></i>
                         </div>
-                        <a href="#pdMakina" data-toggle="modal" data-target="#pdMakina" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="wardprior.php"  class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
 
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                         <div class="icon">
                             <i class="ion ion-information"></i>
                         </div>
-                        <a href="#pdMakina" data-toggle="modal" data-target="#pdMakina" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="comprior.php"  class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
 
                     </div>
                 </div>
