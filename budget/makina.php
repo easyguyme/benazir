@@ -722,27 +722,47 @@
                                             <div class="tab-pane active" id="makinas">
 
                                                 <!-- /.box-header -->
+                                                <?php
+                                                $query = $conn->query("select * from resimg where page='makina'");
+                                                while ($row = $query->fetch()) {
 
-
-
-                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="../dist/img/img.png" alt="Photo">
-
+                                                ?>
+                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="<?php echo $row['img']; ?>" alt="Photo">
+                                                <?php } ?>
 
                                             </div>
                                             <!-- /.tab-pane -->
                                             <div class="tab-pane" id="saras">
-                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="../dist/img/img.png" alt="Photo">
+                                                <?php
+                                                $query = $conn->query("select * from resimg where page='sara'");
+                                                while ($row = $query->fetch()) {
+
+                                                    ?>
+                                                    <img class="img-responsive" style="height:30pc;width: 100pc; " src="<?php echo $row['img']; ?>" alt="Photo">
+                                                <?php } ?>
 
                                             </div>
 
                                             <!-- /.tab-pane -->
                                             <div class="tab-pane" id="lindis">
 
-                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="../dist/img/img.png" alt="Photo">
+                                                <?php
+                                                $query = $conn->query("select * from resimg where page='lindi'");
+                                                while ($row = $query->fetch()) {
+
+                                                    ?>
+                                                    <img class="img-responsive" style="height:30pc;width: 100pc; " src="<?php echo $row['img']; ?>" alt="Photo">
+                                                <?php } ?>
                                             </div>
                                             <div class="tab-pane" id="sabas">
 
-                                                <img class="img-responsive" style="height:30pc;width: 100pc; " src="../dist/img/img.png" alt="Photo">
+                                                <?php
+                                                $query = $conn->query("select * from resimg where page='laini'");
+                                                while ($row = $query->fetch()) {
+
+                                                    ?>
+                                                    <img class="img-responsive" style="height:30pc;width: 100pc; " src="<?php echo $row['img']; ?>" alt="Photo">
+                                                <?php } ?>
 
 
                                             </div>
