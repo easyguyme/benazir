@@ -202,7 +202,7 @@ if (isset($_POST['save'])){
 
     ?>
     <script>
-        window.location = "editsarbudget.php<?php echo '?head='.$get_head ?>";
+        window.location = "allocation.php";
     </script>
     <?php
 

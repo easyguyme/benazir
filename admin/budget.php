@@ -24,81 +24,23 @@
         <!-- Main content -->
         <!--todo add editable heading-->
         <section class="content">
-            <div class="row">
 
-                <div class="box box-danger">
-                    <div class="box-header with-border">
-
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-aqua"><i class="fa fa-cubes"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Makina Budget Allocation</a></span>
-                                <span class="info-box-number"> <a  href="#">click me</a></span>
-                            </div>
-
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"><i class="fa fa-cubes"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Sarang'ombe Budget Allocation</a></span>
-                                <span class="info-box-number"> <a  href="#">click me</a></span>
-                            </div>
-
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-blue"><i class="fa fa-cubes"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Laini saba Budget Allocation</a></span>
-                                <span class="info-box-number"> <a  href="#">click me</a></span>
-                            </div>
-
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- fix for small devices only -->
-                    <div class="clearfix visible-sm-block"></div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-green"><i class="fa fa-cubes"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text"> <a href="#">To Edit Lindi Budget Allocation</a></span>
-                                <span class="info-box-number"> <a  href="#">click me</a></span>
-                            </div>
-
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-
-
-                </div>
-
-                <!-- /.col -->
-            </div>
 
             <div class="row">
-                <div class="col-sm-3 ">
+                <div class="col-sm-6 ">
                     <!-- small box -->
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>Budget Allocation</h3>
 
+                            <p>To edit Budget Allocation</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-information"></i>
+                        </div>
+                        <a href="allocation.php"  class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+
+                    </div>
                 </div>
                 <div class="col-sm-6 ">
                     <!-- small box -->
@@ -116,10 +58,7 @@
                     </div>
                 </div>
                 <!-- small box -->
-                <div class="col-sm-3 ">
-                    <!-- small box -->
 
-                </div>
             </div>
             <!-- ./col -->
 

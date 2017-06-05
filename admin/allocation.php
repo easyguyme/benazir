@@ -235,7 +235,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_sara where head='water'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>1.</th>
@@ -251,7 +251,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_sara where head='health'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>2.</th>
@@ -267,7 +267,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_sara where head='edu'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>3.</th>
@@ -283,7 +283,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_sara where head='san'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>4.</th>
@@ -299,7 +299,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_sara where head='solid'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>5.</th>
@@ -315,7 +315,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_sara where head='drain'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>6.</th>
@@ -331,7 +331,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_sara where head='energy'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>7.</th>
@@ -347,7 +347,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_sara where head='road'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>8.</th>
@@ -395,7 +395,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_lindi where head='water'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>1.</th>
@@ -411,7 +411,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_lindi where head='health'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>2.</th>
@@ -427,7 +427,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_lindi where head='edu'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>3.</th>
@@ -443,7 +443,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_lindi where head='san'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>4.</th>
@@ -459,7 +459,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_lindi where head='solid'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>5.</th>
@@ -475,7 +475,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_lindi where head='drain'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>6.</th>
@@ -491,7 +491,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_lindi where head='energy'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>7.</th>
@@ -507,7 +507,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_lindi where head='road'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>8.</th>
@@ -557,7 +557,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_saba where head='water'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>1.</th>
@@ -573,7 +573,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_saba where head='health'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>2.</th>
@@ -589,7 +589,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_saba where head='edu'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>3.</th>
@@ -605,7 +605,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_saba where head='san'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>4.</th>
@@ -621,7 +621,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_saba where head='solid'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>5.</th>
@@ -637,7 +637,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_saba where head='drain'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>6.</th>
@@ -653,7 +653,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_saba where head='energy'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>7.</th>
@@ -669,7 +669,7 @@
                                                             <?php
                                                             $query = $conn->query("select * from budget_saba where head='road'");
                                                             while ($row = $query->fetch()) {
-
+                                                                $id=$row['head'];
                                                                 ?>
 
                                                                 <th>8.</th>
