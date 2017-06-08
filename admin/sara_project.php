@@ -55,7 +55,7 @@
                         <div class="icon">
                             <i class="ion ion-camera"></i>
                         </div>
-                        <a href="update_magallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="sagallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

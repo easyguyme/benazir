@@ -36,7 +36,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">To Edit Projects</a></span>
-                                <span class="info-box-number"> <a  href="sara_project.php_project.php">click me</a></span>
+                                <span class="info-box-number"> <a  href="sara_project.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->

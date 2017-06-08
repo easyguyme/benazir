@@ -269,7 +269,7 @@
                             {
 
                                 $title = $row['title'];
-                                $desc = $row['desc'];
+                                $desc = $row['dsc'];
                                 $image = $row['image'];
                                 if($counter == 0)
                                 {
