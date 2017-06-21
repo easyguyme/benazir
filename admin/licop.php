@@ -50,7 +50,7 @@
                     <div class="box box-info">
 
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add Makina County Government Priority</h3>
+                            <h3 class="box-title">Add Lindi County Government Priority</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -113,7 +113,7 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>Makina County Government Priorities</dt></h3>
+                            <h3 class="box-title"><dt>Lindi County Government Priorities</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -123,7 +123,7 @@
                         </div>
 
                         <div class="box-body table-responsive">
-                            <form action="macop.php" method="post">
+                            <form action="licop.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                     <a data-toggle="modal" href="#macopdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                     <div id="macopdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -157,7 +157,7 @@
                                     <tbody>
                                     <?php
 
-                                    $query = $conn->query("select * from plans_county where page='makina'") or die(mysql_error());
+                                    $query = $conn->query("select * from plans_county where page='lindi'") or die(mysql_error());
                                     while ($row = $query->fetch()) {
                                         $id = $row['id'];
 
@@ -170,7 +170,7 @@
                                             <td><?php echo $row['period']; ?></td>
                                             <td><?php echo $row['location']; ?></td>
                                             <td>Ksh. <?php echo $row['budget']; ?></td>
-                                            <td width="30"><a href="editmacop.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                            <td width="30"><a href="editlicop.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
 
@@ -365,14 +365,14 @@ if (isset($_POST['save'])){
     $period = $_POST['period'];
     $location = $_POST['location'];
     $budget = $_POST['budget'];
-    $page='makina';
+    $page='lindi';
 
 
     $conn->query("insert into plans_county (types,period,location,budget,page) values('$type','$period','$location','$budget','$page')")or die(mysql_error());
 
     ?>
     <script>
-        window.location = "macop.php";
+        window.location = "licop.php";
     </script>
     <?php
 
@@ -391,7 +391,7 @@ if (isset($_POST['delete_macop'])){
 
     ?>
     <script>
-        window.location = "macop.php";
+        window.location = "licop.php";
     </script>
     <?php
 
