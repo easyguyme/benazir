@@ -35,7 +35,7 @@
                         <div class="box box-info">
                             <div class="box-header with-border">
 
-                                <h3 class="box-title">Update Makina women champion profile information</h3>
+                                <h3 class="box-title">Update Sarang'ombe women champion profile information</h3>
 
                             </div>
                             <!-- main header title -->
@@ -46,10 +46,10 @@
 
                                 <div class="box-body">
                                     <?php
-                                    $query = $conn->query("select * from profiles where page='makina' AND id='$get_id'");
+                                    $query = $conn->query("select * from profiles where page='sara' AND id='$get_id'");
                                     while ($row = $query->fetch()) {
 
-                                    ?>
+                                        ?>
                                         <div class="form-group">
 
                                             <label for="name" class="col-sm-2 control-label">Names:</label>
@@ -86,24 +86,24 @@
 
                                             </div>
                                         </div>
-                                    <div class="form-group">
-                                        <label for="type" class="col-sm-2 control-label">Image Path:</label>
+                                        <div class="form-group">
+                                            <label for="type" class="col-sm-2 control-label">Image Path:</label>
 
-                                        <div class="col-sm-4 input-sm">
-                                            <input type="text" name="img" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['image']; ?>"  disabled>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="who" class="col-sm-2 control-label">Image upload:</label>
-                                        <div class="col-sm-10 input-sm">
-                                            <input name="image" class="input-file uniform_on" id="fileInput" type="file" required>
-                                            <p class="help-block">Click to upload a new image.</p>
+                                            <div class="col-sm-4 input-sm">
+                                                <input type="text" name="img" class="form-control" id="desc" placeholder="Type of quote" value="<?php echo $row['image']; ?>"  disabled>
+                                            </div>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label for="who" class="col-sm-2 control-label">Image upload:</label>
+                                            <div class="col-sm-10 input-sm">
+                                                <input name="image" class="input-file uniform_on" id="fileInput" type="file" required>
+                                                <p class="help-block">Click to upload a new image.</p>
+                                            </div>
 
 
-                                    </div>
+
+                                        </div>
 
 
                                         <div class="form-group">
@@ -148,41 +148,41 @@
 
 
 
-                                <?php }?>
+                                    <?php }?>
+
+                                </div>
+                                <!-- /.box-body -->
+                                <div class="box-footer">
+
+                                    <button name="save" class="btn btn-info">Save changes</button>
+
+                                </div>
+                                <!-- /.box-footer -->
+                            </form>
 
                         </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer">
-
-                            <button name="save" class="btn btn-info">Save changes</button>
-
-                        </div>
-                        <!-- /.box-footer -->
-                        </form>
 
                     </div>
+                    <div class="col-md-2">
 
+
+                    </div>
                 </div>
-                <div class="col-md-2">
+                <!--third row-->
 
 
-                </div>
+
+            </section>
+            <!-- /.content -->
         </div>
-        <!--third row-->
+        <!-- /.content-wrapper -->
 
+        <!-- Main Footer -->
+        <?php include('footer.php'); ?>
 
+        <!-- Control Sidebar -->
 
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-
-    <!-- Main Footer -->
-    <?php include('footer.php'); ?>
-
-    <!-- Control Sidebar -->
-
-    <div class="control-sidebar-bg"></div>
+        <div class="control-sidebar-bg"></div>
 
     </div>
     <!-- ./wrapper -->
@@ -232,10 +232,10 @@ if (isset($_POST['save'])){
 
 
 
-    
+
     ?>
     <script>
-        window.location = "machamp.php";
+        window.location = "sachamp.php";
     </script>
     <?php
 

@@ -37,7 +37,7 @@
                             <!-- block -->
                             <div id="block_bg" class="block">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Edit Makina women champion profiles</h3>
+                                    <h3 class="box-title">Edit Laini saba women champion profiles</h3>
                                 </div>
                                 <div class="block-content collapse in">
                                     <div class="span12">
@@ -58,7 +58,7 @@
                                                 </thead>
                                                 <tbody>
                                                 <?php
-                                                $query = $conn->query("select * from profiles where page='makina' order by id asc");
+                                                $query = $conn->query("select * from profiles where page='saba' order by id asc");
                                                 while ($row = $query->fetch()) {
                                                     $id = $row['id'];
                                                     ?>
@@ -70,7 +70,7 @@
                                                         <td><?php echo $row['designation']; ?></td>
                                                         <td><?php echo $row['age']; ?></td>
 
-                                                        <td width="30"><a href="editmachamp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                        <td width="30"><a href="editlachamp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                     </tr>
