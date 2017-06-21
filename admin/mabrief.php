@@ -33,7 +33,7 @@
 
                             <div class="box-header with-border">
 
-                                <h3 class="box-title">View Picture</h3>
+                                <h3 class="box-title">View Makina Picture</h3>
 
                             </div>
 
@@ -65,7 +65,7 @@
 
                             <div class="box-header with-border">
 
-                                <h3 class="box-title">View brief</h3>
+                                <h3 class="box-title">View Makina brief</h3>
 
                             </div>
 
@@ -92,7 +92,7 @@
                                 <!-- block -->
                                 <div id="block_bg" class="block">
                                     <div class="box-header with-border">
-                                        <h3 class="box-title">Edit Brief and Image</h3>
+                                        <h3 class="box-title">Edit Makina Brief and Image</h3>
                                     </div>
                                     <div class="block-content collapse in">
                                         <div class="span12">
@@ -173,19 +173,9 @@
     <!-- Select2 -->
     <script src="../plugins/select2/select2.full.min.js"></script>
     <!-- InputMask -->
-    <script src="../plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
-    <!-- date-range-picker -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-    <script src="../plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- bootstrap datepicker -->
-    <script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
-    <!-- bootstrap color picker -->
-    <script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-    <!-- bootstrap time picker -->
-    <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <!-- SlimScroll 1.3.0 -->
+   
     <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- iCheck 1.0.1 -->
     <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
@@ -199,15 +189,7 @@
     <script src="../dist/js/demo.js"></script>
 
 
-    <script type="text/javascript">
-        $("#read").click(function() {
-
-            $("#hidden").show();
-            $("#read").hide();
-
-        });
-
-    </script>
+    
 
     </body>
     </html>

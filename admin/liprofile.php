@@ -53,7 +53,7 @@
                         <div class="icon">
                             <i class="ion ion-information"></i>
                         </div>
-                        <a href="mabrief.php" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="librief.php" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
 
                     </div>
                 </div>
