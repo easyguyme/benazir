@@ -110,7 +110,7 @@
                         <div class="icon">
                             <i class="ion ion-information"></i>
                         </div>
-                        <a href="#pdMakina" data-toggle="modal" data-target="#pdMakina" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#pdlindi" data-toggle="modal" data-target="#pdlindi" class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
 
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                         <div class="icon">
                             <i class="ion ion-camera"></i>
                         </div>
-                        <a href="update_magallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="ligallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -158,7 +158,7 @@
 
 <!-- jQuery 2.2.3 -->
 <?php include('hscripts.php'); ?>
-<?php include('modal_delete.php'); ?>
+
 
 <script type="text/javascript">
     $("#read").click(function() {
@@ -171,8 +171,7 @@
 </script>
 </body>
 </html>
-<?php include('logo_modal.php'); ?>
-<?php include('modals.php'); ?>
+
 <style>
     .example-modal .modal {
         position: relative;
@@ -188,3 +187,113 @@
         background: transparent !important;
     }
 </style>
+    <div class="modal example-modal" id="pdlindi" role="dialog">
+        <div class="modal modal-primary">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Update Lindi Area Profile Table</h4>
+                    </div>
+                    <div class="modal-body">
+                        <?php
+                        $query = $conn->query("select * from profile_tbl where page='lindi'");
+                        while ($row = $query->fetch()) {
+
+                        ?>
+
+                        <form method="post" action="sara.php">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="area" class="control-label">Area:</label>
+
+                                    <div  input-sm">
+                                    <input type="text" name="area" class="form-control" id="area" placeholder="Area" value="<?php echo $row['area']; ?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="population" class=" control-label">Population:</label>
+
+                                <div class=" input-sm">
+                                    <input type="text" name="population" class="form-control" id="population" placeholder="Population" value="<?php echo $row['population']; ?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="village" class=" control-label">Villages:</label>
+
+                                <div class=" input-sm">
+                                    <input type="text" name="village" class="form-control" id="village" placeholder="No. of Villages" value="<?php echo $row['village']; ?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fund" class=" control-label">Fund:</label>
+
+                                <div class=" input-sm">
+                                    <input type="text" name="fund" class="form-control" id="fund" placeholder="Fund Amount" value="<?php echo $row['fund']; ?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mca" class=" control-label">MCA:</label>
+
+                                <div class=" input-sm">
+                                    <input type="text" name="mca" class="form-control" id="mca" placeholder="Mca Name" value="<?php echo $row['mca']; ?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="admin" class=" control-label">Ward Admin:</label>
+
+                                <div class=" input-sm">
+                                    <input type="text" name="admin" class="form-control" id="admin" placeholder="Mca Name" value="<?php echo $row['admin']; ?>" required>
+                                </div>
+                            </div>
+                    </div>
+
+
+                    <?php }?>
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-info" name="makdes"><i class="icon-save icon-large"></i> Save</button>
+                </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+<?php
+include('dbcon.php');
+
+if (isset($_POST['makdes'])) {
+    $area = $_POST['area'];
+    $population = $_POST['population'];
+    $village = $_POST['village'];
+    $fund = $_POST['fund'];
+    $mca = $_POST['mca'];
+    $admin = $_POST['admin'];
+
+
+    //$conn->query->prepare("update pdes set head = '$title' , des ='$info' where page ='makina' ") or die(mysql_error());
+    $query="update profile_tbl set area = :area, population = :population , village = :village, fund =:fund , mca= :mca,admin=:admin where page ='lindi' ";
+    $stmt=$conn->prepare($query);
+    $stmt->bindParam(':area', $_POST['area'], PDO::PARAM_STR);
+    $stmt->bindParam(':population', $_POST['population'], PDO::PARAM_STR);
+    $stmt->bindParam(':village', $_POST['village'], PDO::PARAM_STR);
+    $stmt->bindParam(':fund', $_POST['fund'], PDO::PARAM_STR);
+    $stmt->bindParam(':mca', $_POST['mca'], PDO::PARAM_STR);
+    $stmt->bindParam(':admin', $_POST['admin'], PDO::PARAM_STR);
+    $stmt->execute();
+
+
+    ?>
+    <script>
+        window.location = "lindi.php";
+    </script>
+    <?php
+
+}
+?>
