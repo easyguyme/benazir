@@ -35,7 +35,7 @@
                         <div class="box box-info">
                             <div class="box-header with-border">
 
-                                <h3 class="box-title">Update Makina Voice Centre Brief information</h3>
+                                <h3 class="box-title">Update Laini saba Voice Centre Brief information</h3>
 
                             </div>
                             <!-- main header title -->
@@ -46,7 +46,7 @@
 
                                 <div class="box-body">
                                     <?php
-                                    $query = $conn->query("select * from ward where page='makina' AND id='$get_id'");
+                                    $query = $conn->query("select * from ward where page='saba' AND id='$get_id'");
                                     while ($row = $query->fetch()) {
 
                                         ?>
@@ -205,7 +205,7 @@ if (isset($_POST['save'])){
 
     ?>
     <script>
-        window.location = "macentre.php";
+        window.location = "lacentre.php";
     </script>
     <?php
 

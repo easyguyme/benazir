@@ -33,14 +33,14 @@
 
                         <div class="box-header with-border">
 
-                            <h3 class="box-title">View Makina Map</h3>
+                            <h3 class="box-title">View Sarang'ombe Map</h3>
 
                         </div>
 
                         <div class="box-body">
 
                             <?php
-                            $query = $conn->query("select * from ward where page='makina'");
+                            $query = $conn->query("select * from ward where page='sara'");
                             while ($row = $query->fetch()) {
 
                             ?>
@@ -65,7 +65,7 @@
 
                         <div class="box-header with-border">
 
-                            <h3 class="box-title">View Makina Centre brief</h3>
+                            <h3 class="box-title">View Sarang'ombe Centre brief</h3>
 
                         </div>
 
@@ -144,7 +144,7 @@
                             <!-- block -->
                             <div id="block_bg" class="block">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Edit Makina centre details</h3>
+                                    <h3 class="box-title">Edit Sarang'ombe centre details</h3>
                                 </div>
                                 <div class="block-content collapse in">
                                     <div class="span12">
@@ -167,7 +167,7 @@
                                                 </thead>
                                                 <tbody>
                                                 <?php
-                                                $query = $conn->query("select * from ward where page='makina'");
+                                                $query = $conn->query("select * from ward where page='sara'");
                                                 while ($row = $query->fetch()) {
                                                     $id = $row['id'];
                                                     ?>
@@ -181,7 +181,7 @@
                                                         <td><?php echo $row['act1']; ?>, <?php echo $row['act2']; ?>, <?php echo $row['act3']; ?>, <?php echo $row['act4']; ?></td>
                                                         <td><?php echo $row['ach1']; ?>, <?php echo $row['ach2']; ?>, <?php echo $row['ach3']; ?>, <?php echo $row['ach4']; ?></td>
 
-                                                        <td width="30"><a href="editmacenter.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                        <td width="30"><a href="editsacentre.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                     </tr>
