@@ -50,7 +50,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text"> <a href="#">To Edit Events and Activities</a></span>
-                                <span class="info-box-number"> <a  href="makina_event.php">click me</a></span>
+                                <span class="info-box-number"> <a  href="saevent.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->

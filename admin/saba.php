@@ -50,7 +50,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text"> <a href="#">To Edit Events and Activities</a></span>
-                                    <span class="info-box-number"> <a  href="_event.php">click me</a></span>
+                                    <span class="info-box-number"> <a  href="laevent.php">click me</a></span>
                                 </div>
 
                                 <!-- /.info-box-content -->
