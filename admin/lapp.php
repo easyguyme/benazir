@@ -50,7 +50,7 @@
                     <div class="box box-info">
 
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add Makina Community Priority Project</h3>
+                            <h3 class="box-title">Add Laini saba Community Priority Project</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -95,7 +95,7 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>Makina Communities Priorities Projects</dt></h3>
+                            <h3 class="box-title"><dt>Laini saba Communities Priorities Projects</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -105,7 +105,7 @@
                         </div>
 
                         <div class="box-body table-responsive">
-                            <form action="mapp.php" method="post">
+                            <form action="lapp.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                     <a data-toggle="modal" href="#macopdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                     <div id="macopdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -138,7 +138,7 @@
                                     <tbody>
                                     <?php
 
-                                    $query = $conn->query("select * from plan_comm where page='makina'") or die(mysql_error());
+                                    $query = $conn->query("select * from plan_comm where page='saba'") or die(mysql_error());
                                     while ($row = $query->fetch()) {
                                         $id = $row['id'];
 
@@ -150,7 +150,7 @@
                                             <td><?php echo $row['prio']; ?></td>
                                             <td><?php echo $row['description']; ?></td>
 
-                                            <td width="30"><a href="editmapp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                            <td width="30"><a href="editlapp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
 
@@ -344,14 +344,14 @@ if (isset($_POST['save'])){
     $prior = $_POST['priority'];
     $description = $_POST['description'];
 
-    $page='makina';
+    $page='saba';
 
 
     $conn->query("insert into plan_comm (prio,description,page) values('$prior','$description','$page')")or die(mysql_error());
 
     ?>
     <script>
-        window.location = "mapp.php";
+        window.location = "lapp.php";
     </script>
     <?php
 
@@ -370,7 +370,7 @@ if (isset($_POST['delete_mapp'])){
 
     ?>
     <script>
-        window.location = "mapp.php";
+        window.location = "lapp.php";
     </script>
     <?php
 

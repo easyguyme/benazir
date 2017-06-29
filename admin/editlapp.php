@@ -40,7 +40,7 @@
                 <li class="active">Dashboard</li>
             </ol>
         </section>
-
+        <?php $get_id = $_GET['id']; ?>
         <!-- Main content -->
         <!--todo add editable heading-->
         <section class="content">
@@ -50,34 +50,41 @@
                     <div class="box box-info">
 
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add Makina Community Priority Project</h3>
+                            <h3 class="box-title">EDIT LAINI SABA  COMMUNITY PRIORITIES PROJECTS</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form  method="post">
+                            <?php
+
+                            $query = $conn->query("select * from plan_comm  where id='$get_id'") or die(mysql_error());
+                            while ($row = $query->fetch()) {
+
+
+                            ?>
                             <div class="box-body">
                                 <div class="form-group col-sm-10">
                                     <label>Priority:</label>
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="priority" class="form-control"  placeholder="Priority" required>
+                                        <input type="text" name="prior" class="form-control" value="<?php echo $row['prio']; ?>" placeholder="Project name/type" required>
                                     </div>
 
                                 </div>
 
                                 <div class="form-group col-sm-10">
-                                    <label>Priority description:</label>
+                                    <label>Description:</label>
 
                                     <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="description" class="form-control"  placeholder="Description" required>
+                                        <input type="text" name="description" class="form-control"  value="<?php echo $row['description']; ?>" placeholder="Period" required>
                                     </div>
 
                                 </div>
 
 
-
+                                <?php }?>
                                 <!-- /.input group -->
 
 
@@ -95,7 +102,7 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>Makina Communities Priorities Projects</dt></h3>
+                            <h3 class="box-title"><dt>Laini saba County Government Priorities</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -105,31 +112,14 @@
                         </div>
 
                         <div class="box-body table-responsive">
-                            <form action="mapp.php" method="post">
+                            <form action="lapp.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
-                                    <a data-toggle="modal" href="#macopdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
-                                    <div id="macopdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                            <h3 id="myModalLabel">Delete project?</h3>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="alert alert-danger">
-                                                <p>Are you sure you want to delete the project you checked?.</p>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
-                                            <button name="delete_mapp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
-                                        </div>
-                                    </div>
 
                                     <thead>
                                     <tr>
-                                        <th></th>
+
                                         <th><span class="badge bg-light-blue">Priority</span></th>
                                         <th><span class="badge bg-red">Description</span></th>
-
                                         <th></th>
 
 
@@ -138,7 +128,7 @@
                                     <tbody>
                                     <?php
 
-                                    $query = $conn->query("select * from plan_comm where page='makina'") or die(mysql_error());
+                                    $query = $conn->query("select * from plan_comm where page='saba'") or die(mysql_error());
                                     while ($row = $query->fetch()) {
                                         $id = $row['id'];
 
@@ -150,7 +140,7 @@
                                             <td><?php echo $row['prio']; ?></td>
                                             <td><?php echo $row['description']; ?></td>
 
-                                            <td width="30"><a href="editmapp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                            <td width="30"><a href="editlapp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
 
@@ -341,38 +331,19 @@
 error_reporting(E_ALL);
 
 if (isset($_POST['save'])){
-    $prior = $_POST['priority'];
+    $prior = $_POST['prior'];
     $description = $_POST['description'];
+    $page='saba';
 
-    $page='makina';
 
-
-    $conn->query("insert into plan_comm (prio,description,page) values('$prior','$description','$page')")or die(mysql_error());
+    $conn->query("update plan_comm set prio ='$prior',description='$description',page='$page'  where id = '$get_id' ")or die(mysql_error());
 
     ?>
     <script>
-        window.location = "mapp.php";
+        window.location = "lapp.php";
     </script>
     <?php
 
 }
 ?>
 
-<?php
-include('dbcon.php');
-if (isset($_POST['delete_mapp'])){
-    $id=$_POST['selector'];
-    $N = count($id);
-    for($i=0; $i < $N; $i++)
-    {
-        $query = $conn->query("DELETE FROM plan_comm where id='$id[$i]'");
-    }
-
-    ?>
-    <script>
-        window.location = "mapp.php";
-    </script>
-    <?php
-
-}
-?>
