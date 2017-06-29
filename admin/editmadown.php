@@ -50,7 +50,7 @@
                     <div class="box box-info">
 
                         <div class="box-header with-border">
-                            <h3 class="box-title">Edit Download/Publication</h3>
+                            <h3 class="box-title">Edit Makina Download/Publication</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -120,7 +120,7 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>Downloads & Publications</dt></h3>
+                            <h3 class="box-title"><dt>Makina Downloads & Publications</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="box-body table-responsive">
-                            <form action="macop.php" method="post">
+                            <form action="madown.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
 
                                     <thead>

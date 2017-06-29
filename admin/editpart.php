@@ -33,7 +33,7 @@
                     <div class="box box-solid">
                         <div class="box-header with-border">
 
-                            <h3 class="box-title"><dt> View Uploaded Images</dt></h3>
+                            <h3 class="box-title"><dt> View Uploaded Partner Logos</dt></h3>
 
                         </div>
                         <!-- /.box-header -->
@@ -52,7 +52,7 @@
 
 
 
-                        $query = $conn->query("select * from lagallery order by date desc") or die(mysql_error());
+                        $query = $conn->query("select * from partners") or die(mysql_error());
                         $count = $query->rowcount();
                         $slides='';
                         $Indicators='';
@@ -61,17 +61,15 @@
                         while ($row = $query->fetch())
                         {
 
-                            $title = $row['title'];
-                            $desc = $row['dsc'];
+
                             $image = $row['image'];
                             if($counter == 0)
                             {
                                 $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'" class="active"></li>';
                                 $slides .= '<div class="item active">
-            <img src="../saba/' .$image.'" alt="'.$title.'" />
+            <img src="../scroller/img/' .$image.'" alt="logo" />
             <div class="carousel-caption">
-              <h3>'.$title.'</h3>
-              <p>'.$desc.'.</p>
+              
             </div>
           </div>';
 
@@ -80,10 +78,9 @@
                             {
                                 $Indicators .='<li data-target="#carousel-example-generic" data-slide-to="'.$counter.'"></li>';
                                 $slides .= '<div class="item">
-            <img src="../saba/' .$image.'" alt="'.$title.'" />
+            <img src="../scroller/img/' .$image.'" alt="logo" />
             <div class="carousel-caption">
-              <h3>'.$title.'</h3>
-              <p>'.$desc.'.</p>
+              
             </div>
           </div>';
                             }
@@ -115,11 +112,11 @@
 
                 <div class="col-md-6">
                     <div class="box box-info">
-                        <a href="#edit" class="btn  btn-danger">Click to edit uploaded sliders</a>
+
 
                         <div class="box-header with-border">
 
-                            <h3 class="box-title">Update Laini Saba Gallery</h3>
+                            <h3 class="box-title">Update Partner Logos</h3>
 
                         </div>
                         <!-- main header title -->
@@ -130,22 +127,7 @@
 
                             <div class="box-body">
 
-                                <div class="form-group">
 
-                                    <label for="name" class="col-sm-2 control-label">Title:</label>
-
-                                    <div class="col-sm-10 input-sm">
-
-                                        <input type="text" name="title" class="form-control " id="title" placeholder="Name"  required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="type" class="col-sm-2 control-label">Description:</label>
-
-                                    <div class="col-sm-10 input-sm">
-                                        <input type="text" name="descrip" class="form-control" id="desc" placeholder="Type of quote" required>
-                                    </div>
-                                </div>
 
                                 <div class="form-group">
                                     <label for="who" class="col-sm-2 control-label">Image upload:</label>
@@ -154,7 +136,7 @@
                                     </div>
 
 
-                                    <p class="help-block">Click to upload image.</p>
+                                    <p class="help-block">Click to upload logo.</p>
                                 </div>
 
 
@@ -162,7 +144,7 @@
                             <!-- /.box-body -->
                             <div class="box-footer">
 
-                                <button name="save" class="btn btn-info">Add</button>
+                                <button name="save" class="btn btn-info">Upload</button>
 
                             </div>
                             <!-- /.box-footer -->
@@ -182,22 +164,22 @@
                             <!-- block -->
                             <div id="block_bg" class="block">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Edit Uploaded Pics</h3>
+                                    <h3 class="box-title">Edit Uploaded partner logos</h3>
                                 </div>
                                 <div class="block-content collapse in">
                                     <div class="span12">
-                                        <form action="lagallery.php" method="post">
+                                        <form action="editpart.php" method="post">
                                             <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                                 <a data-toggle="modal" href="#makinadelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
 
                                                 <div id="makinadelete" class="modal  fade modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                     <div class="modal-header">
                                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                                        <h3 id="myModalLabel">Delete Gallery image(s)?</h3>
+                                                        <h3 id="myModalLabel">Delete Partner logo(s)?</h3>
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="alert alert-danger">
-                                                            <p>Are you sure you want to delete the image(s) you checked?</p>
+                                                            <p>Are you sure you want to delete the logo(s) you checked?</p>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -208,16 +190,15 @@
                                                 <thead>
                                                 <tr>
                                                     <th></th>
-                                                    <th>Title</th>
-                                                    <th>Description</th>
+                                                    <th>Image </th>
                                                     <th>Image Name</th>
-                                                    <th>Date Uploaded</th>
-                                                    <th></th>
+
+
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <?php
-                                                $query = $conn->query("select * from lagallery order by date desc");
+                                                $query = $conn->query("select * from partners order by id ASC ");
                                                 while ($row = $query->fetch()) {
                                                     $id = $row['id'];
                                                     ?>
@@ -226,11 +207,10 @@
                                                         <td width="30">
                                                             <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
                                                         </td>
-                                                        <td><?php echo $row['title']; ?></td>
-                                                        <td><?php echo $row['dsc']; ?></td>
+                                                        <td><img class="img-responsive" style="height:100px;width: 100px; " src="../scroller/img/<?php echo $row['image']; ?>" alt="Photo"></td>
                                                         <td><?php echo $row['image']; ?></td>
-                                                        <td><?php echo $row['date']; ?></td>
-                                                        <td width="30"><a href="editlagallery.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+
+
 
 
                                                     </tr>
@@ -311,9 +291,9 @@
         $("#example1").DataTable();
         $('#exampl2').DataTable({
             "paging": true,
-            "lengthChange": true,
+            "lengthChange": false,
             "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
-            "searching": true,
+            "searching": false,
             "ordering": false,
             "info": true,
             "autoWidth": true
@@ -338,26 +318,25 @@
 <?php
 include('dbcon.php');
 if (isset($_POST['save'])){
-    $title = $_POST['title'];
-    $descp = $_POST['descrip'];
+
 
 
     $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
     $image_name = addslashes($_FILES['image']['name']);
     $image_size = getimagesize($_FILES['image']['tmp_name']);
 
-    move_uploaded_file($_FILES["image"]["tmp_name"], "../saba/" . $_FILES["image"]["name"]);
+    move_uploaded_file($_FILES["image"]["tmp_name"], "../scroller/img/" . $_FILES["image"]["name"]);
     $location =  $_FILES["image"]["name"];
 
 
 
-    $conn->query("insert into lagallery (title,dsc,image) values('$title','$descp','$location')")or die(mysql_error());
+    $conn->query("insert into partners (image) values('$location')")or die(mysql_error());
 
 
 
     ?>
     <script>
-        window.location = "lagallery.php";
+        window.location = "editpart.php";
     </script>
     <?php
 
@@ -372,11 +351,11 @@ if (isset($_POST['makina_pics'])){
     $N = count($id);
     for($i=0; $i < $N; $i++)
     {
-        $query = $conn->query("DELETE FROM lagallery where id='$id[$i]'");
+        $query = $conn->query("DELETE FROM partners where id='$id[$i]'");
     }
     ?>
     <script>
-        window.location = "lagallery.php";
+        window.location = "editpart.php";
     </script>
     <?php
 

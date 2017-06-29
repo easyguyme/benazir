@@ -37,8 +37,8 @@
                             <span class="info-box-icon bg-red"><i class="fa fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="macop.php">To Edit County Government Priorities</a></span>
-                                <span class="info-box-number"> <a  href="macop.php">click me</a></span>
+                                <span class="info-box-text"> <a href="lacop.php">To Edit County Government Priorities</a></span>
+                                <span class="info-box-number"> <a  href="lacop.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
@@ -88,7 +88,7 @@
                         <div class="icon">
                             <i class="ion ion-information"></i>
                         </div>
-                        <a href="madown.php"  class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="lidown.php"  class="small-box-footer">Click me <i class="fa fa-arrow-circle-right"></i></a>
 
                     </div>
                 </div>

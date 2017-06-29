@@ -40,7 +40,7 @@
                 <li class="active">Dashboard</li>
             </ol>
         </section>
-
+        <?php $get_id = $_GET['id']; ?>
         <!-- Main content -->
         <!--todo add editable heading-->
         <section class="content">
@@ -50,52 +50,59 @@
                     <div class="box box-info">
 
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add Makina Download/Publication</h3>
+                            <h3 class="box-title">Edit Lindi  County Government Priority</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form  method="post">
+                            <?php
+
+                            $query = $conn->query("select * from plans_county  where id='$get_id'") or die(mysql_error());
+                            while ($row = $query->fetch()) {
+
+
+                            ?>
                             <div class="box-body">
                                 <div class="form-group col-sm-10">
-                                    <label>Heading:</label>
+                                    <label>Project name:</label>
 
-                                    <div class="input-group  col-sm-10">
+                                    <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="head" class="form-control"  placeholder="Heading" required>
+                                        <input type="text" name="type" class="form-control" value="<?php echo $row['types']; ?>" placeholder="Project name/type" required>
                                     </div>
 
                                 </div>
 
                                 <div class="form-group col-sm-10">
-                                    <label>Subheading:</label>
+                                    <label>Project Period:</label>
 
-                                    <div class="input-group  col-sm-10">
+                                    <div class="input-group  col-sm-8">
 
-                                        <input type="text" name="sub" class="form-control"  placeholder="Sub heading" required>
+                                        <input type="text" name="period" class="form-control"  value="<?php echo $row['period']; ?>" placeholder="Period" required>
                                     </div>
 
                                 </div>
 
                                 <div class="form-group col-sm-10">
-                                    <label>Description:</label>
+                                    <label>Project Location:</label>
 
-                                    <div class="input-group  col-sm-10">
+                                    <div class="input-group  col-sm-8">
 
-                                        <textarea  name="description"  rows="4" cols="50" placeholder="Description" required></textarea>
+                                        <input type="text" name="location" class="form-control"  value="<?php echo $row['location']; ?>" placeholder="location" required>
                                     </div>
 
                                 </div>
 
                                 <div class="form-group col-sm-10">
-                                    <label>Link:</label>
+                                    <label>Project Budget:</label>
 
-                                    <div class="input-group  col-sm-10">
+                                    <div class="input-group  col-sm-8">
 
-                                        <input type="url" name="link" class="form-control"  placeholder="http://" required>
+                                        <input type="text" name="budget" class="form-control" value="<?php echo $row['budget']; ?>" placeholder="Ksh." required>
                                     </div>
 
                                 </div>
-
+                                <?php }?>
                                 <!-- /.input group -->
 
 
@@ -113,7 +120,7 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>Makina Downloads & Publications</dt></h3>
+                            <h3 class="box-title"><dt>Lindi County Government Priorities</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -123,32 +130,16 @@
                         </div>
 
                         <div class="box-body table-responsive">
-                            <form action="madown.php" method="post">
+                            <form action="licop.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
-                                    <a data-toggle="modal" href="#macopdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
-                                    <div id="macopdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                            <h3 id="myModalLabel">Delete download/publication?</h3>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="alert alert-danger">
-                                                <p>Are you sure you want to delete the download/publication you checked?.</p>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
-                                            <button name="delete_madown" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
-                                        </div>
-                                    </div>
 
                                     <thead>
                                     <tr>
-                                        <th></th>
-                                        <th><span class="badge bg-light-blue">Heading</span></th>
-                                        <th><span class="badge bg-red">Subheading</span></th>
-                                        <th><span class="badge bg-green">Description</span></th>
-                                        <th><span class="badge bg-purple">Link</span></th>
+
+                                        <th><span class="badge bg-light-blue">Project Name/Type</span></th>
+                                        <th><span class="badge bg-red">Project period</span></th>
+                                        <th><span class="badge bg-green">Project Location</span></th>
+                                        <th><span class="badge bg-purple">Project Budget</span></th>
                                         <th></th>
 
 
@@ -157,20 +148,18 @@
                                     <tbody>
                                     <?php
 
-                                    $query = $conn->query("select * from downloads where page='makina'") or die(mysql_error());
+                                    $query = $conn->query("select * from plans_county where page='lindi'") or die(mysql_error());
                                     while ($row = $query->fetch()) {
                                         $id = $row['id'];
 
                                         ?>
                                         <tr>
-                                            <td width="30">
-                                                <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
-                                            </td>
-                                            <td><?php echo $row['named']; ?></td>
-                                            <td><?php echo $row['sub']; ?></td>
-                                            <td><?php echo $row['des']; ?></td>
-                                            <td><?php echo $row['link']; ?></td>
-                                            <td width="30"><a href="editmadown.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+
+                                            <td><?php echo $row['types']; ?></td>
+                                            <td><?php echo $row['period']; ?></td>
+                                            <td><?php echo $row['location']; ?></td>
+                                            <td>Ksh. <?php echo $row['budget']; ?></td>
+                                            <td width="30"><a href="editlicop.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
 
@@ -361,18 +350,23 @@
 error_reporting(E_ALL);
 
 if (isset($_POST['save'])){
-    $name = $_POST['head'];
-    $sub = $_POST['sub'];
-    $description = $_POST['description'];
-    $link = $_POST['link'];
-    $page='makina';
+    $type = $_POST['type'];
+    $period = $_POST['period'];
+    $location = $_POST['location'];
+    $budget = $_POST['budget'];
+    $page='lindi';
 
 
-    $conn->query("insert into downloads (named,sub,des,link,page) values('$name','$sub','$description','$link','$page')")or die(mysql_error());
+    //$conn->query("insert into plans_county (types,period,location,budget,page) values('$type','$period','$location','$budget','$page')")or die(mysql_error());
+
+    $conn->query("update plans_county set types = '$type', period='$period' ,location='$location',budget='$budget', page='$page'  where id = '$get_id' ")or die(mysql_error());
+
+
+
 
     ?>
     <script>
-        window.location = "madown.php";
+        window.location = "licop.php";
     </script>
     <?php
 
@@ -381,17 +375,17 @@ if (isset($_POST['save'])){
 
 <?php
 include('dbcon.php');
-if (isset($_POST['delete_madown'])){
+if (isset($_POST['delete_macop'])){
     $id=$_POST['selector'];
     $N = count($id);
     for($i=0; $i < $N; $i++)
     {
-        $query = $conn->query("DELETE FROM downloads where id='$id[$i]'");
+        $query = $conn->query("DELETE FROM plans_county where id='$id[$i]'");
     }
 
     ?>
     <script>
-        window.location = "madown.php";
+        window.location = "editlicop.php";
     </script>
     <?php
 

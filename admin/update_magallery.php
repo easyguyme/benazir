@@ -349,6 +349,6 @@ if (isset($_POST['save'])){
 
 }else{
 
-    echo 'not updated';
+   
 }
 ?>

@@ -62,6 +62,7 @@
             </li>
             <li><a href="addevent.php"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
             <li><a href="update_contact.php"><i class="fa fa-envelope"></i> <span>Contact Us</span></a></li>
+            <li><a href="editpart.php"><i class="fa fa-handshake-o"></i> <span>Partners</span></a></li>
             <li><a href="register.php"><i class="fa fa-user"></i> <span>Register New Admin</span></a></li>
             <li><a href="#"><i class="fa fa-sign-in"></i> <span>Activity log</span></a></li>
             <li><a href="#"><i class="fa fa-key"></i> <span>User log</span></a></li>

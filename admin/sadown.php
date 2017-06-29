@@ -50,7 +50,7 @@
                     <div class="box box-info">
 
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add Makina Download/Publication</h3>
+                            <h3 class="box-title">Add Sarang'ombe Download/Publication</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -113,7 +113,7 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><dt>Makina Downloads & Publications</dt></h3>
+                            <h3 class="box-title"><dt>Sarang'ombe Downloads & Publications</dt></h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -123,7 +123,7 @@
                         </div>
 
                         <div class="box-body table-responsive">
-                            <form action="madown.php" method="post">
+                            <form action="sadown.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                     <a data-toggle="modal" href="#macopdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
                                     <div id="macopdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -157,7 +157,7 @@
                                     <tbody>
                                     <?php
 
-                                    $query = $conn->query("select * from downloads where page='makina'") or die(mysql_error());
+                                    $query = $conn->query("select * from downloads where page='sara'") or die(mysql_error());
                                     while ($row = $query->fetch()) {
                                         $id = $row['id'];
 
@@ -170,7 +170,7 @@
                                             <td><?php echo $row['sub']; ?></td>
                                             <td><?php echo $row['des']; ?></td>
                                             <td><?php echo $row['link']; ?></td>
-                                            <td width="30"><a href="editmadown.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                            <td width="30"><a href="editsadown.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
 
@@ -365,14 +365,14 @@ if (isset($_POST['save'])){
     $sub = $_POST['sub'];
     $description = $_POST['description'];
     $link = $_POST['link'];
-    $page='makina';
+    $page='sara';
 
 
     $conn->query("insert into downloads (named,sub,des,link,page) values('$name','$sub','$description','$link','$page')")or die(mysql_error());
 
     ?>
     <script>
-        window.location = "madown.php";
+        window.location = "sadown.php";
     </script>
     <?php
 
@@ -391,7 +391,7 @@ if (isset($_POST['delete_madown'])){
 
     ?>
     <script>
-        window.location = "madown.php";
+        window.location = "sadown.php";
     </script>
     <?php
 

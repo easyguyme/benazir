@@ -353,7 +353,7 @@ if (isset($_POST['save'])){
 
     $conn->query("insert into sagallery (title,dsc,image) values('$title','$descp','$location')")or die(mysql_error());
 
-
+   
 
     ?>
     <script>
@@ -361,14 +361,12 @@ if (isset($_POST['save'])){
     </script>
     <?php
 
-}else{
-
-    echo 'not updated';
 }
+?>
 
 
 
-
+<?php
 if (isset($_POST['makina_pics'])){
     $id=$_POST['selector'];
     $N = count($id);
@@ -376,6 +374,11 @@ if (isset($_POST['makina_pics'])){
     {
         $query = $conn->query("DELETE FROM sagallery where id='$id[$i]'");
     }
-    header("location: sagallery.php");
+    ?>
+    <script>
+        window.location = "sagallery.php";
+    </script>
+    <?php
+
 }
 ?>
