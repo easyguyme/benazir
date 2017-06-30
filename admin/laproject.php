@@ -12,8 +12,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                DASHBOARD | ADMIN PANEL
-                <small>Version 1.0</small>
+                DASHBOARD | LAINI SABA | PROJECTS
+
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -38,7 +38,7 @@
                         <div class="icon">
                             <i class="ion ion-chart"></i>
                         </div>
-                        <a href="saba_project.php"  class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="lin_soc.php"  class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

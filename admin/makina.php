@@ -35,8 +35,8 @@
                             <span class="info-box-icon bg-aqua"><i class="fa fa-cubes"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="makina_project.php">To Edit Projects</a></span>
-                                <span class="info-box-number"> <a  href="makina_project.php">click me</a></span>
+                                <span class="info-box-text"> <a href="maproject.php">To Edit Projects</a></span>
+                                <span class="info-box-number"> <a  href="maproject.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->

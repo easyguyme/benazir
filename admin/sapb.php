@@ -55,8 +55,8 @@
                             <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> <a href="mapp.php">To Edit Community Priorities PROJECTS</a></span>
-                                <span class="info-box-number"> <a  href="mapp.php">click me</a></span>
+                                <span class="info-box-text"> <a href="sapp.php">To Edit Community Priorities PROJECTS</a></span>
+                                <span class="info-box-number"> <a  href="sapp.php">click me</a></span>
                             </div>
 
                             <!-- /.info-box-content -->
