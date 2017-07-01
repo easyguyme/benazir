@@ -38,7 +38,7 @@
                         <div class="icon">
                             <i class="ion ion-chart"></i>
                         </div>
-                        <a href="lin_soc.php"  class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="saba_soc.php"  class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -55,7 +55,7 @@
                         <div class="icon">
                             <i class="ion ion-camera"></i>
                         </div>
-                        <a href="update_magallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="laproimg.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -83,7 +83,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="laccp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -98,7 +98,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="mcnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="lacbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
 
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="mcbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="lacbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="ccp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="lccp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -149,7 +149,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="cnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="lcnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
 
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="cbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="lcbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

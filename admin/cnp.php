@@ -42,7 +42,54 @@
         <!--todo add editable heading-->
         <section class="content">
             <div class="col-md-6">
-                <?php include('addcnp.php'); ?>
+                <div class="box box-info">
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Add Makina Current NGO Project</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form  method="post">
+                        <div class="box-body">
+                            <div class="form-group col-sm-10">
+                                <label>Project name:</label>
+
+                                <div class="input-group  col-sm-8">
+
+                                    <input type="text" name="name" class="form-control"  placeholder="Project name" required>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-sm-10">
+                                <label>Project Description:</label>
+
+                                <div class="input-group  col-sm-8">
+
+                                    <input type="text" name="des" class="form-control"  placeholder="Project Description" required>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-sm-10">
+                                <label>Project Completion % :</label>
+
+                                <div class="input-group  col-sm-8">
+
+                                    <input type="text" name="per" class="form-control"  placeholder="Project Completion percentage" required>
+                                </div>
+
+                            </div>
+                            <!-- /.input group -->
+
+
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button  name="save" class="btn btn-info">Save changes</button>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
 
             </div>
             <div class="col-md-6">
@@ -51,14 +98,28 @@
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="box-header with-border">
-                                <h3 class="box-title">View Current NGO Projects</h3>
+                                <h3 class="box-title">View Makina Current NGO Projects</h3>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form action="delete_cnp.php" method="post">
+                                    <form action="cnp.php" method="post">
                                         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                             <a data-toggle="modal" href="#cnpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
-                                            <?php include('modal_delete.php'); ?>
+                                            <div id="cnpdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                                    <h3 id="myModalLabel">Delete Project?</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="alert alert-danger">
+                                                        <p>Are you sure you want to delete the project you checked?.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
+                                                    <button name="delete_cnp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+                                                </div>
+                                            </div>
                                             <thead>
                                             <tr>
                                                 <th></th>
@@ -135,7 +196,7 @@
 </script>
 </body>
 </html>
-<?php include('logo_modal.php'); ?>
+
 <style>
     .example-modal .modal {
         position: relative;
@@ -196,74 +257,39 @@
         });
     });
 </script>
-<script>
-    $(function () {
-        //Initialize Select2 Elements
-        $(".select2").select2();
+<?php
+include('dbcon.php');
+if (isset($_POST['save'])){
+    $name = $_POST['name'];
+    $des = $_POST['des'];
+    $per = $_POST['per'];
+    $type = 'ngo';
 
-        //Datemask dd/mm/yyyy
-        $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
-        //Datemask2 mm/dd/yyyy
-        $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
-        //Money Euro
-        $("[data-mask]").inputmask();
 
-        //Date range picker
-        $('#reservation').daterangepicker();
-        //Date range picker with time picker
-        $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
-        //Date range as a button
-        $('#daterange-btn').daterangepicker(
-            {
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                },
-                startDate: moment().subtract(29, 'days'),
-                endDate: moment()
-            },
-            function (start, end) {
-                $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-            }
-        );
+    $conn->query("insert into makinacurrent (name,des,per,type) values('$name','$des','$per','$type')")or die(mysql_error());
+    ?>
+    <script>
+        window.location = "cnp.php";
+    </script>
+    <?php
 
-        //Date picker
-        $('#datepicker').datepicker({
-            autoclose: true
-        });
-        $('#datepicker2').datepicker({
-            autoclose: true
-        });
+}
+?>
 
-        //iCheck for checkbox and radio inputs
-        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-            checkboxClass: 'icheckbox_minimal-blue',
-            radioClass: 'iradio_minimal-blue'
-        });
-        //Red color scheme for iCheck
-        $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-            checkboxClass: 'icheckbox_minimal-red',
-            radioClass: 'iradio_minimal-red'
-        });
-        //Flat red color scheme for iCheck
-        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-            checkboxClass: 'icheckbox_flat-green',
-            radioClass: 'iradio_flat-green'
-        });
+<?php
+include('dbcon.php');
+if (isset($_POST['delete_cnp'])){
+    $id=$_POST['selector'];
+    $N = count($id);
+    for($i=0; $i < $N; $i++)
+    {
+        $query = $conn->query("DELETE FROM  makinacurrent where id='$id[$i]'");
+    }
+    ?>
+    <script>
+        window.location = "cnp.php";
+    </script>
+    <?php
 
-        //Colorpicker
-        $(".my-colorpicker1").colorpicker();
-        //color picker with addon
-        $(".my-colorpicker2").colorpicker();
-
-        //Timepicker
-        $(".timepicker").timepicker({
-            showInputs: false
-        });
-    });
-</script>
-
+}
+?>

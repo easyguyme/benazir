@@ -1,6 +1,5 @@
 <?php  include('session.php'); ?>
 <?php include('header.php'); ?>
-<?php $get_id = $_GET['id']; ?>
 <!-- daterange picker -->
 <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
 <!-- bootstrap datepicker -->
@@ -16,7 +15,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-<!-- Makina county complete projects -->
+<!-- Lindi county complete projects -->
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
@@ -45,55 +44,52 @@
                 <div class="box box-info">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit Makina Complete CBO Project</h3>
+                        <h3 class="box-title">Add Lindi Complete NGO Project</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
                     <form  method="post">
-                        <?php
-                        $query = $conn->query("select * from makina_cproject where id='$get_id'");
-                        while ($row = $query->fetch()) {
+                        <div class="box-body">
+                            <div class="form-group col-sm-10">
+                                <label>Project name:</label>
 
-                            ?>
-                            <div class="box-body">
+                                <div class="input-group  col-sm-8">
 
-                                <div class="form-group col-sm-10">
-                                    <label>Project name:</label>
-
-                                    <div class="input-group  col-sm-8">
-
-                                        <input type="text" name="name" class="form-control"  placeholder="Project name" value="<?php echo $row['name']; ?>"  required>
-                                    </div>
-
+                                    <input type="text" name="name" class="form-control"  placeholder="Project name" required>
                                 </div>
-                                <div class="form-group col-sm-7">
-                                    <label>Start Date:</label>
-
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input type="text" name="sdate" class="form-control pull-right" id="datepicker" placeholder="Start Date" value="<?php echo $row['sdate']; ?>"  required>
-                                    </div>
-                                </div>
-                                <div class="form-group col-sm-7">
-                                    <label>End Date:</label>
-
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input type="text" name="edate" class="form-control pull-right" id="datepicker2" placeholder="End Date" value="<?php echo $row['edate']; ?>"  required>
-                                    </div>
-                                </div>
-
 
                             </div>
-                            <!-- /.box-body -->
-                            <div class="box-footer">
-                                <button  name="update" class="btn btn-info">Update changes</button>
+                            <div class="form-group col-sm-7">
+                                <label>Start Date:</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="sdate" class="form-control pull-right" id="datepicker" placeholder="Start Date" required>
+                                </div>
                             </div>
-                        <?php } ?>
+                            <div class="form-group col-sm-7">
+                                <label>End Date:</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="edate" class="form-control pull-right" id="datepicker2" placeholder="End Date" required>
+                                </div>
+                            </div>
+
+
+                            <!-- /.input group -->
+
+
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button  name="save" class="btn btn-info">Save changes</button>
+                        </div>
+                        <!-- /.box-footer -->
                     </form>
                 </div>
 
@@ -104,13 +100,28 @@
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="box-header with-border">
-                                <h3 class="box-title">View Makina Complete CBO Projects</h3>
+                                <h3 class="box-title">View Lindi Complete NGO Projects</h3>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form action="mcbp.php" method="post">
+                                    <form action="lincnp.php" method="post">
                                         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
-                                           
+                                            <a data-toggle="modal" href="#cbpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
+                                            <div id="cbpdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                                    <h3 id="myModalLabel">Delete Project?</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="alert alert-danger">
+                                                        <p>Are you sure you want to delete the project you checked?.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
+                                                    <button name="delete_mcnp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+                                                </div>
+                                            </div>
                                             <thead>
                                             <tr>
                                                 <th></th>
@@ -123,7 +134,7 @@
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $query = $conn->query("select * from makina_cproject where org='cbo' ");
+                                            $query = $conn->query("select * from lindi_cproject where org='ngo' ");
                                             while ($row = $query->fetch()) {
                                                 $id = $row['id'];
                                                 ?>
@@ -137,7 +148,7 @@
                                                     <td><?php echo $row['sdate']; ?></td>
                                                     <td><?php echo $row['edate']; ?></td>
                                                     <td><?php echo $row['status']; ?></td>
-                                                    <td width="30"><a href="editmcbp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                    <td width="30"><a href="editlincnp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                 </tr>
@@ -232,8 +243,10 @@
 <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+<!-- Page script -->
 <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+
 <script>
     $(function () {
         $("#example1").DataTable();
@@ -248,7 +261,6 @@
         });
     });
 </script>
-<!-- Page script -->
 <script>
     $(function () {
         //Initialize Select2 Elements
@@ -322,20 +334,37 @@
 
 <?php
 include('dbcon.php');
-if (isset($_POST['update'])){
+if (isset($_POST['save'])){
     $name = $_POST['name'];
     $sdate = $_POST['sdate'];
     $edate = $_POST['edate'];
+    $status = 'complete';
+    $org = 'ngo';
 
 
-
-
-    $conn->query("update makina_cproject set name = '$name', sdate='$sdate' ,edate='$edate'  where id = '$get_id' ")or die(mysql_error());
-
+    $conn->query("insert into lindi_cproject (name,sdate,edate,status,org) values('$name','$sdate','$edate','$status','$org')")or die(mysql_error());
 
     ?>
     <script>
-        window.location = "mcbp.php";
+        window.location = "lincnp.php";
+    </script>
+    <?php
+
+}
+?>
+
+<?php
+include('dbcon.php');
+if (isset($_POST['delete_mcnp'])){
+    $id=$_POST['selector'];
+    $N = count($id);
+    for($i=0; $i < $N; $i++)
+    {
+        $query = $conn->query("DELETE FROM  lindi_cproject where id='$id[$i]'");
+    }
+    ?>
+    <script>
+        window.location = "lincnp.php";
     </script>
     <?php
 

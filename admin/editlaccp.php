@@ -2,10 +2,18 @@
 <?php include('header.php'); ?>
 <?php $get_id = $_GET['id']; ?>
 <!-- daterange picker -->
-
+<link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+<!-- bootstrap datepicker -->
+<link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
 <!-- iCheck for checkboxes and radio inputs -->
 <link rel="stylesheet" href="../plugins/iCheck/all.css">
-    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+<!-- Bootstrap Color Picker -->
+<link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
+<!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="../plugins/select2/select2.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
@@ -38,13 +46,13 @@
                 <div class="box box-info">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit Makina Current CBO Project</h3>
+                        <h3 class="box-title">Edit Laini saba Current County Project</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
                     <form  method="post">
                         <?php
-                        $query = $conn->query("select * from makinacurrent where id='$get_id'");
+                        $query = $conn->query("select * from saracurrent where id='$get_id'");
                         while ($row = $query->fetch()) {
 
                             ?>
@@ -96,13 +104,28 @@
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="box-header with-border">
-                                <h3 class="box-title">View Makina Current CBO Projects</h3>
+                                <h3 class="box-title">View Laini saba Current County Projects</h3>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form action="cbp.php" method="post">
+                                    <form action="laccp.php" method="post">
                                         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
-
+                                            <a data-toggle="modal" href="#ccpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
+                                            <div id="ccpdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                                    <h3 id="myModalLabel">Delete Project?</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="alert alert-danger">
+                                                        <p>Are you sure you want to delete the project you checked?.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
+                                                    <button name="delete_ccp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+                                                </div>
+                                            </div>
                                             <thead>
                                             <tr>
                                                 <th></th>
@@ -114,7 +137,7 @@
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $query = $conn->query("select * from makinacurrent where type='cbo' ");
+                                            $query = $conn->query("select * from sabacurrent where type='county' ");
                                             while ($row = $query->fetch()) {
                                                 $id = $row['id'];
                                                 ?>
@@ -128,7 +151,7 @@
                                                     <td><?php echo $row['des']; ?></td>
                                                     <td><?php echo $row['per']; ?></td>
 
-                                                    <td width="30"><a href="editcbp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                    <td width="30"><a href="editlaccp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                 </tr>
@@ -179,7 +202,7 @@
 </script>
 </body>
 </html>
-
+<?php include('logo_modal.php'); ?>
 <style>
     .example-modal .modal {
         position: relative;
@@ -198,9 +221,21 @@
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="../plugins/select2/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="../plugins/input-mask/jquery.inputmask.js"></script>
+<script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
 <!-- date-range-picker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-
+<script src="../plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+<script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
 <!-- SlimScroll 1.3.0 -->
 <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- iCheck 1.0.1 -->
@@ -213,6 +248,8 @@
 <script src="../dist/js/demo.js"></script>
 <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- Page script -->
+
 <script>
     $(function () {
         $("#example1").DataTable();
@@ -227,8 +264,6 @@
         });
     });
 </script>
-
-
 <?php
 include('dbcon.php');
 if (isset($_POST['update'])){
@@ -238,12 +273,12 @@ if (isset($_POST['update'])){
 
 
 
-    $conn->query("update makinacurrent set name = '$name', des='$des' ,per='$per'  where id = '$get_id' ")or die(mysql_error());
+    $conn->query("update sabacurrent set name = '$name', des='$des' ,per='$per'  where id = '$get_id' ")or die(mysql_error());
 
 
     ?>
     <script>
-        window.location = "cbp.php";
+        window.location = "editlaccp.php<?php echo '?id='.$get_id; ?>";
     </script>
     <?php
 

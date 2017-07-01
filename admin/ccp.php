@@ -42,7 +42,54 @@
         <!--todo add editable heading-->
         <section class="content">
             <div class="col-md-6">
-                <?php include('addccp.php'); ?>
+                <div class="box box-info">
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Add Makina Current County Project</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form  method="post">
+                        <div class="box-body">
+                            <div class="form-group col-sm-10">
+                                <label>Project name:</label>
+
+                                <div class="input-group  col-sm-8">
+
+                                    <input type="text" name="name" class="form-control"  placeholder="Project name" required>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-sm-10">
+                                <label>Project Description:</label>
+
+                                <div class="input-group  col-sm-8">
+
+                                    <input type="text" name="des" class="form-control"  placeholder="Project Description" required>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-sm-10">
+                                <label>Project Completion % :</label>
+
+                                <div class="input-group  col-sm-8">
+
+                                    <input type="text" name="per" class="form-control"  placeholder="Project Completion percentage" required>
+                                </div>
+
+                            </div>
+                            <!-- /.input group -->
+
+
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button  name="save" class="btn btn-info">Save changes</button>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
 
             </div>
             <div class="col-md-6">
@@ -51,14 +98,28 @@
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="box-header with-border">
-                                <h3 class="box-title">View Current County Projects</h3>
+                                <h3 class="box-title">View Makina Current County Projects</h3>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form action="delete_ccp.php" method="post">
+                                    <form action="ccp.php" method="post">
                                         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
                                             <a data-toggle="modal" href="#ccpdelete" id="delete"  class="btn btn-sm btn-danger">Delete</a>
-                                            <?php include('modal_delete.php'); ?>
+                                            <div id="ccpdelete" class="modal  fade modal-sm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                                    <h3 id="myModalLabel">Delete Project?</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="alert alert-danger">
+                                                        <p>Are you sure you want to delete the project you checked?.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i> No</button>
+                                                    <button name="delete_ccp" class="btn btn-danger"><i class="icon-check icon-large"></i> Yes</button>
+                                                </div>
+                                            </div>
                                             <thead>
                                             <tr>
                                                 <th></th>
@@ -266,3 +327,44 @@
         });
     });
 </script>
+<?php
+include('dbcon.php');
+if (isset($_POST['save'])){
+    $name = $_POST['name'];
+    $des = $_POST['des'];
+    $per = $_POST['per'];
+    $type = 'county';
+
+
+    $conn->query("insert into makinacurrent (name,des,per,type) values('$name','$des','$per','$type')")or die(mysql_error());
+
+
+    ?>
+    <script>
+        window.location = "ccp.php";
+    </script>
+    <?php
+
+}
+?>
+
+
+
+
+<?php
+include('dbcon.php');
+if (isset($_POST['delete_ccp'])){
+    $id=$_POST['selector'];
+    $N = count($id);
+    for($i=0; $i < $N; $i++)
+    {
+        $query = $conn->query("DELETE FROM  makinacurrent where id='$id[$i]'");
+    }
+    ?>
+    <script>
+        window.location = "ccp.php";
+    </script>
+    <?php
+
+}
+?>

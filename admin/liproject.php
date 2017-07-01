@@ -55,7 +55,7 @@
                         <div class="icon">
                             <i class="ion ion-camera"></i>
                         </div>
-                        <a href="update_magallery.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="liproimg.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -83,7 +83,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="liccp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -98,7 +98,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="mcnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="licnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
 
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="mcbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="licbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="ccp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="linccp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -149,7 +149,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="cnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="lincnp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
 
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                                 <div class="icon">
                                     <i class="ion ion-grid"></i>
                                 </div>
-                                <a href="cbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="lincbp.php" class="small-box-footer">click me <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

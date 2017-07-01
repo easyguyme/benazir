@@ -16,7 +16,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-<!-- Makina county complete projects -->
+<!-- Sarang'ombe county complete projects -->
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
@@ -45,13 +45,13 @@
                 <div class="box box-info">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit Makina Complete CBO Project</h3>
+                        <h3 class="box-title">Edit Sarang'ombe Complete CBO Project</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
                     <form  method="post">
                         <?php
-                        $query = $conn->query("select * from makina_cproject where id='$get_id'");
+                        $query = $conn->query("select * from sara_cproject where id='$get_id'");
                         while ($row = $query->fetch()) {
 
                             ?>
@@ -104,13 +104,13 @@
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="box-header with-border">
-                                <h3 class="box-title">View Makina Complete CBO Projects</h3>
+                                <h3 class="box-title">View Sarang'ombe Complete CBO Projects</h3>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form action="mcbp.php" method="post">
+                                    <form action="scbp.php" method="post">
                                         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="exampl2">
-                                           
+
                                             <thead>
                                             <tr>
                                                 <th></th>
@@ -123,7 +123,7 @@
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $query = $conn->query("select * from makina_cproject where org='cbo' ");
+                                            $query = $conn->query("select * from sara_cproject where org='cbo' ");
                                             while ($row = $query->fetch()) {
                                                 $id = $row['id'];
                                                 ?>
@@ -137,7 +137,7 @@
                                                     <td><?php echo $row['sdate']; ?></td>
                                                     <td><?php echo $row['edate']; ?></td>
                                                     <td><?php echo $row['status']; ?></td>
-                                                    <td width="30"><a href="editmcbp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
+                                                    <td width="30"><a href="editscbp.php<?php echo '?id='.$id; ?>" class="btn btn-sm btn-success">Edit</a></td>
 
 
                                                 </tr>
@@ -330,12 +330,12 @@ if (isset($_POST['update'])){
 
 
 
-    $conn->query("update makina_cproject set name = '$name', sdate='$sdate' ,edate='$edate'  where id = '$get_id' ")or die(mysql_error());
+    $conn->query("update sara_cproject set name = '$name', sdate='$sdate' ,edate='$edate'  where id = '$get_id' ")or die(mysql_error());
 
 
     ?>
     <script>
-        window.location = "mcbp.php";
+        window.location = "scbp.php";
     </script>
     <?php
 
