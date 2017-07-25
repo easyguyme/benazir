@@ -64,8 +64,8 @@
             <li><a href="update_contact.php"><i class="fa fa-envelope"></i> <span>Contact Us</span></a></li>
             <li><a href="editpart.php"><i class="fa  fa-group"></i> <span>Partners</span></a></li>
             <li><a href="register.php"><i class="fa fa-user"></i> <span>Register New Admin</span></a></li>
-            <li><a href="#"><i class="fa fa-sign-in"></i> <span>Activity log</span></a></li>
-            <li><a href="#"><i class="fa fa-key"></i> <span>User log</span></a></li>
+            <li><a href="activitylog.php"><i class="fa fa-sign-in"></i> <span>Activity log</span></a></li>
+            <li><a href="userlog.php"><i class="fa fa-key"></i> <span>User log</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>

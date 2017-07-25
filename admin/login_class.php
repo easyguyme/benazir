@@ -35,9 +35,18 @@ class Login{
             session_start();
         }
         $_SESSION["logged_in"] = $this->username;
+        $this->log_access();
         echo "<i> You're now logged in.</i>";
     }
 
+    private function log_access(){
+        //$conn->query("insert into user_log (username,login_date,user_id)values('$username',NOW(),".$row['user_id'].")")or die(mysql_error());
+        $log_user = $this->conn->prepare("insert into user_log (username,login_date) VALUE (:username,NOW())");
+        $log_user->execute(array(':username'=>$this->username));
+        //$confim=$log_user->fetch(PDO::FETCH_ASSOC);
+    }
+    
+    
     private function is_account_confirmed(){
         $select_confirmation_query = $this->conn->prepare("SELECT confirmation_code FROM registration WHERE email = :username");
         $select_confirmation_query->execute(array(':username'=>$this->username));

@@ -1,8 +1,10 @@
 <?php
 include('dbcon.php');
-session_start();
+include ('session.php');
+//session_start();
+$conn->query("update user_log set logout_date = NOW() where username = '$session_id' ")or die(mysql_error());
 session_destroy();
-$conn->query("update user_log set logout_Date = NOW() where user_id = '$session_id' ")or die(mysql_error());
+
 
 header('location:index.php');
 ?>

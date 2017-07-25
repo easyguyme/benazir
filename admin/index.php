@@ -45,7 +45,7 @@ if( !isset($_SESSION) ){
 
 
         <?PHP endif ?>
-
+        Your userid was blocked.
         <?PHP else: ?>
             Your IP address has been blocked.
         <?PHP endif; ?>
