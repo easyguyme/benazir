@@ -1,5 +1,6 @@
 <?PHP
 require ('../PHPMailer/PHPMailerAutoload.php');
+include ('session.php');
 	
 	class RegistrationValidator{
 	
@@ -15,7 +16,7 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 			$this->date_today					= date("Y-m-d");
 			$this->ip							= $_SERVER["REMOTE_ADDR"];
 			$this->confirmation_code			= md5(uniqid());
-			
+			$this->session_id                   =$_SESSION['logged_in'];
 			if(isset($_POST["register_button"])){
 			
 				if( (!empty($_POST["fname"]))		and
@@ -46,7 +47,7 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 
 		function logprocess(){
 
-
+            $this->conn->query("insert into activity_log (username,date,action) values('$this->session_id',NOW(),'Added and admin')")or die (mysql_error());
 
 
         }
@@ -65,7 +66,8 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 					if($was_registration_sucessful){	
 						//now send confirmation code to his email.
 						$this->is_confirmation_mail_sent();
-                        
+                        $this->logprocess();
+
 					}
 				}				
 			}
