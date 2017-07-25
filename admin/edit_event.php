@@ -59,6 +59,7 @@
                     <label>Event Status</label>
                     <select name="status" class="form-control" required>
                         <option><?php echo $row['status']; ?></option>
+                        <option>Complete</option>
                         <option>Ongoing</option>
                         <option>Upcoming</option>
                         <option>Cancelled</option>

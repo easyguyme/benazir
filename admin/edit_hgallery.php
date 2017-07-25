@@ -197,7 +197,7 @@ if (isset($_POST['save'])){
 
 
     $conn->query("update hgallery set title='$title' , descp='$descp' , image='$location' where id = '$get_id' ")or die(mysql_error());
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'edited gallery')")or die (mysql_error());
 
 
     ?>

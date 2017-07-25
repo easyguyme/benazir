@@ -299,7 +299,7 @@ if (isset($_POST['save'])){
 
 
     $conn->query("insert into prior_com (makina,sara,laini,lindi) values('$makina','$sara','$lindi','$laini')")or die(mysql_error());
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'Added community priorities')")or die (mysql_error());
     ?>
     <script>
         window.location = "comprior.php";
@@ -317,6 +317,7 @@ if (isset($_POST['delete_macop'])){
     for($i=0; $i < $N; $i++)
     {
         $query = $conn->query("DELETE FROM prior_com where id='$id[$i]'");
+        $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'deleted a community priority')")or die (mysql_error());
     }
 
     ?>

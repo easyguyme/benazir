@@ -267,6 +267,7 @@ if (isset($_POST['save'])){
 
 
     $conn->query("insert into makinacurrent (name,des,per,type) values('$name','$des','$per','$type')")or die(mysql_error());
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'Added NGO project $name')")or die (mysql_error());
     ?>
     <script>
         window.location = "cnp.php";
@@ -284,6 +285,7 @@ if (isset($_POST['delete_cnp'])){
     for($i=0; $i < $N; $i++)
     {
         $query = $conn->query("DELETE FROM  makinacurrent where id='$id[$i]'");
+        $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'deleted current project')")or die (mysql_error());
     }
     ?>
     <script>

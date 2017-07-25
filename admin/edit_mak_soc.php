@@ -77,7 +77,7 @@ if (isset($_POST['update'])){
 
 
     $conn->query("update social_audit set name = '$name', sdate='$sdate' ,edate='$edate'  where id = '$get_id' ")or die(mysql_error());
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'edited social audit')")or die (mysql_error());
 
     ?>
     <script>

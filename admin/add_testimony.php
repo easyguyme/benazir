@@ -52,7 +52,7 @@ if (isset($_POST['save'])){
     $stmt->bindParam(':name', $_POST['who'], PDO::PARAM_STR);
 
     $stmt->execute();
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'Added testimony')")or die (mysql_error());
     ?>
     <script>
         window.location = "addtestimony.php";

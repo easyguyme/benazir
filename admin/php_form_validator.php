@@ -39,7 +39,17 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 			}
 			
 		}
-		
+
+
+
+
+
+		function logprocess(){
+
+
+
+
+        }
 		//This is the method where returned value from other methods is checked.
 		function check_returns(){
 		
@@ -55,6 +65,7 @@ require ('../PHPMailer/PHPMailerAutoload.php');
 					if($was_registration_sucessful){	
 						//now send confirmation code to his email.
 						$this->is_confirmation_mail_sent();
+                        
 					}
 				}				
 			}

@@ -54,6 +54,7 @@
                     <label>Event Status</label>
                     <select name="status" class="form-control" required>
                         <option></option>
+                        <option>Complete</option>
                         <option>Ongoing</option>
                         <option>Upcoming</option>
                         <option>Cancelled</option>
@@ -72,6 +73,7 @@
 
 <?php
 include('dbcon.php');
+
 if (isset($_POST['save'])){
     $event = $_POST['event'];
     $venue = $_POST['venue'];
@@ -81,8 +83,9 @@ if (isset($_POST['save'])){
 
 
 
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'Added new event $event at $venue')")or die (mysql_error());
         $conn->query("insert into hevents (event,venue,sdate,edate,status) values('$event','$venue','$sdate','$edate','$status')")or die(mysql_error());
+
         ?>
         <script>
             window.location = "addevent.php";

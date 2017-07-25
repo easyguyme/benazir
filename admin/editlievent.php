@@ -103,6 +103,7 @@
                                             <label>Status:</label>
                                             <select name="status" class="form-control select2" style="width: 100%;" >
                                                 <option selected="selected"><?php echo $row['status']; ?></option>
+                                                <option>Complete</option>
                                                 <option>Ongoing</option>
                                                 <option>Canceled</option>
                                                 <option>Upcoming</option>

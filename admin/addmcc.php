@@ -130,7 +130,7 @@ if (isset($_POST['save'])){
 
 
     $conn->query("insert into makina_cproject (name,sdate,edate,status,org) values('$name','$sdate','$edate','$status','$org')")or die(mysql_error());
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'Added complete county project $name')")or die (mysql_error());
 
 }
 ?>

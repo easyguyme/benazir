@@ -67,7 +67,7 @@ if (isset($_POST['save'])){
     $finding = $_POST['finding'];
     $page='makina';
 
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'Added social audit $name')")or die (mysql_error());
     $conn->query("insert into social_audit (name,stage,stake,finding,page) values('$name','$stage','$stake','$finding','$page')")or die(mysql_error());
 
 

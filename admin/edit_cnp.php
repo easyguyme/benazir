@@ -65,7 +65,7 @@ if (isset($_POST['update'])){
 
     $conn->query("update makinacurrent set name = '$name', des='$des' ,per='$per'  where id = '$get_id' ")or die(mysql_error());
 
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'edited a cnp')")or die (mysql_error());
     ?>
     <script>
         window.location = "editcnp.php<?php echo '?id='.$get_id; ?>";

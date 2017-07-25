@@ -114,6 +114,7 @@ if (isset($_POST['save'])){
                 $stmt->bindParam(':link', $link, PDO::PARAM_STR);
 
                 $stmt->execute();
+                $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'Added publication $named')")or die (mysql_error());
 
             }
         }

@@ -126,7 +126,7 @@ if (isset($_POST['save'])){
 
 
     $conn->query("insert into makinacurrent (name,des,per,type) values('$name','$des','$per','$type')")or die(mysql_error());
-
+    $conn->query("insert into activity_log (username,date,action) values('$session_id',NOW(),'Added current cbo $name')")or die (mysql_error());
 
 }
 ?>
