@@ -47,7 +47,7 @@ include ('session.php');
 
 		function logprocess(){
 
-            $this->conn->query("insert into activity_log (username,date,action) values('$this->session_id',NOW(),'Added and admin')")or die (mysql_error());
+            $this->conn->query("insert into activity_log (username,date,action) values('$this->session_id',NOW(),'Added an admin')")or die (mysql_error());
 
 
         }
